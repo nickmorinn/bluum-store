@@ -36,7 +36,7 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio_mobile": 0.6,
+        "bluum_text_size_ratio_mobile": 0.7,
         "bluum_text_size_ratio_desktop": 0.6,
         "bluum_text_line_height": 120,
         "background": "",
