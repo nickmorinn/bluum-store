@@ -76,8 +76,8 @@ body {
 }
 
 em {
-  font-family: "LibreBaskerville-Italic", serif;
-  font-style: normal;
+  font-family: "LibreBaskerville", serif;
+  font-style: italic; 
 }
 
 hr {
