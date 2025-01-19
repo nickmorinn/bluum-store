@@ -26,6 +26,11 @@ body {
   position: relative;
 }
 
+em {
+  font-family: "LibreBaskerville-Italic", serif;
+  font-style: normal;
+}
+
 hr {
   color: inherit;
   border-top-width: 1px;
@@ -3667,11 +3672,6 @@ tfoot td {
   50% {
     opacity: .5;
   }
-}
-
-.skeleton {
-  background: rgb(var(--text-color) / .15);
-  border-radius: 4px;
   flex-shrink: 0;
   animation: 2.5s cubic-bezier(.4, 0, .6, 1) infinite pulse;
   display: block;

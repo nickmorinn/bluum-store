@@ -15,7 +15,7 @@
         "item_cArkwh": {
           "type": "item",
           "settings": {
-            "title": "Research-grade peptides, delivered",
+            "title": "Research-grade peptides, <em>delivered</em>",
             "subheading": "",
             "content": "",
             "button_text": "Shop All",
@@ -91,7 +91,7 @@
         "item_WnHjcY": {
           "type": "item",
           "settings": {
-            "title": "Lab-tested before they hit your lab. Your results start with ours.",
+            "title": "Lab-tested <em>before</em> they hit your lab. <br> Your results start with <u>ours.</u>",
             "subheading": "",
             "content": "",
             "button_text": "",
