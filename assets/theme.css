@@ -9947,6 +9947,10 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   font-weight: bold;
 }
 
+.semibold {
+  font-weight: 500;
+}
+
 .text-xxs {
   font-size: 10px;
   line-height: 1.7;

@@ -58,7 +58,7 @@
                     <ul class="v-stack gap-3" role="list">
                       {%- for link in block.settings.menu.links -%}
                         <li>
-                          <a href="{{ link.url }}" class="inline-block link-faded break-all">{{ link.title }}</a>
+                          <a href="{{ link.url }}" class="inline-block link-faded semibold break-all">{{ link.title }}</a>
                         </li>
                       {%- endfor -%}
                     </ul>
@@ -243,7 +243,7 @@
           "type": "richtext",
           "id": "title",
           "label": "Heading",
-          "default": "About our store"
+          "default": "<p>About our store</p>"
         },
         {
           "type": "richtext",
