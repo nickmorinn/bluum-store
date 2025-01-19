@@ -18,7 +18,7 @@
           "type": "message",
           "settings": {
             "text": "Use code WINTERSALE for 30% off and free shipping",
-            "url": ""
+            "url": "shopify://collections/frontpage"
           }
         }
       },
