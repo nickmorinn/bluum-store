@@ -110,7 +110,7 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio": 0.5,
+        "bluum_text_size_ratio": 0.2,
         "background": "",
         "background_gradient": "",
         "heading_text_color": "",
