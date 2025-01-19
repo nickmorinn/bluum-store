@@ -29,6 +29,7 @@
         "item_cArkwh"
       ],
       "settings": {
+        "button_spacing": 24,
         "full_width": true,
         "stack_mobile": true,
         "content_max_width_mobile": 500,
@@ -148,6 +149,7 @@
         "item_WnHjcY"
       ],
       "settings": {
+        "button_spacing": 24,
         "full_width": true,
         "stack_mobile": true,
         "content_max_width_mobile": 500,

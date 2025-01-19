@@ -13,6 +13,7 @@
       --bluum-text-line-height: {{ section.settings.bluum_text_line_height }}%;
       --bluum-text-auto-columns: {% if section.blocks.size == 1 %}minmax(0, 1fr){% else %}{% if section.settings.text_divider != 'none' %}48vw auto{% else %}64vw{% endif %}{% endif %};
       --bluum-text-max-width: {{ section.settings.content_max_width_mobile }}px;
+      --bluum-text-button-spacing: {{ section.settings.button_spacing }}px;
     }
 
     .bluum-text__text {
@@ -20,6 +21,10 @@
       max-width: var(--bluum-text-max-width);
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .bluum-text__content .prose .button {
+      margin-block-start: var(--bluum-text-button-spacing) !important;
     }
 
     @media screen and (min-width: 700px) {
@@ -159,6 +164,16 @@
     {
       "type": "header",
       "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "label": "Button spacing",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
     },
     {
       "type": "checkbox",
