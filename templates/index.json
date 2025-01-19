@@ -15,7 +15,7 @@
         "item_cArkwh": {
           "type": "item",
           "settings": {
-            "title": "Research-grade peptides, <em>delivered</em>",
+            "title": "<p>Research-grade peptides, <em>delivered</em></p>",
             "subheading": "",
             "content": "",
             "button_text": "Shop All",
