@@ -170,7 +170,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "featured-products",
+        "collection": "frontpage",
         "products": [],
         "full_width": true,
         "stack_products": false,
