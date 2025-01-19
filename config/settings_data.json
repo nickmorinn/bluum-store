@@ -24,6 +24,7 @@
     "header_text_color": "#1a1a1a",
     "footer_background": "#c8dae8",
     "footer_text_color": "#24201f",
+    "dialog_background": "#f1f1f1",
     "primary_button_background": "#c8dae8",
     "primary_button_text_color": "#24201f",
     "secondary_button_background": "#c8dae8",
