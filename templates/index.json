@@ -321,14 +321,14 @@
         "button_text": "",
         "button_url": "",
         "text_position": "start",
-        "background": "#c8dae8",
+        "background": "#fffdfa",
         "background_gradient": "",
         "text_color": "#24201f",
         "heading_color": "",
         "heading_gradient": "",
         "button_background": "",
         "button_text_color": "",
-        "accordion_background": "",
+        "accordion_background": "#fffdfa",
         "accordion_text_color": ""
       }
     }
