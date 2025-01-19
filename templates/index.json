@@ -9,37 +9,53 @@
  */
 {
   "sections": {
-    "slideshow": {
+    "bluum_text_e3K3WL": {
+      "type": "bluum-text",
+      "blocks": {
+        "item_cArkwh": {
+          "type": "item",
+          "settings": {
+            "title": "Research-grade peptides, delivered",
+            "subheading": "",
+            "content": "",
+            "button_text": "",
+            "button_url": "",
+            "animate_bluum_text": false,
+            "animate_bluum_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "item_cArkwh"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "bluum_text_style": "fill",
+        "text_divider": "none",
+        "bluum_text_size_ratio": 0.6,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "slideshow_VHXXCQ": {
       "type": "slideshow",
       "blocks": {
-        "slide-1": {
+        "image_g7mWw6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/sema-both-bluum.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "subheading": "Tell your story",
-            "title": "Slide title",
-            "heading_tag": "h0",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
-          }
-        },
-        "slide-2": {
-          "type": "image",
-          "settings": {
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Tell your story",
-            "title": "Slide title",
+            "title": "Slide 1",
             "heading_tag": "h0",
             "button_text": "",
             "button_link": "",
@@ -54,106 +70,19 @@
         }
       },
       "block_order": [
-        "slide-1",
-        "slide-2"
+        "image_g7mWw6"
       ],
       "settings": {
         "full_width": true,
         "allow_transparent_header": true,
         "show_initial_transition": false,
         "image_size": "auto",
-        "controls_type": "numbers",
+        "controls_type": "dots",
         "transition_type": "fade_with_text",
-        "autoplay": true,
+        "autoplay": false,
         "cycle_speed": 6,
-        "background": "#f2f2f2",
-        "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
-      }
-    },
-    "image-link-blocks": {
-      "type": "image-link-blocks",
-      "blocks": {
-        "1664424046b00c932c-0": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "1664424046b00c932c-1": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "1664424046b00c932c-2": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "1664424046b00c932c-3": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "e4a0ef18-1856-4ddd-83d8-871a60d7acac": {
-          "type": "item",
-          "settings": {
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "1664424046b00c932c-0",
-        "1664424046b00c932c-1",
-        "1664424046b00c932c-2",
-        "1664424046b00c932c-3",
-        "e4a0ef18-1856-4ddd-83d8-871a60d7acac"
-      ],
-      "settings": {
-        "full_width": false,
-        "block_size": "medium",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": ""
+        "background": "#F2F2F2",
+        "background_gradient": ""
       }
     },
     "scrolling-text": {
@@ -406,28 +335,6 @@
         "mobile_row_height": 150,
         "background": "",
         "background_gradient": ""
-      }
-    },
-    "before-after-image": {
-      "type": "before-after-image",
-      "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "Before/after",
-        "content": "<p>Showcase your product benefit by using before/after image comparison.</p>",
-        "expand_image": false,
-        "text_position": "center",
-        "before_after_text_position": "bottom",
-        "before_text": "Before",
-        "after_text": "After",
-        "drag_initial_position": 50,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "before_text_color": "#ffffff",
-        "after_text_color": "#ffffff",
-        "drag_cursor_background": "#ffffff",
-        "drag_cursor_color": "#000000"
       }
     },
     "press": {
@@ -728,14 +635,13 @@
     }
   },
   "order": [
-    "slideshow",
-    "image-link-blocks",
+    "bluum_text_e3K3WL",
+    "slideshow_VHXXCQ",
     "scrolling-text",
     "collection-list",
     "featured-collection",
     "image-with-text-overlay",
     "media-grid",
-    "before-after-image",
     "press",
     "hot-spots",
     "multiple-images-with-text",
