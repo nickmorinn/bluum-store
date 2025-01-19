@@ -2827,7 +2827,7 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   --product-card-badge-spacing: var(--spacing-2);
   --product-card-info-padding: var(--spacing-4);
   --product-card-quick-buy-inset: var(--spacing-2);
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded);
   isolation: isolate;
   grid-template-columns: minmax(0, 1fr);
   align-content: start;
@@ -2865,13 +2865,15 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .product-card__image:not(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
-  border-top-left-radius: var(--rounded-sm);
-  border-top-right-radius: var(--rounded-sm);
+  /* border-top-left-radius: var(--rounded-sm);
+  border-top-right-radius: var(--rounded-sm); */
+  border-radius: var(--rounded);
 }
 
 .product-card__image:is(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
-  border-top-right-radius: var(--rounded-sm);
-  border-top-left-radius: var(--rounded-sm);
+  /* border-top-left-radius: var(--rounded-sm);
+  border-top-right-radius: var(--rounded-sm); */
+  border-radius: var(--rounded);
 }
 
 .product-card__image--secondary {
