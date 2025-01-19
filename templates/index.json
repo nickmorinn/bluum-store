@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow": {
@@ -44,16 +53,20 @@
           }
         }
       },
-      "block_order": ["slide-1", "slide-2"],
+      "block_order": [
+        "slide-1",
+        "slide-2"
+      ],
       "settings": {
         "full_width": true,
         "allow_transparent_header": true,
+        "show_initial_transition": false,
         "image_size": "auto",
         "controls_type": "numbers",
         "transition_type": "fade_with_text",
         "autoplay": true,
         "cycle_speed": 6,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
       }
     },
@@ -204,10 +217,15 @@
           }
         }
       },
-      "block_order": ["collection-1", "collection-2", "collection-3"],
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3"
+      ],
       "settings": {
         "full_width": true,
         "stack_collections": false,
+        "collections_per_row_mobile": "1",
         "collections_per_row": 3,
         "show_progress_bar": false,
         "subheading": "",
@@ -247,49 +265,21 @@
         "product_card_text_color": ""
       }
     },
-    "bluum-text": {
-      "type": "bluum-text",
-      "blocks": {
-        "1664424181b38582d5-0": {
-          "type": "item",
-          "settings": {
-            "title": "100%",
-            "subheading": "Showcase a benefit of your product",
-            "content": "",
-            "button_text": "",
-            "button_url": "",
-            "animate_bluum_text": false,
-            "animate_bluum_text_duration": 2
-          }
-        }
-      },
-      "block_order": ["1664424181b38582d5-0"],
-      "settings": {
-        "full_width": true,
-        "stack_mobile": true,
-        "text_alignment": "center",
-        "bluum_text_style": "fill",
-        "text_divider": "none",
-        "bluum_text_size_ratio": 1,
-        "background": "",
-        "background_gradient": "",
-        "heading_text_color": "",
-        "heading_gradient": "linear-gradient(180deg, rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0) 100%)",
-        "text_color": "",
-        "button_background": "",
-        "button_text_color": ""
-      }
-    },
     "image-with-text-overlay": {
       "type": "image-with-text-overlay",
       "blocks": {
         "1664424230c4756b0e-0": {
           "type": "subheading",
-          "settings": { "text": "Subheading" }
+          "settings": {
+            "text": "Subheading"
+          }
         },
         "1664424230c4756b0e-1": {
           "type": "heading",
-          "settings": { "text": "Image with text overlay", "heading_tag": "h1" }
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
         },
         "1664424230c4756b0e-2": {
           "type": "richtext",
@@ -413,6 +403,7 @@
         "full_width": true,
         "reduce_width": false,
         "desktop_row_height": 290,
+        "mobile_row_height": 150,
         "background": "",
         "background_gradient": ""
       }
@@ -434,7 +425,9 @@
         "background_gradient": "",
         "text_color": "",
         "before_text_color": "#ffffff",
-        "after_text_color": "#ffffff"
+        "after_text_color": "#ffffff",
+        "drag_cursor_background": "#ffffff",
+        "drag_cursor_color": "#000000"
       }
     },
     "press": {
@@ -461,7 +454,10 @@
           }
         }
       },
-      "block_order": ["16644243327ba53d2a-0", "16644243327ba53d2a-1"],
+      "block_order": [
+        "16644243327ba53d2a-0",
+        "16644243327ba53d2a-1"
+      ],
       "settings": {
         "full_width": true,
         "content_size": "medium",
@@ -567,7 +563,10 @@
           }
         }
       },
-      "block_order": ["1664424486a2b084ab-0", "1664424486a2b084ab-1"],
+      "block_order": [
+        "1664424486a2b084ab-0",
+        "1664424486a2b084ab-1"
+      ],
       "settings": {
         "full_width": true,
         "images_layout": "scattered",
@@ -582,18 +581,41 @@
     "featured-product": {
       "type": "featured-product",
       "blocks": {
-        "vendor": { "type": "vendor", "settings": {} },
-        "title": { "type": "title", "settings": { "heading_tag": "h2" } },
-        "badges": { "type": "badges", "settings": {} },
+        "vendor": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
         "price": {
           "type": "price",
-          "settings": { "show_taxes_notice": false }
+          "settings": {
+            "show_taxes_notice": false
+          }
         },
-        "rating": { "type": "rating", "settings": { "show_empty": false } },
-        "separator": { "type": "separator", "settings": {} },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
         "description": {
           "type": "description",
-          "settings": { "collapse_content": false }
+          "settings": {
+            "collapse_content": false
+          }
         },
         "variant-picker": {
           "type": "variant_picker",
@@ -602,14 +624,19 @@
             "stack_blocks": true,
             "selector_style": "block",
             "swatch_selector_style": "color",
+            "variant_image_options": "",
             "size_chart_page": ""
           }
         },
-        "quantity-selector": { "type": "quantity_selector", "settings": {} },
+        "quantity-selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "buy-buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_payment_button": true,
+            "show_gift_card_recipient": true,
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
@@ -706,7 +733,6 @@
     "scrolling-text",
     "collection-list",
     "featured-collection",
-    "bluum-text",
     "image-with-text-overlay",
     "media-grid",
     "before-after-image",
