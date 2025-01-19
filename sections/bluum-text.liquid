@@ -12,16 +12,21 @@
       --bluum-text-font-size: calc(min(20vw, 65px) * {{ section.settings.bluum_text_size_ratio_mobile }});
       --bluum-text-line-height: {{ section.settings.bluum_text_line_height }}%;
       --bluum-text-auto-columns: {% if section.blocks.size == 1 %}minmax(0, 1fr){% else %}{% if section.settings.text_divider != 'none' %}48vw auto{% else %}64vw{% endif %}{% endif %};
+      --bluum-text-max-width: {{ section.settings.content_max_width_mobile }}px;
     }
 
     .bluum-text__text {
       line-height: var(--bluum-text-line-height);
+      max-width: var(--bluum-text-max-width);
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
         --bluum-text-font-size: calc(min(15vw, var(--container-max-width) * 0.15) / {{ section.blocks.size }} * {{ section.settings.bluum_text_size_ratio_desktop }});
         --bluum-text-auto-columns: {% if section.settings.text_divider != 'none' %}minmax(0, 1fr) auto{% else %}minmax(0, 1fr){% endif %};
+        --bluum-text-max-width: {{ section.settings.content_max_width_desktop }}px;
       }
     }
   </style>
@@ -152,6 +157,10 @@
   ],
   "settings": [
     {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
       "type": "checkbox",
       "id": "full_width",
       "label": "Full width",
@@ -162,6 +171,30 @@
       "id": "stack_mobile",
       "label": "Stack on mobile",
       "default": true
+    },
+    {
+      "type": "range",
+      "id": "content_max_width_mobile",
+      "label": "Mobile max width",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "content_max_width_desktop",
+      "label": "Desktop max width",
+      "min": 400,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "Text settings"
     },
     {
       "type": "select",
