@@ -1,3 +1,9 @@
+{%- comment -%}
+IMPLEMENTATION NOTE: Bluum header with all the menu is an extremely complex piece of code. Due to requirements from design
+team, we had to cover over hundred of potential combinations. As a consequence, this part (and all the menu snippets) are
+extremely sensitive code that should (if possible) not be touched unless you have spend enough time to study and understand
+the underlying logic of the menu.
+{%- endcomment -%}
 
 {%- if section.settings.show_country_selector and localization.available_countries.size > 1 -%}
   {%- assign will_show_country_selector = true -%}
@@ -546,7 +552,7 @@
           "type": "text",
           "id": "menu_item",
           "label": "Menu item",
-          "info": "Enter menu item to apply a mega menu dropdown."
+          "info": ""
         },
         {
           "type": "select",
@@ -689,7 +695,7 @@
           "type": "select",
           "id": "promo_content_layout",
           "label": "Promotional content layout",
-          "info": "To improve readability, layout can be changed automatically depending on the screen size, menu column count and promotional content.",
+          "info": "",
           "options": [
             {
               "value": "grid",

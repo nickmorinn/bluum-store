@@ -1,17 +1,4 @@
-{%- comment -%}
-----------------------------------------------------------------------------------------------------------------------
-PRODUCT GALLERY COMPONENT
-----------------------------------------------------------------------------------------------------------------------
 
-This component is used to show the product gallery (used in product page and featured product section)
-
-********************************************
-Supported variables
-********************************************
-
-* product: the product to render (if empty, renders placeholder content)
-* product_form_id: the product form id
-{%- endcomment -%}
 
 {%- assign default_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
 {%- capture product_gallery_id -%}product-gallery-{{ product.id }}-{{ section.id }}{%- endcapture -%}
