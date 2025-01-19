@@ -1237,20 +1237,32 @@ scroll-carousel {
 }
 
 .drawer::part(overlay) {
-  background: rgb(var(--background-primary) / 0);
+  /* Base (closed) overlay state: no blur, no visible background */
+  opacity: 0;
+  background: rgba(var(--background-primary), 0); /* transparent at first */
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  min-height: 100lvh;
+
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  transition: background 0.25s ease-in-out, backdrop-filter 0.25s ease-in-out, -webkit-backdrop-filter 0.25s ease-in-out;
+
+  /* Animate these properties in or out */
+  transition:
+    opacity 0.25s ease-in-out,
+    backdrop-filter 0.25s ease-in-out,
+    -webkit-backdrop-filter 0.25s ease-in-out,
+    background-color 0.25s ease-in-out;
+
+  will-change: opacity, backdrop-filter, -webkit-backdrop-filter, background-color;
 }
 
 .drawer[open]::part(overlay) {
-  background: rgb(var(--background-primary) / 0.3);
+  /* Open (visible) overlay state: show blur and fade background */
+  opacity: 1;
+  background: rgba(var(--background-primary), 0.3); /* or #0003, etc. */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
