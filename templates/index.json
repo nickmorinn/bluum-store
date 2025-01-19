@@ -313,7 +313,7 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "<p>You <em>ask</em>, we <span style=\"text-decoration:underline\">answer.</span></p>",
+        "title": "<p>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></p>",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
