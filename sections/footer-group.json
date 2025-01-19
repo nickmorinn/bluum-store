@@ -94,8 +94,8 @@
             "image": "shopify://shop_images/bluum-logo.png",
             "image_width": 150,
             "heading_size": "h3",
-            "title": "Stay in the loop on the latest products and discounts.",
-            "content": ""
+            "title": "",
+            "content": "<p>Stay in the loop on the latest products and discounts.</p>"
           }
         },
         "links": {
