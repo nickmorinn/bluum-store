@@ -93,7 +93,7 @@
         "item_WnHjcY": {
           "type": "item",
           "settings": {
-            "title": "<p>Lab-tested <em>before</em> they hit your lab. <br/>Your results start with <span style=\"text-decoration:underline\">ours.</span></p>",
+            "title": "<p>Lab-tested <em>before</em> they hit your lab. Your results start with <span style=\"text-decoration:underline\">ours.</span></p>",
             "subheading": "",
             "content": "",
             "button_text": "",
@@ -112,7 +112,7 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio_mobile": 0.3,
+        "bluum_text_size_ratio_mobile": 0.4,
         "bluum_text_size_ratio_desktop": 0.2,
         "bluum_text_line_height": 120,
         "background": "",
