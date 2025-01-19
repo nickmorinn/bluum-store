@@ -35,7 +35,7 @@
               {%- if block.settings.title != blank -%}
                 <h2 class="bluum-text__text heading break-all">
                   <bluum-text {% if block.settings.animate_bluum_text %}count-up="{{ block.settings.animate_bluum_text_duration }}"{% endif %} reveal-js>
-                    {%- render 'styled-text', content: block.settings.title | strip_html, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.bluum_text_style -%}
+                    {%- render 'styled-text', content: block.settings.title, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.bluum_text_style -%}
                   </bluum-text>
                 </h2>
               {%- endif -%}
@@ -47,7 +47,7 @@
                       <h3 class="h4">{{ block.settings.subheading | escape }}</h3>
                     {%- endif -%}
 
-                    {{- block.settings.content -}}
+                    {{- block.settings.content | richtext -}}
 
                     {%- if block.settings.button_text != blank -%}
                       {%- render 'button', content: block.settings.button_text, href: block.settings.button_url, size: 'xl', background: section.settings.button_background, text_color: section.settings.button_text_color -%}
