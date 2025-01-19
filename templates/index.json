@@ -18,8 +18,8 @@
             "title": "Research-grade peptides, delivered",
             "subheading": "",
             "content": "",
-            "button_text": "",
-            "button_url": "",
+            "button_text": "Shop All",
+            "button_url": "shopify://collections/all",
             "animate_bluum_text": false,
             "animate_bluum_text_duration": 2
           }
