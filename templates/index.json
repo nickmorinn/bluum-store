@@ -85,7 +85,7 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "",
+        "background": "rgba(0,0,0,0)",
         "background_gradient": ""
       }
     },
@@ -199,29 +199,53 @@
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Is this quality tested?",
+            "content": "<p>Absolutely. Our analytical testing is conducted by Janoshik Analytical, an independent third-party laboratory to verify the identity, purity, and composition of our research products. Each CoA includes purity analysis, peptide sequence confirmation, and date of analysis.</p>"
           }
         },
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "When should I expect my order? ",
+            "content": "<p>Delivery typically takes 3-5 business days. We ship from right here in the USA to all US addresses.<br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>"
           }
         },
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "How should these compounds be stored?",
+            "content": "<p>Our peptides are shipping in lyophilized form, which is stable at room temperature during transit. Once received, store unopened vials in a cool, dry place.</p>"
+          }
+        },
+        "item_FzEkgP": {
+          "type": "item",
+          "settings": {
+            "title": "Are products stable during shipping?",
+            "content": "<p>Our peptides are shipped in lyophilized (freeze-dried) form, which ensures stability during transit. This powder form is highly stable at room temperature and resistant to temperature fluctuations that occur during shipping.<br/><br/>Research has shown no significant degradation or loss of purity when lyophilized peptides are exposed to room temperature during typical shipping timeframes. Each batch is verified for purity upon production, and our stability testing confirms maintenance of product integrity during standard shipping conditions.</p>"
+          }
+        },
+        "item_EjPNg6": {
+          "type": "item",
+          "settings": {
+            "title": "What are you bulk ordering options?",
+            "content": "<p>For bulk inquiries and volume pricing, please <a href=\"/pages/contact\" title=\"Contact\">contact us</a>. </p>"
+          }
+        },
+        "item_cBaxBB": {
+          "type": "item",
+          "settings": {
+            "title": "Can I return my order? ",
+            "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order? We're happy to help - just reach out.</p>"
           }
         }
       },
       "block_order": [
         "166442457738b23caf-0",
         "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "166442457738b23caf-2",
+        "item_FzEkgP",
+        "item_EjPNg6",
+        "item_cBaxBB"
       ],
       "settings": {
         "full_width": false,
