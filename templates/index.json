@@ -175,7 +175,7 @@
         "full_width": true,
         "stack_products": false,
         "show_progress_bar": false,
-        "products_count": 6,
+        "products_count": 44,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
         "subheading": "",
@@ -190,6 +190,28 @@
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": ""
+      }
+    },
+    "rich_text_nHCNyU": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_cVHmTc": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_cVHmTc"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "press": {
@@ -315,6 +337,7 @@
     "media_grid_AV4pEG",
     "bluum_text_NDzceH",
     "featured-collection",
+    "rich_text_nHCNyU",
     "press",
     "faq"
   ]
