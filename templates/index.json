@@ -34,7 +34,8 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio": 0.6,
+        "bluum_text_size_ratio_desktop": 0.6,
+        "bluum_text_size_ratio_mobile": 0.7,
         "background": "",
         "background_gradient": "",
         "heading_text_color": "",
@@ -91,7 +92,7 @@
         "item_WnHjcY": {
           "type": "item",
           "settings": {
-            "title": "Lab-tested <em>before</em> they hit your lab. <br> Your results start with <u>ours.</u>",
+            "title": "Lab-tested <em>before</em> they hit your lab. Your results start with <u>ours.</u>",
             "subheading": "",
             "content": "",
             "button_text": "",
@@ -110,7 +111,8 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio": 0.2,
+        "bluum_text_size_ratio_desktop": 0.2,
+        "bluum_text_size_ratio_mobile": 0.4,
         "background": "",
         "background_gradient": "",
         "heading_text_color": "",
