@@ -161,7 +161,7 @@
           "settings": {
             "logo_width": 100,
             "author": "",
-            "content": "Share info about what your customers say about your products.",
+            "content": "No second-guessing the quality when ordering from Bluum. My new go-to.",
             "show_rating": false,
             "rating": 4
           }
@@ -171,7 +171,7 @@
           "settings": {
             "logo_width": 100,
             "author": "",
-            "content": "Or share content about your promotion, offers...",
+            "content": "Shipping is lightning-fast. Can't recommend them enough.",
             "show_rating": false,
             "rating": 4
           }
@@ -183,7 +183,7 @@
       ],
       "settings": {
         "full_width": true,
-        "content_size": "medium",
+        "content_size": "small",
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -250,14 +250,14 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "You ask, we answer",
+        "title": "You ask, we answer.",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
         "answer_time": "",
         "button_text": "",
         "button_url": "",
-        "text_position": "start",
+        "text_position": "center",
         "background": "#f1f1f1",
         "background_gradient": "",
         "text_color": "",
