@@ -1,3 +1,52 @@
+/* Font Face Declarations */
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('LibreBaskerville-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('LibreBaskerville-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('LibreBaskerville-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('Switzer-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('Switzer-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('Switzer-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */
 *, :before, :after {
   box-sizing: border-box;
@@ -2187,55 +2236,6 @@ scroll-carousel {
 .empty-state {
   justify-items: center;
   gap: var(--spacing-5);
-  text-align: center;
-  margin-block-start: var(--spacing-12);
-  margin-block-end: var(--spacing-12);
-  display: grid;
-}
-
-.empty-state__icon-wrapper {
-  position: relative;
-}
-
-.empty-state__icon-wrapper > .count-bubble {
-  position: absolute;
-  top: calc(-1 * var(--spacing-1-5));
-}
-
-.empty-state__icon-wrapper > .count-bubble:not(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
-  right: calc(-1 * var(--spacing-1-5));
-}
-
-.empty-state__icon-wrapper > .count-bubble:is(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
-  left: calc(-1 * var(--spacing-1-5));
-}
-
-@media screen and (min-width: 700px) {
-  .empty-state {
-    gap: var(--spacing-8);
-    margin-block-start: var(--spacing-32);
-    margin-block-end: var(--spacing-32);
-  }
-
-  .empty-state__icon-wrapper > svg {
-    width: var(--spacing-12);
-    height: var(--spacing-12);
-  }
-
-  .empty-state__icon-wrapper > .count-bubble {
-    top: calc(-1 * var(--spacing-3));
-  }
-
-  .empty-state__icon-wrapper > .count-bubble:not(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
-    right: calc(-1 * var(--spacing-3));
-  }
-
-  .empty-state__icon-wrapper > .count-bubble:is(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
-    left: calc(-1 * var(--spacing-3));
-  }
-}
-
-.scrollable-with-controls {
   gap: var(--spacing-6);
   grid-auto-columns: minmax(0, 1fr);
   display: grid;
