@@ -102,12 +102,21 @@
           "type": "links",
           "settings": {
             "menu": "footer",
-            "show_menu_title": true,
+            "show_menu_title": false,
+            "menu_title": "Links"
+          }
+        },
+        "links_N6danA": {
+          "type": "links",
+          "settings": {
+            "menu": "footer-right",
+            "show_menu_title": false,
             "menu_title": ""
           }
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "title": "About",
             "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
@@ -118,6 +127,7 @@
       "block_order": [
         "newsletter",
         "links",
+        "links_N6danA",
         "text"
       ],
       "settings": {
