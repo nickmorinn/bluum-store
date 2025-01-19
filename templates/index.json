@@ -36,7 +36,7 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio_mobile": 0.7,
+        "bluum_text_size_ratio_mobile": 0.6,
         "bluum_text_size_ratio_desktop": 0.6,
         "bluum_text_line_height": 120,
         "background": "",
@@ -76,6 +76,7 @@
       "block_order": [
         "image_g7mWw6"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "allow_transparent_header": true,
@@ -86,6 +87,44 @@
         "autoplay": false,
         "cycle_speed": 6,
         "background": "rgba(0,0,0,0)",
+        "background_gradient": ""
+      }
+    },
+    "media_grid_AV4pEG": {
+      "type": "media-grid",
+      "blocks": {
+        "image_3rFqim": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sema-both-bluum.png",
+            "title": "",
+            "heading_tag": "h4",
+            "link_url": "",
+            "link_text": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 4,
+            "desktop_row_span": 3,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "rgba(0,0,0,0)",
+            "button_text_color": "#ffffff",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_3rFqim"
+      ],
+      "settings": {
+        "full_width": true,
+        "reduce_width": false,
+        "desktop_row_height": 290,
+        "mobile_row_height": 150,
+        "background": "",
         "background_gradient": ""
       }
     },
@@ -250,14 +289,14 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "You <em>ask</em>, we <u>answer.</u>",
+        "title": "<p>You ask, we answer.</p>",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
         "answer_time": "",
         "button_text": "",
         "button_url": "",
-        "text_position": "left",
+        "text_position": "center",
         "background": "#f1f1f1",
         "background_gradient": "",
         "text_color": "",
@@ -273,6 +312,7 @@
   "order": [
     "bluum_text_e3K3WL",
     "slideshow_VHXXCQ",
+    "media_grid_AV4pEG",
     "bluum_text_NDzceH",
     "featured-collection",
     "press",
