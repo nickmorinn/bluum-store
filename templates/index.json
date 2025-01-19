@@ -55,7 +55,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/sema-both-bluum.png",
-            "content_max_width": 780,
+            "content_max_width": 1200,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "subheading": "",
