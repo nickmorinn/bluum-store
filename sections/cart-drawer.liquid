@@ -163,15 +163,30 @@
       <form action="{{ routes.cart_url }}" method="POST" class="buy-buttons {% if section.settings.show_checkout_button %}buy-buttons--compact{% endif %}">
         {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
-        {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
-          <a href="{{ routes.cart_url }}" class="button button--xl {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant>
-            {{- 'cart.general.view_cart' | t -}}
-          </a>
-        {%- endif -%}
+        <div class="v-stack gap-4">
+          <div class="text-sm">
+            <div class="flex items-start gap-4">
+              <input type="checkbox" 
+                     class="mt-1" 
+                     id="terms-checkbox" 
+                     onchange="document.querySelector('[name=checkout]').disabled = !this.checked;
+                              document.querySelector('#checkout-wrapper').style.opacity = this.checked ? '1' : '0.5';">
+              <span>I have read, understood and agreed with your Terms of Service and Waiver Agreement. I certify that these products will not be used on humans.</span>
+            </div>
+          </div>
 
-        {%- if section.settings.show_checkout_button -%}
-          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl' -%}
-        {%- endif -%}
+          {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
+            <a href="{{ routes.cart_url }}" class="button button--xl {% if section.settings.show_checkout_button %}button--secondary{% endif %}" data-no-instant>
+              {{- 'cart.general.view_cart' | t -}}
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.show_checkout_button -%}
+            <div id="checkout-wrapper" class="w-full" style="opacity: 0.5">
+              {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl', disabled: true, stretch: true -%}
+            </div>
+          {%- endif -%}
+        </div>
       </form>
     </div>
   {%- endif -%}
