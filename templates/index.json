@@ -55,7 +55,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/sema-both-bluum.png",
-            "content_max_width": 780,
+            "content_max_width": 1200,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "subheading": "",
@@ -77,7 +77,7 @@
         "image_g7mWw6"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "allow_transparent_header": true,
         "show_initial_transition": false,
         "image_size": "auto",
@@ -85,7 +85,7 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "#f2f2f2",
+        "background": "rgba(0,0,0,0)",
         "background_gradient": ""
       }
     },
