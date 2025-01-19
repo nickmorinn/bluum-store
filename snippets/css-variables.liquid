@@ -120,15 +120,19 @@ note that this may have bluum on different places.
     /* Font properties */
     /* --heading-font-family: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }}; */
     --heading-font-family: 'Switzer', {{ settings.heading_font.fallback_families }};
-    --heading-font-weight: {{ settings.heading_font.weight }};
+    /* --heading-font-weight: {{ settings.heading_font.weight }}; */
+    --heading-font-weight: 600;
     --heading-font-style: {{ settings.heading_font.style }};
     --heading-text-transform: {{ settings.heading_text_transform }};
-    --heading-letter-spacing: {% if direction == 'rtl' %}0{% else %}{{ settings.heading_letter_spacing | divided_by: 100.0 }}em{% endif %};
+    /* --heading-letter-spacing: {% if direction == 'rtl' %}0{% else %}{{ settings.heading_letter_spacing | divided_by: 100.0 }}em{% endif %}; */
+    --heading-letter-spacing: -.04em;
     /* --text-font-family: {{ settings.text_font.family }}, {{ settings.text_font.fallback_families }}; */
     --text-font-family: 'Switzer', {{ settings.text_font.fallback_families }};
-    --text-font-weight: {{ settings.text_font.weight }};
+    /* --text-font-weight: {{ settings.text_font.weight }}; */
+    --text-font-weight: 400;
     --text-font-style: {{ settings.text_font.style }};
-    --text-letter-spacing: {% if direction == 'rtl' %}0{% else %}{{ settings.text_font_letter_spacing | divided_by: 100.0 }}em{% endif %};
+    /* --text-letter-spacing: {% if direction == 'rtl' %}0{% else %}{{ settings.text_font_letter_spacing | divided_by: 100.0 }}em{% endif %}; */
+    --text-letter-spacing: -.01em;
 
     /* Font sizes */
     --text-h0: {% if settings.heading_font_size == 'small' %}2.5rem{% elsif settings.heading_font_size == 'medium' %}2.75rem{% else %}3rem{% endif %};
