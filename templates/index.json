@@ -170,12 +170,12 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "featured-products",
+        "collection": "frontpage",
         "products": [],
         "full_width": true,
         "stack_products": false,
         "show_progress_bar": false,
-        "products_count": 6,
+        "products_count": 44,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
         "subheading": "",
@@ -190,6 +190,28 @@
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": ""
+      }
+    },
+    "rich_text_nHCNyU": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_cVHmTc": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_cVHmTc"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "press": {
@@ -289,17 +311,17 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "<p>You ask, we answer.</p>",
+        "title": "<p>You <em>ask</em>, we <span style=\"text-decoration:underline\">answer.</span></p>",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
         "answer_time": "",
         "button_text": "",
         "button_url": "",
-        "text_position": "center",
-        "background": "#f1f1f1",
+        "text_position": "start",
+        "background": "#c8dae8",
         "background_gradient": "",
-        "text_color": "",
+        "text_color": "#24201f",
         "heading_color": "",
         "heading_gradient": "",
         "button_background": "",
@@ -315,6 +337,7 @@
     "media_grid_AV4pEG",
     "bluum_text_NDzceH",
     "featured-collection",
+    "rich_text_nHCNyU",
     "press",
     "faq"
   ]
