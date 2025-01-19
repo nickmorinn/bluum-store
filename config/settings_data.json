@@ -36,6 +36,7 @@
     "text_font_size_mobile": 18,
     "text_font_size_desktop": 20,
     "heading_apparition": "split_fade",
+    "show_quick_buy": false,
     "product_color_display": "swatch",
     "product_info_alignment": "start",
     "cart_icon": "shopping_basket",
