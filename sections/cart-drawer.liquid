@@ -164,15 +164,13 @@
         {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
         <div class="v-stack gap-4">
-          <div class="text-sm">
-            <div class="flex items-start gap-4">
-              <input type="checkbox" 
-                     class="mt-1" 
-                     id="terms-checkbox" 
-                     onchange="document.querySelector('[name=checkout]').disabled = !this.checked;
-                              document.querySelector('#checkout-wrapper').style.opacity = this.checked ? '1' : '0.5';">
-              <span>I have read, understood and agreed with your Terms of Service and Waiver Agreement. I certify that these products will not be used on humans.</span>
-            </div>
+          <div class="h-stack items-start gap-4">
+            <input type="checkbox" 
+                   class="flex-shrink-0" 
+                   id="terms-checkbox" 
+                   onchange="document.querySelector('[name=checkout]').disabled = !this.checked;
+                            document.querySelector('#checkout-wrapper').style.opacity = this.checked ? '1' : '0.5';">
+            <div class="text-sm flex-1">I have read, understood and agreed with your <a href="{{ section.settings.terms_of_service_url }}" class="link" target="_blank">Terms of Service</a> and <a href="{{ section.settings.waiver_agreement_url }}" class="link" target="_blank">Waiver Agreement</a>. I certify that these products will not be used on humans.</div>
           </div>
 
           {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
@@ -254,6 +252,22 @@
       "type": "color",
       "id": "product_card_text_color",
       "label": "Product card text"
+    },
+    {
+      "type": "header",
+      "content": "Legal Documents"
+    },
+    {
+      "type": "url",
+      "id": "terms_of_service_url",
+      "label": "Terms of Service URL",
+      "info": "Link to your Terms of Service document"
+    },
+    {
+      "type": "url",
+      "id": "waiver_agreement_url",
+      "label": "Waiver Agreement URL",
+      "info": "Link to your Waiver Agreement document"
     }
   ]
 }
