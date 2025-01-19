@@ -20,10 +20,18 @@
             "text": "Use code WINTERSALE for 30% off",
             "url": "shopify://collections/frontpage"
           }
+        },
+        "message_RaRXpN": {
+          "type": "message",
+          "settings": {
+            "text": "Free US Domestic Shipping",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "message"
+        "message",
+        "message_RaRXpN"
       ],
       "settings": {
         "enable_sticky": false,
