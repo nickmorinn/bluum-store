@@ -46,10 +46,17 @@
         },
         "collapsible_text_KJfR3z": {
           "type": "collapsible_text",
+          "disabled": true,
           "settings": {
             "title": "RESEARCH USE ONLY",
             "content": "<p>These compounds are NOT  intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>",
             "page": ""
+          }
+        },
+        "text_RYM3iC": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>RESEARCH USE ONLY</strong><br/>These compounds are NOT  intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>"
           }
         },
         "variant_picker": {
@@ -87,6 +94,7 @@
         "payment_terms",
         "description",
         "collapsible_text_KJfR3z",
+        "text_RYM3iC",
         "variant_picker",
         "quantity_selector",
         "buy_buttons"
