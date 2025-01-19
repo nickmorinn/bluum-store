@@ -343,7 +343,7 @@
       {
         "type": "header",
         "content": "Product",
-        "info": ""
+        "info": "Configure the appearance of product-related elements"
       },
       {
         "type": "color",
