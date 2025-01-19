@@ -31,6 +31,8 @@
       "settings": {
         "full_width": true,
         "stack_mobile": true,
+        "content_max_width_mobile": 500,
+        "content_max_width_desktop": 1200,
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
@@ -109,6 +111,8 @@
       "settings": {
         "full_width": true,
         "stack_mobile": true,
+        "content_max_width_mobile": 500,
+        "content_max_width_desktop": 600,
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
