@@ -114,12 +114,6 @@
                       <a href="{{ link.url }}" class="bold link-faded-reverse" {% if link.current %}aria-current="page"{% endif %}>{{- link.title -}}</a>
                     {%- else -%}
                       {%- if mega_menu_block != '' -%}
-                        {%- comment -%}
-                        Implementation note: the designers had the desire to show a lot of different kind of menus in Impact: one standard
-                        mega menu but also a kind of "sidebar" mode when the mega-menu appears in a drawer. Unfortunately, this comes with
-                        a lot of extra complexity as we have to go through two different code path: a "details" element for the standard
-                        menu, and a full drawer for the other one.
-                        {%- endcomment -%}
                         {%- unless mega_menu_block.settings.layout == 'drawer' -%}
                           <details is="mega-menu-disclosure" trigger="{{ section.settings.menu_open_trigger | escape }}" {{ mega_menu_block.shopify_attributes }}>
                             <summary class="text-with-icon gap-2.5 bold link-faded-reverse" {% if link.url != '#' %}data-url="{{ link.url | escape }}"{% endif %}>

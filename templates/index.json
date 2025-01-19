@@ -247,8 +247,8 @@
         "product_card_text_color": ""
       }
     },
-    "impact-text": {
-      "type": "impact-text",
+    "bluum-text": {
+      "type": "bluum-text",
       "blocks": {
         "1664424181b38582d5-0": {
           "type": "item",
@@ -258,8 +258,8 @@
             "content": "",
             "button_text": "",
             "button_url": "",
-            "animate_impact_text": false,
-            "animate_impact_text_duration": 2
+            "animate_bluum_text": false,
+            "animate_bluum_text_duration": 2
           }
         }
       },
@@ -268,9 +268,9 @@
         "full_width": true,
         "stack_mobile": true,
         "text_alignment": "center",
-        "impact_text_style": "fill",
+        "bluum_text_style": "fill",
         "text_divider": "none",
-        "impact_text_size_ratio": 1,
+        "bluum_text_size_ratio": 1,
         "background": "",
         "background_gradient": "",
         "heading_text_color": "",
@@ -706,7 +706,7 @@
     "scrolling-text",
     "collection-list",
     "featured-collection",
-    "impact-text",
+    "bluum-text",
     "image-with-text-overlay",
     "media-grid",
     "before-after-image",

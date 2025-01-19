@@ -4512,9 +4512,9 @@ if (!window.customElements.get("images-with-text-scrolling")) {
   window.customElements.define("images-with-text-scrolling", ImagesWithTextScrolling);
 }
 
-// js/sections/impact-text.js
+// js/sections/bluum-text.js
 import { animate as animate14, inView as inView9 } from "vendor";
-var ImpactText = class extends HTMLElement {
+var BluumText = class extends HTMLElement {
   connectedCallback() {
     if (!window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
       return;
@@ -4549,8 +4549,8 @@ var ImpactText = class extends HTMLElement {
     }
   }
 };
-if (!window.customElements.get("impact-text")) {
-  window.customElements.define("impact-text", ImpactText);
+if (!window.customElements.get("bluum-text")) {
+  window.customElements.define("bluum-text", BluumText);
 }
 
 // js/sections/media-grid.js
@@ -5160,7 +5160,7 @@ export {
   ImageBanner,
   ImageLinkBlocks,
   ImagesWithTextScrolling,
-  ImpactText,
+  BluumText,
   LineItem,
   LineItemQuantity,
   Listbox,

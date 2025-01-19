@@ -9,14 +9,14 @@
 
   <style>
     #shopify-section-{{ section.id }} {
-      --impact-text-font-size: calc(min(20vw, 65px) * {{ section.settings.impact_text_size_ratio }});
-      --impact-text-auto-columns: {% if section.blocks.size == 1 %}minmax(0, 1fr){% else %}{% if section.settings.text_divider != 'none' %}48vw auto{% else %}64vw{% endif %}{% endif %};
+      --bluum-text-font-size: calc(min(20vw, 65px) * {{ section.settings.bluum_text_size_ratio }});
+      --bluum-text-auto-columns: {% if section.blocks.size == 1 %}minmax(0, 1fr){% else %}{% if section.settings.text_divider != 'none' %}48vw auto{% else %}64vw{% endif %}{% endif %};
     }
 
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
-        --impact-text-font-size: calc(min(15vw, var(--container-max-width) * 0.15) / {{ section.blocks.size }} * {{ section.settings.impact_text_size_ratio }});
-        --impact-text-auto-columns: {% if section.settings.text_divider != 'none' %}minmax(0, 1fr) auto{% else %}minmax(0, 1fr){% endif %};
+        --bluum-text-font-size: calc(min(15vw, var(--container-max-width) * 0.15) / {{ section.blocks.size }} * {{ section.settings.bluum_text_size_ratio }});
+        --bluum-text-auto-columns: {% if section.settings.text_divider != 'none' %}minmax(0, 1fr) auto{% else %}minmax(0, 1fr){% endif %};
       }
     }
   </style>
@@ -29,19 +29,19 @@
 
   <div {% render 'section-properties' %}>
     <div {% unless section.settings.stack_mobile %}class="scroll-area bleed {% if section.blocks.size < 3 %}sm:unbleed{% else %}md:unbleed{% endif %}"{% endunless %}>
-      <div class="impact-text impact-text--{{ section.settings.text_alignment }} {% unless section.settings.stack_mobile %}impact-text--scroll{% endunless %}">
+      <div class="bluum-text bluum-text--{{ section.settings.text_alignment }} {% unless section.settings.stack_mobile %}bluum-text--scroll{% endunless %}">
           {%- for block in section.blocks -%}
             <div class="snap-center" {{ block.shopify_attributes }}>
               {%- if block.settings.title != blank -%}
-                <h2 class="impact-text__text heading break-all">
-                  <impact-text {% if block.settings.animate_impact_text %}count-up="{{ block.settings.animate_impact_text_duration }}"{% endif %} reveal-js>
-                    {%- render 'styled-text', content: block.settings.title, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.impact_text_style -%}
-                  </impact-text>
+                <h2 class="bluum-text__text heading break-all">
+                  <bluum-text {% if block.settings.animate_bluum_text %}count-up="{{ block.settings.animate_bluum_text_duration }}"{% endif %} reveal-js>
+                    {%- render 'styled-text', content: block.settings.title, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.bluum_text_style -%}
+                  </bluum-text>
                 </h2>
               {%- endif -%}
 
               {%- if block.settings.subheading != blank or block.settings.content != blank or block.settings.button_text != blank -%}
-                <div class="impact-text__content">
+                <div class="bluum-text__content">
                   <div class="prose">
                     {%- if block.settings.subheading != blank -%}
                       <h3 class="h4">{{ block.settings.subheading | escape }}</h3>
@@ -77,8 +77,8 @@
 
 {% schema %}
 {
-  "name": "Impact text",
-  "class": "shopify-section--impact-text",
+  "name": "bluum text",
+  "class": "shopify-section--bluum-text",
   "tag": "section",
   "disabled_on": {
     "templates": ["password"],
@@ -93,8 +93,8 @@
         {
           "type": "text",
           "id": "title",
-          "label": "Impact text",
-          "info": "For best results, keep this text short and impactful.",
+          "label": "bluum text",
+          "info": "For best results, keep this text short and bluumful.",
           "default": "100%"
         },
         {
@@ -128,13 +128,13 @@
         },
         {
           "type": "checkbox",
-          "id": "animate_impact_text",
+          "id": "animate_bluum_text",
           "label": "Show count up animation",
           "default": false
         },
         {
           "type": "range",
-          "id": "animate_impact_text_duration",
+          "id": "animate_bluum_text_duration",
           "label": "Count up duration",
           "min": 0.5,
           "max": 5,
@@ -180,8 +180,8 @@
     },
     {
       "type": "select",
-      "id": "impact_text_style",
-      "label": "Impact text style",
+      "id": "bluum_text_style",
+      "label": "bluum text style",
       "options": [
         {
           "value": "outline",
@@ -224,8 +224,8 @@
     },
     {
       "type": "range",
-      "id": "impact_text_size_ratio",
-      "label": "Impact text size ratio",
+      "id": "bluum_text_size_ratio",
+      "label": "bluum text size ratio",
       "min": 0.5,
       "max": 1.5,
       "step": 0.1,
@@ -249,12 +249,12 @@
     {
       "type": "color",
       "id": "heading_text_color",
-      "label": "Impact text"
+      "label": "bluum text"
     },
     {
       "type": "color_background",
       "id": "heading_gradient",
-      "label": "Impact text gradient"
+      "label": "bluum text gradient"
     },
     {
       "type": "color",
@@ -274,7 +274,7 @@
   ],
   "presets": [
     {
-      "name": "Impact text",
+      "name": "bluum text",
       "blocks": [
         {
           "type": "item"

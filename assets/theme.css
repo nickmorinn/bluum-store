@@ -200,7 +200,7 @@ video {
   display: none !important;
 }
 
-height-observer, visibility-progress, scroll-area, video-media, model-media, media-carousel, impact-text, recently-viewed-products {
+height-observer, visibility-progress, scroll-area, video-media, model-media, media-carousel, bluum-text, recently-viewed-products {
   display: block;
 }
 
@@ -6874,64 +6874,64 @@ product-rerender {
   }
 }
 
-.impact-text {
-  --impact-text-spacing: var(--spacing-10);
-  gap: var(--impact-text-spacing);
+.bluum-text {
+  --bluum-text-spacing: var(--spacing-10);
+  gap: var(--bluum-text-spacing);
   align-items: start;
   display: grid;
 }
 
-.impact-text--scroll {
-  grid: auto / auto-flow var(--impact-text-auto-columns);
+.bluum-text--scroll {
+  grid: auto / auto-flow var(--bluum-text-auto-columns);
 }
 
-.impact-text--center {
+.bluum-text--center {
   text-align: center;
   justify-content: safe center;
 }
 
-.impact-text--end {
+.bluum-text--end {
   text-align: end;
   justify-content: end;
 }
 
-.impact-text__text {
-  font-size: var(--impact-text-font-size);
+.bluum-text__text {
+  font-size: var(--bluum-text-font-size);
   letter-spacing: 0;
   line-height: 1;
 }
 
-.impact-text__text:not(:only-child) {
+.bluum-text__text:not(:only-child) {
   margin-bottom: .2em;
 }
 
-.impact-text__content {
+.bluum-text__content {
   max-width: 750px;
 }
 
-.impact-text--center .impact-text__content {
+.bluum-text--center .bluum-text__content {
   margin-inline-start: auto;
   margin-inline-end: auto;
 }
 
-.impact-text--end .impact-text__content {
+.bluum-text--end .bluum-text__content {
   margin-inline-start: auto;
 }
 
 @media screen and (min-width: 700px) {
-  .impact-text {
-    --impact-text-spacing: var(--spacing-8);
-    grid: auto / auto-flow var(--impact-text-auto-columns);
+  .bluum-text {
+    --bluum-text-spacing: var(--spacing-8);
+    grid: auto / auto-flow var(--bluum-text-auto-columns);
   }
 
-  .impact-text--center {
+  .bluum-text--center {
     justify-content: space-evenly;
   }
 }
 
 @media screen and (min-width: 1150px) {
-  .impact-text {
-    --impact-text-spacing: var(--spacing-12);
+  .bluum-text {
+    --bluum-text-spacing: var(--spacing-12);
   }
 }
 
