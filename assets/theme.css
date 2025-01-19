@@ -3495,7 +3495,7 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .link-faded {
-  opacity: .7;
+  /* opacity: .7; */
   transition: opacity .2s ease-in-out;
 }
 
