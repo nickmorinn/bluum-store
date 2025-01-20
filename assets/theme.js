@@ -5125,6 +5125,9 @@ import { Delegate as Delegate7 } from "vendor";
   setScrollbarWidth();
   window.addEventListener("resize", throttle(setScrollbarWidth));
 })();
+// Import features list functionality
+import './features-list.js';
+
 export {
   AccordionDisclosure,
   AccountLogin,

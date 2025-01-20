@@ -224,73 +224,10 @@
   }
 {%- endstyle -%}
 
-<script>
-  class FeaturesList extends HTMLElement {
-    constructor() {
-      super();
-      this.buttons = this.querySelectorAll('.features-list__button');
-      this.images = this.querySelectorAll('.features-list__image-wrapper');
-      this.activeIndex = 1;
-      this.init();
-    }
+{{ 'features-list.js' | asset_url | script_tag }}
+
+<div data-features-list class="features-list{% if section.settings.title == blank %} no-heading{% endif %}">
   
-    init() {
-      // Wait for images to load before initializing
-      Promise.all(
-        Array.from(this.querySelectorAll('img')).map(img => {
-          if (img.complete) return Promise.resolve();
-          return new Promise(resolve => {
-            img.onload = resolve;
-            img.onerror = resolve;
-          });
-        })
-      ).then(() => {
-        this.bindEvents();
-        // Set initial active state
-        this.setActiveItem(this.activeIndex);
-      });
-    }
-  
-    bindEvents() {
-      this.buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          const index = parseInt(button.dataset.index);
-          if (index !== this.activeIndex) {
-            this.setActiveItem(index);
-          }
-        });
-      });
-    }
-  
-    setActiveItem(index) {
-      // Update active states
-      this.activeIndex = index;
-  
-      // Update button states
-      this.buttons.forEach(button => {
-        const isActive = parseInt(button.dataset.index) === index;
-        button.classList.toggle('is-active', isActive);
-        button.setAttribute('aria-pressed', isActive);
-      });
-  
-      // Update image states with transition
-      this.images.forEach(image => {
-        const shouldBeActive = parseInt(image.dataset.index) === index;
-        if (shouldBeActive) {
-          image.classList.add('is-active');
-          image.style.zIndex = '1';
-        } else {
-          image.classList.remove('is-active');
-          image.style.zIndex = '0';
-        }
-      });
-    }
-  }
-  
-  customElements.define('features-list', FeaturesList);
-</script>
-  
-  <features-list class="features-list{% if section.settings.title == blank %} no-heading{% endif %}">
     <div class="features-list__wrapper page-width">
       <div class="features-list__container">
         <div class="features-list__content-container">
@@ -336,7 +273,7 @@
         </div>
       </div>
     </div>
-  </features-list>
+  </div>
   
   {% schema %}
   {
