@@ -22,7 +22,7 @@ Supported parameters
 <details {% if id %}id="{{ id | escape }}"{% endif %} class="{{ class }} accordion {% if size %}accordion--{{ size }}{% endif %} group" aria-expanded="{% if open %}true{% else %}false{% endif %}" is="accordion-disclosure" {% if open %}open{% endif %} {{ block.shopify_attributes }}>
   <summary>
     {%- comment -%}iOS 14 does not support flex on the summary itself, so we have to use this extra div{%- endcomment -%}
-    <div class="accordion__toggle semibold h5">
+    <div class="accordion__toggle semibold h4">
       {%- if icon -%}
         <div class="text-with-icon">
           {%- render 'icon' with icon -%}
