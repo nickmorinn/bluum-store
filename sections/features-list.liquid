@@ -1,16 +1,310 @@
 {%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* Features List Styles */
+  .features-list {
+    --features-list-gap: var(--spacing-6);
+    padding: var(--spacing-8) 0;
+    background: rgb(var(--background-primary) / 0.5);
+    position: relative;
+    isolation: isolate;
+  }
+
+  .features-list:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+
+  .features-list__wrapper {
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
+
+  .features-list__container {
+    display: grid;
+    gap: var(--features-list-gap);
+  }
+
+  .features-list__content-container {
+    display: grid;
+    gap: var(--spacing-2);
+    grid-template-columns: 1fr;
+  }
+
+  .features-list__image-area {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: rgb(var(--background-primary));
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    order: -1;
+    margin-bottom: var(--spacing-8);
+  }
+
+  .features-list__text-area {
+    display: grid;
+    gap: var(--spacing-6);
+  }
+
+  .features-list__image-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+  .features-list__image-wrapper.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .features-list__main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--rounded-sm);
+  }
+
+  .features-list__text-area {
+    display: grid;
+    gap: var(--spacing-4);
+  }
+
+  .features-list__button {
+    text-align: left;
+    background: rgb(var(--background-primary) / 0.7);
+    padding: var(--spacing-8);
+    border-radius: var(--rounded-lg);
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    width: 100%;
+    position: relative;
+    isolation: isolate;
+    opacity: 0.5;
+  }
+
+  .features-list__button.is-active {
+    opacity: 1;
+  }
+
+  .features-list__button:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .features-list__button:hover {
+    transform: translateY(-2px);
+  }
+
+  .features-list__button:hover,
+  .features-list__button.is-active {
+    border-color: rgb(var(--text-color));
+    background: #EAEAEA;
+  }
+
+  .features-list__button-content {
+    display: flex;
+    gap: var(--spacing-6);
+    align-items: flex-start;
+  }
+
+  @media screen and (min-width: 700px) {
+    .features-list__button-content {
+      gap: var(--spacing-4);
+    }
+  }
+
+  .features-list__icon {
+    flex-shrink: 0;
+    width: var(--spacing-12);
+    height: var(--spacing-12);
+    display: grid;
+    place-items: center;
+    /* background: rgb(var(--text-color) / 0.03); */
+    border-radius: var(--rounded-lg);
+    padding: var(--spacing-3);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .features-list__button:hover .features-list__icon,
+  .features-list__button.is-active .features-list__icon {
+    /* background: rgb(var(--text-color) / 0.06); */
+  }
+
+  .features-list__icon img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .features-list__text-content {
+    display: grid;
+    gap: var(--spacing-2);
+  }
+
+  .features-list__button-title {
+    font-size: var(--text-h3);
+    font-weight: 500;
+    letter-spacing: -.02em;
+  }
+
+  .features-list__text {
+    font-weight: normal; 
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-top: var(--spacing-2);
+    max-width: 42ch;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .features-list__button.is-active .features-list__text {
+    height: auto;
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 750px) {
+    .features-list {
+      --features-list-gap: var(--spacing-8);
+      padding: var(--spacing-20) 0;
+    }
+
+    .features-list__content-container {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--spacing-16);
+      align-items: center;
+    }
+
+    .features-list__image-area {
+      order: 2;
+      margin-bottom: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .features-list__button {
+      padding: var(--spacing-10);
+    }
+
+    .features-list__text-area {
+      max-width: 85%;
+      margin-left: auto;
+      margin-right: 0;
+      display: grid;
+      gap: var(--spacing-8);
+    }
+
+    .features-list__icon {
+      width: var(--spacing-14);
+      height: var(--spacing-14);
+      padding: var(--spacing-4);
+    }
+
+    .features-list__button-title {
+      font-size: var(--text-h3);
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .features-list {
+      padding: var(--spacing-16) 0;
+    }
+    
+    .features-list__content-container {
+      gap: var(--spacing-16);
+    }
+  }
+{%- endstyle -%}
+
+<script>
+  class FeaturesList extends HTMLElement {
+    constructor() {
+      super();
+      this.buttons = this.querySelectorAll('.features-list__button');
+      this.images = this.querySelectorAll('.features-list__image-wrapper');
+      this.activeIndex = 1;
+      this.init();
     }
   
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
+    init() {
+      // Wait for images to load before initializing
+      Promise.all(
+        Array.from(this.querySelectorAll('img')).map(img => {
+          if (img.complete) return Promise.resolve();
+          return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve;
+          });
+        })
+      ).then(() => {
+        this.bindEvents();
+        // Set initial active state
+        this.setActiveItem(this.activeIndex);
+      });
     }
-  {%- endstyle -%}
+  
+    bindEvents() {
+      this.buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const index = parseInt(button.dataset.index);
+          if (index !== this.activeIndex) {
+            this.setActiveItem(index);
+          }
+        });
+      });
+    }
+  
+    setActiveItem(index) {
+      // Update active states
+      this.activeIndex = index;
+  
+      // Update button states
+      this.buttons.forEach(button => {
+        const isActive = parseInt(button.dataset.index) === index;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', isActive);
+      });
+  
+      // Update image states with transition
+      this.images.forEach(image => {
+        const shouldBeActive = parseInt(image.dataset.index) === index;
+        if (shouldBeActive) {
+          image.classList.add('is-active');
+          image.style.zIndex = '1';
+        } else {
+          image.classList.remove('is-active');
+          image.style.zIndex = '0';
+        }
+      });
+    }
+  }
+  
+  customElements.define('features-list', FeaturesList);
+</script>
   
   <features-list class="features-list color-{{ section.settings.color_scheme }} gradient{% if section.settings.title == blank %} no-heading{% endif %}">
     <div class="features-list__wrapper page-width section-{{ section.id }}-padding">
@@ -146,4 +440,3 @@
     ]
   }
   {% endschema %}
-  

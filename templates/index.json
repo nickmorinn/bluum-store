@@ -256,6 +256,47 @@
         "logo_item_border": ""
       }
     },
+    "features_list": {
+      "type": "features-list",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/icon-flask.svg",
+            "image": "shopify://shop_images/674cce339044297326183ec2_IMG_6967_2-2-p-800.jpg",
+            "title": "Verified & Verified Again",
+            "text": "<p>Every batch undergoes third-party testing by Janoshik Analytical (an independent lab). We provide Certificates of Analysis because you deserve to know what's in your products. No fake reports (unlike some of our competitors).</p>"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/icon-plane.svg",
+            "image": "shopify://shop_images/674ccefaaf8ff5b2eaaba233_motion_blur-2.jpg",
+            "title": "Free and Fast Shipping",
+            "text": "<p>Forget about customs clearance and international delays. Our U.S. facility ships your order the same day. Pure simplicity from our lab to yours.</p>"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/icon-molecule.svg",
+            "image": "shopify://shop_images/6749f84f04d10cf9b89fd758_WhatsApp_Image_2024-11-29_at_03.41.43_1_-p-800.jpg",
+            "title": "Next-Generation Compounds",
+            "text": "<p>Get the latest and greatest. From established staples to the latest innovations in GLP1 research, our catalogue evolves with the science.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -341,6 +382,7 @@
     "featured-collection",
     "rich_text_nHCNyU",
     "press",
+    "features_list",
     "faq"
   ]
 }
