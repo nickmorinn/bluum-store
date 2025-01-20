@@ -268,10 +268,8 @@
         "feature_2",
         "feature_3"
       ],
-      "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
+      "disabled": true,
+      "settings": {}
     },
     "faq": {
       "type": "faq",
