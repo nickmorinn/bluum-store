@@ -307,7 +307,7 @@
   customElements.define('features-list', FeaturesList);
 </script>
   
-  <features-list class="features-list color-{{ section.settings.color_scheme }} gradient{% if section.settings.title == blank %} no-heading{% endif %}">
+  <features-list class="features-list section-{{ section.id }}-padding{% if section.settings.title == blank %} no-heading{% endif %}">
     <div class="features-list__wrapper page-width section-{{ section.id }}-padding">
       <div class="features-list__container">
         <div class="features-list__content-container">
