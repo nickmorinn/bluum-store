@@ -1,16 +1,4 @@
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
   /* Features List Styles */
   .features-list {
     --features-list-gap: var(--spacing-6);
@@ -303,7 +291,7 @@
 </script>
   
   <features-list class="features-list{% if section.settings.title == blank %} no-heading{% endif %}">
-    <div class="features-list__wrapper page-width section-{{ section.id }}-padding">
+    <div class="features-list__wrapper page-width">
       <div class="features-list__container">
         <div class="features-list__content-container">
           <div class="features-list__text-area">
