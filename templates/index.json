@@ -29,7 +29,7 @@
         "item_cArkwh"
       ],
       "settings": {
-        "button_spacing": 24,
+        "button_spacing": 12,
         "full_width": true,
         "stack_mobile": true,
         "content_max_width_mobile": 500,
@@ -37,9 +37,9 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio_mobile": 0.6,
+        "bluum_text_size_ratio_mobile": 0.7,
         "bluum_text_size_ratio_desktop": 0.6,
-        "bluum_text_line_height": 120,
+        "bluum_text_line_height": 115,
         "background": "",
         "background_gradient": "",
         "heading_text_color": "",
@@ -244,6 +244,7 @@
         "16644243327ba53d2a-0",
         "16644243327ba53d2a-1"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "content_size": "small",
@@ -354,7 +355,7 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "<p>You <em>ask</em>, we <span style=\"text-decoration:underline\">answer.</span></p>",
+        "title": "<p>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></p>",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
@@ -362,14 +363,14 @@
         "button_text": "",
         "button_url": "",
         "text_position": "start",
-        "background": "#c8dae8",
+        "background": "#fffdfa",
         "background_gradient": "",
         "text_color": "#24201f",
         "heading_color": "",
         "heading_gradient": "",
         "button_background": "",
         "button_text_color": "",
-        "accordion_background": "",
+        "accordion_background": "#fffdfa",
         "accordion_text_color": ""
       }
     }
