@@ -91,42 +91,19 @@
         "background_gradient": ""
       }
     },
-    "media_grid_AV4pEG": {
-      "type": "media-grid",
-      "blocks": {
-        "image_3rFqim": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/sema-both-bluum.png",
-            "title": "",
-            "heading_tag": "h4",
-            "link_url": "",
-            "link_text": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_column_span": 4,
-            "desktop_row_span": 3,
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "background": "rgba(0,0,0,0)",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "rgba(0,0,0,0)",
-            "button_text_color": "#ffffff",
-            "overlay_color": "rgba(0,0,0,0)",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "image_3rFqim"
-      ],
+    "image_with_text_overlay_jcVJRC": {
+      "type": "image-with-text-overlay",
       "settings": {
-        "full_width": true,
-        "reduce_width": false,
-        "desktop_row_height": 290,
-        "mobile_row_height": 150,
-        "background": "",
-        "background_gradient": ""
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/sema-both-bluum.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
       }
     },
     "bluum_text_NDzceH": {
@@ -350,7 +327,7 @@
   "order": [
     "bluum_text_e3K3WL",
     "slideshow_VHXXCQ",
-    "media_grid_AV4pEG",
+    "image_with_text_overlay_jcVJRC",
     "bluum_text_NDzceH",
     "featured-collection",
     "press",
