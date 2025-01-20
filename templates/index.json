@@ -242,7 +242,7 @@
           "type": "feature",
           "settings": {
             "image": "shopify://shop_images/674cce339044297326183ec2_IMG_6967_2-2-p-800.jpg",
-            "title": "Verified & Verified Again",
+            "title": "Lab-Verified",
             "text": "<p>Every batch undergoes third-party testing by Janoshik Analytical (an independent lab). We provide Certificates of Analysis because you deserve to know what's in your products. No fake reports (unlike some of our competitors).</p>"
           }
         },
@@ -268,7 +268,6 @@
         "feature_2",
         "feature_3"
       ],
-      "disabled": false,
       "settings": {}
     },
     "faq": {
