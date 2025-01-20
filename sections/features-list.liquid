@@ -55,11 +55,6 @@
     margin-bottom: var(--spacing-8);
   }
 
-  .features-list__text-area {
-    display: grid;
-    gap: var(--spacing-6);
-  }
-
   .features-list__image-wrapper {
     opacity: 0;
     visibility: hidden;
@@ -307,7 +302,7 @@
   customElements.define('features-list', FeaturesList);
 </script>
   
-  <features-list class="features-list section-{{ section.id }}-padding{% if section.settings.title == blank %} no-heading{% endif %}">
+  <features-list class="features-list{% if section.settings.title == blank %} no-heading{% endif %}">
     <div class="features-list__wrapper page-width section-{{ section.id }}-padding">
       <div class="features-list__container">
         <div class="features-list__content-container">
@@ -361,12 +356,6 @@
     "tag": "section",
     "class": "section",
     "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "Color scheme",
-        "default": "background-1"
-      },
       {
         "type": "header",
         "content": "Padding"
