@@ -30,8 +30,16 @@
   }
 
   .features-list__wrapper {
-    max-width: var(--page-width);
     margin: 0 auto;
+    /* padding: 0 var(--spacing-4); */
+  }
+
+  @media screen and (min-width: 750px) {
+    .features-list__wrapper {
+      margin-right: 0;
+      padding-right: var(--spacing-16);
+      max-width: none;
+    }
   }
 
   .features-list__container {
@@ -207,9 +215,6 @@
     }
 
     .features-list__text-area {
-      max-width: 85%;
-      margin-left: auto;
-      margin-right: 0;
       display: grid;
       gap: var(--spacing-8);
     }
@@ -258,7 +263,7 @@
                     {%- endcase -%}
                   </div>
                   <div class="features-list__text-content">
-                    <span class="features-list__button-title h2">{{ block.settings.title | escape }}</span>
+                    <span class="features-list__button-title h3">{{ block.settings.title | escape }}</span>
                     {%- if block.settings.text != blank -%}
                       <div class="features-list__text rte h4">{{ block.settings.text }}</div>
                     {%- endif -%}
