@@ -252,34 +252,34 @@
       ],
       "settings": {}
     },
-    "images_with_text_scrolling_UmHPfi": {
-      "type": "images-with-text-scrolling",
+    "multiple_images_with_text_zwMTBW": {
+      "type": "multiple-images-with-text",
       "blocks": {
-        "item_BCt3gH": {
+        "item_HWXhrL": {
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/money-hat.jpg",
-            "icon": "none",
-            "icon_width": 48,
+            "image_rotation_degrees": -2,
+            "subheading": "",
             "title": "Receive $100 store credit",
-            "content": "<p>Leave us a review on Reddit mentioning our site and we will gift you with $100 of store credit. Just shoot us an email including your post link and order number when completed. <br/><br/>Approved subreddits include:<br/>‍<br/>☑️ r/bpc_157<br/>☑️ r/Biohackers <br/>☑️ r/Peptides<br/>☑️ r/PeptideForum<br/>☑️ r/peptidesource</p>"
+            "content": "<p>Leave us a review on Reddit mentioning our site and we will gift you with $100 of store credit. Just shoot us an email including your post link and order number when completed. <br/><br/>Approved subreddits include:<br/>‍<br/>☑️ r/bpc_157<br/>☑️ r/Biohackers <br/>☑️ r/Peptides<br/>☑️ r/PeptideForum<br/>☑️ r/peptidesource</p>",
+            "button_url": "shopify://pages/contact",
+            "button_text": "Message Us"
           }
         }
       },
       "block_order": [
-        "item_BCt3gH"
+        "item_HWXhrL"
       ],
       "settings": {
         "full_width": true,
-        "stack_on_mobile": false,
-        "show_counter": false,
-        "desktop_image_effect": "reveal",
-        "image_position": "start",
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
         "background": "#c8dae8",
         "background_gradient": "",
         "text_color": "",
-        "heading_color": "",
-        "heading_gradient": ""
+        "button_background": "#1a1a1a",
+        "button_text_color": "#fffdfa"
       }
     },
     "faq": {
@@ -367,7 +367,7 @@
     "featured-collection",
     "press",
     "features_list",
-    "images_with_text_scrolling_UmHPfi",
+    "multiple_images_with_text_zwMTBW",
     "faq"
   ]
 }
