@@ -86,10 +86,10 @@ note that this may have bluum on different places.
     --container-max-width: {{ settings.page_width }}px;
     --container-narrow-max-width: {{ settings.page_width | minus: 250 }}px;
     --container-gutter: var(--spacing-5);
-    --section-outer-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-8){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-10){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-12){% else %}var(--spacing-14){% endif %};
+    --section-outer-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-8){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-10){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-12){% else %}var(--spacing-18){% endif %};
     --section-inner-max-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-8){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-9){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-10){% else %}var(--spacing-12){% endif %};
     --section-inner-spacing-inline: var(--container-gutter);
-    --section-stack-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-8){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-8){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-8){% else %}var(--spacing-10){% endif %};
+    --section-stack-spacing-block: var(--spacing-6);
 
     /* Grid gutter */
     --grid-gutter: var(--spacing-5);
@@ -258,7 +258,7 @@ note that this may have bluum on different places.
       --section-outer-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-12){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-14){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-16){% else %}var(--spacing-20){% endif %};
       --section-inner-max-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-10){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-10){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-12){% else %}var(--spacing-14){% endif %};
       --section-inner-spacing-inline: {% if settings.section_boxed_horizontal_spacing == 'xsmall' %}var(--spacing-10){% elsif settings.section_boxed_horizontal_spacing == 'small' %}var(--spacing-10){% elsif settings.section_boxed_horizontal_spacing == 'medium' %}var(--spacing-12){% else %}var(--spacing-14){% endif %};
-      --section-stack-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-10){% else %}var(--spacing-12){% endif %};
+        --section-stack-spacing-block: var(--spacing-6);
 
       /* Grid gutter */
       --grid-gutter: var(--spacing-6);
@@ -280,7 +280,7 @@ note that this may have bluum on different places.
       --section-outer-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-14){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-16){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-18){% else %}var(--spacing-20){% endif %};
       --section-inner-max-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-12){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-14){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-16){% else %}var(--spacing-18){% endif %};
       --section-inner-spacing-inline: {% if settings.section_boxed_horizontal_spacing == 'xsmall' %}var(--spacing-12){% elsif settings.section_boxed_horizontal_spacing == 'small' %}var(--spacing-14){% elsif settings.section_boxed_horizontal_spacing == 'medium' %}var(--spacing-16){% else %}var(--spacing-18){% endif %};
-      --section-stack-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-10){% else %}var(--spacing-12){% endif %};
+        --section-stack-spacing-block: var(--spacing-6);
     }
   }
 
@@ -291,7 +291,7 @@ note that this may have bluum on different places.
       --section-outer-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-14){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-16){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-20){% else %}var(--spacing-24){% endif %};
       --section-inner-max-spacing-block: {% if settings.section_vertical_spacing == 'xsmall' %}var(--spacing-12){% elsif settings.section_vertical_spacing == 'small' %}var(--spacing-14){% elsif settings.section_vertical_spacing == 'medium' %}var(--spacing-16){% else %}var(--spacing-18){% endif %};
       --section-inner-spacing-inline: {% if settings.section_boxed_horizontal_spacing == 'xsmall' %}var(--spacing-12){% elsif settings.section_boxed_horizontal_spacing == 'small' %}var(--spacing-14){% elsif settings.section_boxed_horizontal_spacing == 'medium' %}var(--spacing-16){% else %}var(--spacing-18){% endif %};
-      --section-stack-spacing-block: var(--spacing-12);
+      --section-stack-spacing-block: var(--spacing-6);
     }
   }
 

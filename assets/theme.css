@@ -497,7 +497,7 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
 }
 
 .accordion-box {
-  padding: var(--spacing-1) var(--spacing-6);
+  padding: var(--spacing-1) var(--spacing-1);
 }
 
 .accordion-box > :first-child {
@@ -510,7 +510,7 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
 
 @media screen and (min-width: 1000px) {
   .accordion-box {
-    padding: var(--spacing-5) var(--spacing-12);
+    padding: var(--spacing-1) var(--spacing-1);
   }
 }
 
