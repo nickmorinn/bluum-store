@@ -471,7 +471,7 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
 .accordion__toggle {
   gap: var(--spacing-5);
   flex-grow: 1;
-  align-items: flex-start;
+  align-items: center;
   padding-block-start: var(--accordion-spacing);
   padding-block-end: var(--accordion-spacing);
   display: flex;
