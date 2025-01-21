@@ -115,6 +115,8 @@
         "item_WnHjcY": {
           "type": "item",
           "settings": {
+            "show_reviews": false,
+            "review_text": "Compounds trusted by 1000+",
             "title": "<p>Lab-tested <em>before</em> they hit your lab. Your results start with <span style=\"text-decoration:underline\">ours.</span></p>",
             "subheading": "",
             "content": "",
@@ -250,6 +252,36 @@
       ],
       "settings": {}
     },
+    "images_with_text_scrolling_UmHPfi": {
+      "type": "images-with-text-scrolling",
+      "blocks": {
+        "item_BCt3gH": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/money-hat.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Receive $100 store credit",
+            "content": "<p>Leave us a review on Reddit mentioning our site and we will gift you with $100 of store credit. Just shoot us an email including your post link and order number when completed. <br/><br/>Approved subreddits include:<br/>‍<br/>☑️ r/bpc_157<br/>☑️ r/Biohackers <br/>☑️ r/Peptides<br/>☑️ r/PeptideForum<br/>☑️ r/peptidesource</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_BCt3gH"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "show_counter": false,
+        "desktop_image_effect": "reveal",
+        "image_position": "start",
+        "background": "#c8dae8",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -335,6 +367,7 @@
     "featured-collection",
     "press",
     "features_list",
+    "images_with_text_scrolling_UmHPfi",
     "faq"
   ]
 }
