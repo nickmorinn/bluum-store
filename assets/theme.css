@@ -497,7 +497,7 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
 }
 
 .accordion-box {
-  padding: var(--spacing-1) var(--spacing-10);
+  padding: var(--spacing-1) var(--spacing-4);
 }
 
 .accordion-box > :first-child {
