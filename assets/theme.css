@@ -7666,8 +7666,6 @@ product-rerender {
   display: grid;
 }
 
-  position: relative;
-}
 
 .product-gallery__media-list {
   grid: var(--product-gallery-media-list-grid);
