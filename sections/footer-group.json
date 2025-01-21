@@ -93,7 +93,7 @@
           "type": "newsletter",
           "settings": {
             "image": "shopify://shop_images/bluum-logo.png",
-            "image_width": 150,
+            "image_width": 300,
             "heading_size": "h3",
             "title": "",
             "content": "<p>Stay in the loop on the latest products and discounts.</p>"
@@ -119,7 +119,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "title": "About",
+            "title": "<p>About</p>",
             "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
             "enable_follow_on_shop": true
           }
