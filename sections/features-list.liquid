@@ -1,23 +1,24 @@
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  .section.features-list.section-{{ section.id }}-padding {
+    padding-block-start: {{ section.settings.padding_block_start | times: 0.75 | round: 0 }}px !important;
+    padding-block-end: {{ section.settings.padding_block_end | times: 0.75 | round: 0 }}px !important;
   }
 
   @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+    .section.features-list.section-{{ section.id }}-padding {
+      padding-block-start: {{ section.settings.padding_block_start }}px !important;
+      padding-block-end: {{ section.settings.padding_block_end }}px !important;
     }
   }
 
   /* Features List Styles */
   .features-list {
     --features-list-gap: var(--spacing-6);
-    padding: var(--spacing-4) 0;
     background: rgb(var(--background-primary) / 0.5);
     position: relative;
     isolation: isolate;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
 
   .features-list:before {
@@ -31,7 +32,8 @@
 
   .features-list__wrapper {
     margin: 0 auto;
-    /* padding: 0 var(--spacing-8); */
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
 
   @media screen and (min-width: 750px) {
@@ -145,9 +147,7 @@
     height: var(--spacing-12);
     display: grid;
     place-items: center;
-    /* background: rgb(var(--text-color) / 0.03); */
     border-radius: var(--rounded-lg);
-    /* padding: var(--spacing-3); */
     padding-left: var(--spacing-3);
     padding-right: var(--spacing-3);
     padding-bottom: var(--spacing-14);
@@ -159,12 +159,6 @@
     .features-list__icon {
       padding-bottom: var(--spacing-6);
     }
-  }
-
-  .features-list__button:hover .features-list__icon,
-  .features-list__button.is-active .features-list__icon {
-    /* background: rgb(var(--text-color) / 0.06); */
-
   }
 
   .features-list__icon img {
@@ -203,7 +197,6 @@
   @media screen and (min-width: 750px) {
     .features-list {
       --features-list-gap: var(--spacing-8);
-      padding: var(--spacing-8) 0;
     }
 
     .features-list__content-container {
@@ -232,7 +225,6 @@
     .features-list__icon {
       width: var(--spacing-14);
       height: var(--spacing-14);
-      /* padding: var(--spacing-4); */
     }
 
     .features-list__button-title {
@@ -241,10 +233,6 @@
   }
 
   @media screen and (min-width: 1000px) {
-    .features-list {
-      padding: var(--spacing-6) 0;
-    }
-    
     .features-list__content-container {
       gap: var(--spacing-6);
     }
@@ -253,107 +241,126 @@
 
 {{ 'features-list.js' | asset_url | script_tag }}
 
-<div data-features-list class="features-list{% if section.settings.title == blank %} no-heading{% endif %}">
-  
-    <div class="features-list__wrapper page-width">
-      <div class="features-list__container">
-        <div class="features-list__content-container">
-          <div class="features-list__text-area">
-            {%- for block in section.blocks -%}
-              <button class="features-list__button" data-index="{{ forloop.index }}" {{ block.shopify_attributes }}>
-                <div class="features-list__button-content">
-                  <div class="features-list__icon">
-                    {%- case forloop.index -%}
-                      {%- when 1 -%}
-                        <img src="{{ 'icon-flask.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
-                      {%- when 2 -%}
-                        <img src="{{ 'icon-plane.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
-                      {%- when 3 -%}
-                        <img src="{{ 'icon-molecule.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
-                    {%- endcase -%}
-                  </div>
-                  <div class="features-list__text-content">
-                    <span class="features-list__button-title h3">{{ block.settings.title | escape }}</span>
-                    {%- if block.settings.text != blank -%}
-                      <div class="features-list__text rte h4">{{ block.settings.text }}</div>
-                    {%- endif -%}
-                  </div>
+<div data-features-list class="section features-list section-{{ section.id }}-padding{% if section.settings.title == blank %} no-heading{% endif %}">
+  <div class="features-list__wrapper page-width">
+    <div class="features-list__container">
+      <div class="features-list__content-container">
+        <div class="features-list__text-area">
+          {%- for block in section.blocks -%}
+            <button class="features-list__button" data-index="{{ forloop.index }}" {{ block.shopify_attributes }}>
+              <div class="features-list__button-content">
+                <div class="features-list__icon">
+                  {%- case forloop.index -%}
+                    {%- when 1 -%}
+                      <img src="{{ 'icon-flask.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
+                    {%- when 2 -%}
+                      <img src="{{ 'icon-plane.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
+                    {%- when 3 -%}
+                      <img src="{{ 'icon-molecule.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
+                  {%- endcase -%}
                 </div>
-              </button>
-            {%- endfor -%}
-          </div>
-          <div class="features-list__image-area">
-            {%- for block in section.blocks -%}
-              {%- if block.settings.image != blank -%}
-                <div class="features-list__image-wrapper" data-index="{{ forloop.index }}">
-                  <img 
-                    src="{{ block.settings.image | image_url: width: 800 }}"
-                    alt="{{ block.settings.title | escape }}"
-                    loading="lazy"
-                    class="features-list__main-image"
-                  >
+                <div class="features-list__text-content">
+                  <span class="features-list__button-title h3">{{ block.settings.title | escape }}</span>
+                  {%- if block.settings.text != blank -%}
+                    <div class="features-list__text rte h4">{{ block.settings.text }}</div>
+                  {%- endif -%}
                 </div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-  
+              </div>
+            </button>
+          {%- endfor -%}
+        </div>
+        <div class="features-list__image-area">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.image != blank -%}
+              <div class="features-list__image-wrapper" data-index="{{ forloop.index }}">
+                <img 
+                  src="{{ block.settings.image | image_url: width: 800 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  loading="lazy"
+                  class="features-list__main-image"
+                >
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
       </div>
     </div>
   </div>
-  
-  {% schema %}
-  {
-    "name": "Features List",
-    "tag": "section",
-    "class": "section",
-    "settings": [],
-    "blocks": [
-      {
-        "type": "feature",
-        "name": "Feature",
-        "limit": 3,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "icon",
-            "label": "Icon"
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Feature Image"
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "default": "Feature title",
-            "label": "Title"
-          },
-          {
-            "type": "richtext",
-            "id": "text",
-            "default": "<p>Share information about a key feature of your product.</p>",
-            "label": "Text"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Features List",
-        "blocks": [
-          {
-            "type": "feature"
-          },
-          {
-            "type": "feature"
-          },
-          {
-            "type": "feature"
-          }
-        ]
-      }
-    ]
-  }
-  {% endschema %}
+</div>
+
+{% schema %}
+{
+  "name": "Features List",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding block start",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding block end",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Feature Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Feature title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Share information about a key feature of your product.</p>",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features List",
+      "blocks": [
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

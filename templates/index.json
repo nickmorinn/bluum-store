@@ -251,8 +251,8 @@
         "feature_3"
       ],
       "settings": {
-        "padding_top": 16,
-        "padding_bottom": 16
+        "padding_block_start": 0,
+        "padding_block_end": 16
       }
     },
     "multiple_images_with_text_zwMTBW": {

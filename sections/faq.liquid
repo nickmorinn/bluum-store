@@ -58,7 +58,7 @@
       <div class="section-stack__intro">
         <div class="v-stack gap-10">
           {%- if content != blank -%}
-            <div class="prose {% if text_position == 'center' %}text-center{% endif %}">
+            <div class="prose {% if text_position == 'center' %}text-center{% endif %} {% if section.settings.mobile_title_alignment == 'left' %}sm:text-left{% endif %}">
               {{- content -}}
             </div>
           {%- endif -%}
@@ -211,8 +211,24 @@
     },
     {
       "type": "select",
+      "id": "mobile_title_alignment",
+      "label": "Mobile title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
       "id": "text_position",
-      "label": "Text position",
+      "label": "Desktop text position",
       "options": [
         {
           "value": "start",
