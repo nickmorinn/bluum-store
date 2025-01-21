@@ -23,6 +23,8 @@ Supported parameters
   <summary>
     {%- comment -%}iOS 14 does not support flex on the summary itself, so we have to use this extra div{%- endcomment -%}
     <div class="accordion__toggle semibold h4">
+      <span class="circle-plus group-hover:colors group-expanded:colors group-expanded:rotate">{%- render 'icon' with 'plus' -%}</span>
+      
       {%- if icon -%}
         <div class="text-with-icon">
           {%- render 'icon' with icon -%}
@@ -31,8 +33,6 @@ Supported parameters
       {%- else -%}
         <span {% if size == 'lg' %}class="h6"{% endif %}>{{- title | escape -}}</span>
       {%- endif -%}
-
-      <span class="circle-chevron group-hover:colors group-expanded:colors group-expanded:rotate">{%- render 'icon' with 'chevron-bottom-small' -%}</span>
     </div>
   </summary>
 

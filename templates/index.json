@@ -31,7 +31,7 @@
         "item_cArkwh"
       ],
       "settings": {
-        "button_spacing": 12,
+        "button_spacing": 24,
         "full_width": true,
         "stack_mobile": true,
         "content_max_width_mobile": 500,
@@ -250,7 +250,10 @@
         "feature_2",
         "feature_3"
       ],
-      "settings": {}
+      "settings": {
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
     },
     "multiple_images_with_text_zwMTBW": {
       "type": "multiple-images-with-text",
