@@ -251,6 +251,7 @@
         "feature_3"
       ],
       "settings": {
+        "margin_top": -40,
         "padding_block_start": 0,
         "padding_block_end": 16
       }
