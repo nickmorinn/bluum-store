@@ -9,11 +9,46 @@
 
   <style>
     #shopify-section-{{ section.id }} {
+      --review-spacing: 24px;
       --bluum-text-font-size: calc(min(20vw, 65px) * {{ section.settings.bluum_text_size_ratio_mobile }});
       --bluum-text-line-height: {{ section.settings.bluum_text_line_height }}%;
       --bluum-text-auto-columns: {% if section.blocks.size == 1 %}minmax(0, 1fr){% else %}{% if section.settings.text_divider != 'none' %}48vw auto{% else %}64vw{% endif %}{% endif %};
       --bluum-text-max-width: {{ section.settings.content_max_width_mobile }}px;
       --bluum-text-button-spacing: {{ section.settings.button_spacing }}px;
+    }
+
+    .bluum-text__reviews {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: var(--review-spacing);
+    }
+
+    .bluum-text__stars {
+      display: flex;
+      gap: 0;
+    }
+
+    .bluum-text__star {
+      width: 40px;
+      height: 40px;
+      color: var(--button-background);
+      margin-inline-start: -4px;
+    }
+
+    .bluum-text__star:first-child {
+      margin-inline-start: 0;
+    }
+
+    .bluum-text__review-count {
+      color: rgb(var(--text-color));
+      opacity: 0.85;
+      font-family: var(--text-font-family);
+      font-size: var(--text-h5);
+      font-weight: var(--text-font-weight);
+      line-height: 1.2;
+      letter-spacing: var(--text-letter-spacing);
     }
 
     .bluum-text__text {
@@ -47,6 +82,16 @@
       <div class="bluum-text bluum-text--{{ section.settings.text_alignment }} {% unless section.settings.stack_mobile %}bluum-text--scroll{% endunless %}">
           {%- for block in section.blocks -%}
             <div class="snap-center" {{ block.shopify_attributes }}>
+              {%- if block.settings.show_reviews -%}
+                <div class="bluum-text__reviews">
+                  <div class="bluum-text__stars">
+                    {%- for i in (1..5) -%}
+                      <svg class="bluum-text__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    {%- endfor -%}
+                  </div>
+                  <p class="bluum-text__review-count heading heading--small">{{ block.settings.review_text }}</p>
+                </div>
+              {%- endif -%}
               {%- if block.settings.title != blank -%}
                 <h2 class="bluum-text__text heading break-all">
                   <bluum-text {% if block.settings.animate_bluum_text %}count-up="{{ block.settings.animate_bluum_text_duration }}"{% endif %} reveal-js>
@@ -105,6 +150,22 @@
       "type": "item",
       "name": "Item",
       "settings": [
+        {
+          "type": "header",
+          "content": "Reviews"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_reviews",
+          "label": "Show reviews",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "Compounds trusted by 1000+"
+        },
         {
           "type": "richtext",
           "id": "title",
