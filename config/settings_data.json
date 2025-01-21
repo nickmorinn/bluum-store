@@ -11,7 +11,7 @@
   "current": {
     "page_width": 1300,
     "section_vertical_spacing": "large",
-    "section_boxed_horizontal_spacing": "large",
+    "section_boxed_horizontal_spacing": "xsmall",
     "button_border_radius": 40,
     "input_border_radius": 8,
     "block_border_radius": 40,
