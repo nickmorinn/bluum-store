@@ -11,6 +11,7 @@
     #shopify-section-{{ section.id }} {
       margin-top: {{ section.settings.margin_top }}px;
       --review-spacing: 24px;
+      --star-size: {{ section.settings.star_size_mobile }}px;
       --bluum-text-font-size: calc(min(20vw, 65px) * {{ section.settings.bluum_text_size_ratio_mobile }});
       --bluum-text-line-height: {{ section.settings.bluum_text_line_height }}%;
       --bluum-text-auto-columns: {% if section.blocks.size == 1 %}minmax(0, 1fr){% else %}{% if section.settings.text_divider != 'none' %}48vw auto{% else %}64vw{% endif %}{% endif %};
@@ -32,8 +33,8 @@
     }
 
     .bluum-text__star {
-      width: 40px;
-      height: 40px;
+      width: var(--star-size);
+      height: var(--star-size);
       color: var(--button-background);
       margin-inline-start: -4px;
     }
@@ -65,6 +66,7 @@
 
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
+        --star-size: {{ section.settings.star_size_desktop }}px;
         --bluum-text-font-size: calc(min(15vw, var(--container-max-width) * 0.15) / {{ section.blocks.size }} * {{ section.settings.bluum_text_size_ratio_desktop }});
         --bluum-text-auto-columns: {% if section.settings.text_divider != 'none' %}minmax(0, 1fr) auto{% else %}minmax(0, 1fr){% endif %};
         --bluum-text-max-width: {{ section.settings.content_max_width_desktop }}px;
@@ -223,6 +225,30 @@
     }
   ],
   "settings": [
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "range",
+      "id": "star_size_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Star size on mobile",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "star_size_desktop",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Star size on desktop",
+      "default": 40
+    },
     {
       "type": "header",
       "content": "Layout"
