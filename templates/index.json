@@ -40,7 +40,7 @@
         "text_alignment": "center",
         "bluum_text_style": "fill",
         "text_divider": "none",
-        "bluum_text_size_ratio_mobile": 0.7,
+        "bluum_text_size_ratio_mobile": 0.8,
         "bluum_text_size_ratio_desktop": 0.6,
         "bluum_text_line_height": 110,
         "background": "",
@@ -255,9 +255,10 @@
         "feature_3"
       ],
       "settings": {
-        "margin_top": -40,
         "padding_block_start": 0,
-        "padding_block_end": 16
+        "padding_block_end": 16,
+        "margin_top": -40,
+        "margin_bottom": 0
       }
     },
     "multiple_images_with_text_zwMTBW": {
@@ -354,6 +355,7 @@
         "answer_time": "",
         "button_text": "",
         "button_url": "",
+        "mobile_title_alignment": "center",
         "text_position": "start",
         "background": "#fffdfa",
         "background_gradient": "",
