@@ -16,7 +16,7 @@
           "type": "item",
           "settings": {
             "show_reviews": true,
-            "review_text": "Trusted & Verified.",
+            "review_text": "Trusted, Verified.",
             "title": "<p>Research-Grade Peptides, <em>delivered</em></p>",
             "subheading": "",
             "content": "",
@@ -133,6 +133,32 @@
       "block_order": [
         "item_WnHjcY"
       ],
+      "settings": {
+        "star_size_mobile": 32,
+        "star_size_desktop": 40,
+        "margin_top": 0,
+        "button_spacing": 24,
+        "full_width": true,
+        "stack_mobile": true,
+        "content_max_width_mobile": 500,
+        "content_max_width_desktop": 600,
+        "text_alignment": "center",
+        "bluum_text_style": "fill",
+        "text_divider": "none",
+        "bluum_text_size_ratio_mobile": 0.4,
+        "bluum_text_size_ratio_desktop": 0.2,
+        "bluum_text_line_height": 120,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "bluum_text_fFfpCb": {
+      "type": "bluum-text",
       "settings": {
         "star_size_mobile": 32,
         "star_size_desktop": 40,
@@ -376,6 +402,7 @@
     "slideshow_VHXXCQ",
     "image_with_text_overlay_jcVJRC",
     "bluum_text_NDzceH",
+    "bluum_text_fFfpCb",
     "featured-collection",
     "press",
     "features_list",
