@@ -28,29 +28,30 @@
             "show_taxes_notice": false
           }
         },
-        "rating": {
-          "type": "rating",
+        "variant_picker": {
+          "type": "variant_picker",
           "settings": {
-            "show_empty": false
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
           }
         },
-        "payment_terms": {
-          "type": "payment_terms",
+        "quantity_selector": {
+          "type": "quantity_selector",
           "settings": {}
         },
-        "description": {
-          "type": "description",
+        "buy_buttons": {
+          "type": "buy_buttons",
           "settings": {
-            "collapse_content": true
-          }
-        },
-        "collapsible_text_KJfR3z": {
-          "type": "collapsible_text",
-          "disabled": true,
-          "settings": {
-            "title": "RESEARCH USE ONLY",
-            "content": "<p>These compounds are NOT  intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>",
-            "page": ""
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
           }
         },
         "offer_NH3yPe": {
@@ -79,36 +80,26 @@
             "text_color": "#24201f"
           }
         },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
         "text_RYM3iC": {
           "type": "text",
           "settings": {
             "text": "<p><strong>RESEARCH USE ONLY</strong><br/>These compounds are NOT  intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
+        "description": {
+          "type": "description",
           "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": false,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
+            "collapse_content": true
           }
         }
       },
@@ -116,16 +107,15 @@
         "title",
         "badges",
         "price",
-        "rating",
-        "payment_terms",
-        "description",
-        "collapsible_text_KJfR3z",
-        "offer_NH3yPe",
-        "offer_Rn3tCi",
-        "text_RYM3iC",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "offer_NH3yPe",
+        "offer_Rn3tCi",
+        "rating",
+        "payment_terms",
+        "text_RYM3iC",
+        "description"
       ],
       "custom_css": [
         ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
