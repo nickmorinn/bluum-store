@@ -9,6 +9,7 @@
 
   <style>
     #shopify-section-{{ section.id }} {
+      margin-top: {{ section.settings.margin_top }}px;
       --review-spacing: 24px;
       --bluum-text-font-size: calc(min(20vw, 65px) * {{ section.settings.bluum_text_size_ratio_mobile }});
       --bluum-text-line-height: {{ section.settings.bluum_text_line_height }}%;
@@ -225,6 +226,16 @@
     {
       "type": "header",
       "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": -100,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin top",
+      "default": 0
     },
     {
       "type": "range",

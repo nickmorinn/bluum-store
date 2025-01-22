@@ -31,6 +31,7 @@
         "item_cArkwh"
       ],
       "settings": {
+        "margin_top": -40,
         "button_spacing": 24,
         "full_width": true,
         "stack_mobile": true,
@@ -111,6 +112,9 @@
     },
     "bluum_text_NDzceH": {
       "type": "bluum-text",
+      "settings": {
+        "margin_top": 0
+      },
       "blocks": {
         "item_WnHjcY": {
           "type": "item",
