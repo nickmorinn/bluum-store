@@ -60,7 +60,7 @@
       },
       "4824701725375534060": {
         "type": "shopify://apps/blockify-checkout/blocks/block-checkout/a02f68fe-3bdb-4615-b9c5-7d181a329397",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     }
