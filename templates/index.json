@@ -308,6 +308,7 @@
       "block_order": [
         "item_HWXhrL"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "images_layout": "stacked",
