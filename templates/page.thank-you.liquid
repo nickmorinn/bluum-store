@@ -1,0 +1,8 @@
+
+
+
+{% if order.metafields.custom.zaprite_payment_link %}
+  <p>Your payment link: 
+    <a href="{{ order.metafields.custom.zaprite_payment_link }}" target="_blank">Complete Payment</a>
+  </p>
+{% endif %}
