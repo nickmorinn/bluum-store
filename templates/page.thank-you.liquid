@@ -5,5 +5,8 @@
       var message = "<p>Click <a href='" + paymentLink + "' target='_blank'>here</a> to complete payment.</p>";
       document.querySelector(".order-summary__sections").insertAdjacentHTML("beforeend", message);
     }
+
+window.location.href = "{{googleGemini_GenerateText.text}}";
   });
+
 </script>
