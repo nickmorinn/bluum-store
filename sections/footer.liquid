@@ -14,21 +14,6 @@
 </style>
 {%- endif -%}
 
-
-
-{% assign redirect_url = googleGemini_GenerateText.text %}
-<script>
-  console.log("googleGemini_GenerateText.text: {{ googleGemini_GenerateText.text }}");
-
-  {% if redirect_url %}
-    window.location.href = "{{ redirect_url }}";
-  {% else %}
-    console.log("No redirect URL available.");
-  {% endif %}
-</script>
-
-
-
 <div class="footer">
   <div class="container">
     <div class="footer__wrapper">
