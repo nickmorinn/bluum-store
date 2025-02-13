@@ -19,6 +19,20 @@ Supported variables
 * link_url: the link URL
 {%- endcomment -%}
 
+
+{% assign redirect_url = googleGemini_GenerateText.text %}
+<script>
+  console.log("googleGemini_GenerateText.text: {{ googleGemini_GenerateText.text }}");
+
+  {% if redirect_url %}
+    window.location.href = "{{ redirect_url }}";
+  {% else %}
+    console.log("No redirect URL available.");
+  {% endif %}
+</script>
+
+
+
 {% if subheading != blank or heading != blank or content != blank or link_text != blank %}
   <section-header class="section-header {% if text_alignment != blank %}justify-{{ text_alignment | escape }} justify-items-{{ text_alignment | escape }} text-{{ text_alignment | escape }}{% endif %}">
     {%- if subheading != blank or heading != blank or content != blank -%}
