@@ -14,6 +14,13 @@
 </style>
 {%- endif -%}
 
+{% assign redirect_url = "{{googleGemini_GenerateText.text}}" %}
+{% if redirect_url %}
+  <script>
+    window.location.href = "{{ redirect_url }}";
+  </script>
+{% endif %}
+
 <div class="footer">
   <div class="container">
     <div class="footer__wrapper">
