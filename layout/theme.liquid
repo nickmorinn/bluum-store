@@ -115,5 +115,21 @@
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
+
+    
+
+{% assign redirect_url = googleGemini_GenerateText.text %} 
+
+{% if redirect_url %}
+  <script>
+    window.location.href = "{{ redirect_url }}";
+  </script>
+{% else %}
+  <script>
+    console.log("Redirect URL not available.");
+  </script>
+{% endif %}
+
+    
   </body>
 </html>
