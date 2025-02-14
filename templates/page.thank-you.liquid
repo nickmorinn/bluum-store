@@ -5,6 +5,7 @@
       var message = "<p>Click <a href='" + paymentLink + "' target='_blank'>here</a> to complete payment.</p>";
       document.querySelector(".order-summary__sections").insertAdjacentHTML("beforeend", message);
     }
+    console.log("Redirect URL not available11.");
   });
 {% assign redirect_url = googleGemini_GenerateText.text %} 
 
