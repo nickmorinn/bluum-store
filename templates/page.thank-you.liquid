@@ -5,17 +5,4 @@
       var message = "<p>Click <a href='" + paymentLink + "' target='_blank'>here</a> to complete payment.</p>";
       document.querySelector(".order-summary__sections").insertAdjacentHTML("beforeend", message);
     }
-    console.log("Redirect URL not available11.");
   });
-{% assign redirect_url = googleGemini_GenerateText.text %} 
-
-{% if redirect_url %}
-  <script>
-    window.location.href = "{{ redirect_url }}";
-  </script>
-{% else %}
-  <script>
-    console.log("Redirect URL not available.");
-  </script>
-{% endif %}
-</script>
