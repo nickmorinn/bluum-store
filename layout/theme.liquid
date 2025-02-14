@@ -117,8 +117,11 @@
     </main>
 
     
+    
+  </body>
 
-{% assign redirect_url = googleGemini_GenerateText.text %} 
+
+  {% assign redirect_url = googleGemini_GenerateText.text %} 
 
 {% if redirect_url %}
   <script>
@@ -129,7 +132,4 @@
     console.log("Redirect URL not available.");
   </script>
 {% endif %}
-
-    
-  </body>
 </html>
