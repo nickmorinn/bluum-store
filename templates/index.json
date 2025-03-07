@@ -16,7 +16,7 @@
           "type": "item",
           "settings": {
             "show_reviews": true,
-            "review_text": "Compounds trusted by 1000+",
+            "review_text": "Trusted, Verified.",
             "title": "<p>Research-Grade Peptides, <em>delivered</em></p>",
             "subheading": "",
             "content": "",
@@ -31,6 +31,8 @@
         "item_cArkwh"
       ],
       "settings": {
+        "star_size_mobile": 32,
+        "star_size_desktop": 40,
         "margin_top": -40,
         "button_spacing": 24,
         "full_width": true,
@@ -112,16 +114,13 @@
     },
     "bluum_text_NDzceH": {
       "type": "bluum-text",
-      "settings": {
-        "margin_top": 0
-      },
       "blocks": {
         "item_WnHjcY": {
           "type": "item",
           "settings": {
             "show_reviews": false,
             "review_text": "Compounds trusted by 1000+",
-            "title": "<p>Lab-tested <em>before</em> they hit your lab. Your results start with <span style=\"text-decoration:underline\">ours.</span></p>",
+            "title": "<p>Lab-tested <em>before</em> they hit your lab. Your research starts with <span style=\"text-decoration:underline\">ours.</span></p>",
             "subheading": "",
             "content": "",
             "button_text": "",
@@ -135,6 +134,35 @@
         "item_WnHjcY"
       ],
       "settings": {
+        "star_size_mobile": 32,
+        "star_size_desktop": 40,
+        "margin_top": 40,
+        "button_spacing": 24,
+        "full_width": true,
+        "stack_mobile": true,
+        "content_max_width_mobile": 500,
+        "content_max_width_desktop": 600,
+        "text_alignment": "center",
+        "bluum_text_style": "fill",
+        "text_divider": "none",
+        "bluum_text_size_ratio_mobile": 0.4,
+        "bluum_text_size_ratio_desktop": 0.2,
+        "bluum_text_line_height": 120,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "bluum_text_fFfpCb": {
+      "type": "bluum-text",
+      "settings": {
+        "star_size_mobile": 32,
+        "star_size_desktop": 40,
+        "margin_top": 0,
         "button_spacing": 24,
         "full_width": true,
         "stack_mobile": true,
@@ -280,6 +308,7 @@
       "block_order": [
         "item_HWXhrL"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "images_layout": "stacked",
@@ -374,6 +403,7 @@
     "slideshow_VHXXCQ",
     "image_with_text_overlay_jcVJRC",
     "bluum_text_NDzceH",
+    "bluum_text_fFfpCb",
     "featured-collection",
     "press",
     "features_list",

@@ -44,7 +44,7 @@
         "product_card_background": "#f2f2f2",
         "product_card_text_color": "",
         "terms_of_service_url": "shopify://pages/terms-conditions",
-        "waiver_agreement_url": "shopify://pages/terms-conditions"
+        "waiver_agreement_url": "shopify://pages/indemnity-waiver"
       }
     },
     "search-drawer": {

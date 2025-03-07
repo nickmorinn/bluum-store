@@ -38,7 +38,9 @@
     "text_font": "din_next_n4",
     "text_font_size_mobile": 18,
     "text_font_size_desktop": 20,
-    "heading_apparition": "split_fade",
+    "zoom_image_on_hover": false,
+    "stagger_products_apparition": false,
+    "heading_apparition": "fade",
     "show_quick_buy": true,
     "show_sold_out_badge": true,
     "product_color_display": "swatch",
@@ -49,7 +51,19 @@
     "favicon": "shopify://shop_images/favicon-256px.png",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "17368511000352060744": {
+        "type": "shopify://apps/goaffpro-affiliate-marketing/blocks/goaffpro-embedded-pixel/2f4d802b-86c2-47e4-8096-ae1aa3efbab2",
+        "disabled": false,
+        "settings": {}
+      },
+      "4824701725375534060": {
+        "type": "shopify://apps/blockify-checkout/blocks/block-checkout/a02f68fe-3bdb-4615-b9c5-7d181a329397",
+        "disabled": true,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Sound": {

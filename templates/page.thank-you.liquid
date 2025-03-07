@@ -1,0 +1,9 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var paymentLink = "{{ order.metafields.custom.payment_link }}";
+    if (paymentLink) {
+      var message = "<p>Click <a href='" + paymentLink + "' target='_blank'>here</a> to complete payment.</p>";
+      document.querySelector(".order-summary__sections").insertAdjacentHTML("beforeend", message);
+    }
+  });
+</script>
