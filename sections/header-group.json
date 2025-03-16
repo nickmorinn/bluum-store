@@ -17,7 +17,7 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "Use code SPRINGSALE for 20% off",
+            "text": "Use code SPRINGSALE for 10% off",
             "url": "shopify://collections/frontpage"
           }
         },
