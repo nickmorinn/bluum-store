@@ -377,7 +377,7 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "<p>You ask,<br/>we answer.</p>",
+        "title": "<p><strong>You </strong><em><strong>ask</strong></em><strong>, <br/>we </strong><span style=\"text-decoration:underline\"><strong>answer.</strong></span></p>",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
