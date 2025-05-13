@@ -21,8 +21,8 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Questions?",
-        "content": "",
+        "title": "",
+        "content": "<h1>Questions?</h1>",
         "text_position": "start",
         "contact_form_size": "large",
         "background": "#fffdfa",
