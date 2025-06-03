@@ -16,6 +16,7 @@
       "blocks": {
         "message": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "text": "Use code SPRINGSALE for 20% off",
             "url": "shopify://collections/frontpage"
