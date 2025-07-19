@@ -21,7 +21,7 @@
             "subheading": "",
             "content": "",
             "button_text": "Shop Now",
-            "button_url": "shopify://collections/all",
+            "button_url": "shopify://collections/frontpage",
             "animate_bluum_text": false,
             "animate_bluum_text_duration": 2
           }
