@@ -76,6 +76,18 @@
       </div>
     </div>
   {%- else -%}
+    {%- comment -%}Apply default sort if no sort_by parameter is present{%- endcomment -%}
+    {%- if request.params.sort_by == blank and section.settings.default_sort != blank -%}
+      <script>
+        // Redirect to collection with default sort if no sort parameter is present
+        if (!window.location.search.includes('sort_by=') && !window.location.search.includes('page=')) {
+          const url = new URL(window.location);
+          url.searchParams.set('sort_by', '{{ section.settings.default_sort }}');
+          window.location.replace(url.toString());
+        }
+      </script>
+    {%- endif -%}
+
     {%- paginate collection.products by section.settings.products_per_page -%}
       <div class="collection {% if show_filters %}collection--filters-{{ section.settings.filter_layout | escape }}{% endif %}">
         {%- if show_filters or section.settings.show_sort_by -%}
@@ -672,6 +684,46 @@
       "id": "open_first_filter_group",
       "label": "Open first group by default",
       "default": false
+    },
+    {
+      "type": "select",
+      "id": "default_sort",
+      "label": "Default sort order",
+      "options": [
+        {
+          "value": "manual",
+          "label": "Featured"
+        },
+        {
+          "value": "best-selling",
+          "label": "Best selling"
+        },
+        {
+          "value": "title-ascending",
+          "label": "Alphabetically, A-Z"
+        },
+        {
+          "value": "title-descending",
+          "label": "Alphabetically, Z-A"
+        },
+        {
+          "value": "price-ascending",
+          "label": "Price, low to high"
+        },
+        {
+          "value": "price-descending",
+          "label": "Price, high to low"
+        },
+        {
+          "value": "created-ascending",
+          "label": "Date, old to new"
+        },
+        {
+          "value": "created-descending",
+          "label": "Date, new to old"
+        }
+      ],
+      "default": "title-ascending"
     }
   ]
 }

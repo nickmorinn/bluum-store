@@ -41,7 +41,8 @@
         "show_filters": true,
         "show_filter_group_name": false,
         "show_filter_values_count": true,
-        "open_first_filter_group": false
+        "open_first_filter_group": false,
+        "default_sort": "title-ascending"
       }
     }
   },
