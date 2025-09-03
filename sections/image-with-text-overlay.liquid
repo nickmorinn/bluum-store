@@ -22,7 +22,7 @@
   <image-banner reveal-on-scroll="true" {% if section.settings.enable_parallax %}parallax="0.3"{% endif %} {% render 'surface', class: class, text_color: section.settings.text_color %}>
     {%- if section.settings.image != blank -%}
       {%- capture sizes -%}{% if section.settings.full_width %}100vw{% else %}(max-width: 740px) calc(100vw - 40px), (max-width: 999px) calc(100vw - 64px), min({{ settings.page_width }}px, 100vw - 96px){% endif %}{%- endcapture -%}
-      {%- capture fetch_priority -%}{% if section.index == 1 %}high{% else %}low{% endif %}{%- endcapture -%}
+      {%- capture fetch_priority -%}{% if section.index == 1 %}high{% else %}high{% endif %}{%- endcapture -%}
 
       <picture>
         {%- if section.settings.mobile_image != blank -%}
