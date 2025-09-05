@@ -105,6 +105,7 @@
         "image_size": "auto",
         "image": "shopify://shop_images/bpc-box-both-lighter.png",
         "mobile_image": "shopify://shop_images/bpc-box-both-lighter_4cd238a6-d8da-4da9-9619-cd056843fc72.png",
+        "priority_load": true,
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",

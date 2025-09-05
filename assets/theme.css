@@ -10106,3 +10106,19 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   overflow: hidden;
 }
 
+/* page speed */
+.footer__newsletter-form button.circle-chevron svg.icon.icon-chevron-right-small {
+    width: 10px;
+    height: 13px;
+}
+.footer__newsletter-form .form-control input.is-floating {
+    border-color: #24201f;
+}
+.topbar {
+    padding-block-start: var(--spacing-2-5);
+    padding-block-end: var(--spacing-2-5);
+    text-align: center;
+}
+.topbar p.semibold.text-base.is-selected {
+    font-family: 'Switzer', sans-serif;
+}

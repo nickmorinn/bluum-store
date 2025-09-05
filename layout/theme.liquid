@@ -77,39 +77,78 @@
     <meta name="ahrefs-site-verification" content="add7c2c4d3e470a8d1e7162d3dee4ebb2f95ac69625e9b3ea788bce713a31e4d">
     <meta name="cryptomus" content="7c3a566c" />
 
-    <script type="text/javascript">
+    {% comment %} <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "ppgit0y4fn");
+    </script> {% endcomment %}
+    <script>
+    function loadClarity(){
+      if(window.clarityLoaded) return;
+      window.clarityLoaded = true;
+      var s=document.createElement("script");
+      s.src="https://www.clarity.ms/tag/ppgit0y4fn";
+      s.defer=true;
+      document.head.appendChild(s);
+    }
+    window.addEventListener("load", function(){
+      setTimeout(loadClarity, 2000); // load after 2s idle
+    });
+    ['scroll','mousemove','touchstart'].forEach(evt=>{
+      window.addEventListener(evt, loadClarity, {once:true});
+    });
     </script>
 
+
     <!-- Twitter conversion tracking base code -->
-    <script>
+    {% comment %} <script>
     !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
     },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
     a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
     twq('config','p7lq0');
-    </script>
+    </script> {% endcomment %}
     <!-- End Twitter conversion tracking base code -->
     <!-- Twitter conversion tracking event code -->
-    <script type="text/javascript">
+    {% comment %} <script type="text/javascript">
       // Insert Twitter Event ID
       twq('event', 'tw-p7lq0-p7qui', {
         value: null, // use this to pass the value of the conversion (e.g. 5.00)
         email_address: null, // use this to pass a user’s email address
         phone_number: null // phone number in E164 standard
       });
+    </script> {% endcomment %}
+    <script>
+    function loadTwitterPixel(){
+      if(window.twitterLoaded) return;
+      window.twitterLoaded = true;
+      !function(e,t,n,s,u,a){
+        e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments)},
+        s.version='1.1',s.queue=[],u=t.createElement(n),u.async=1,
+        u.src='https://static.ads-twitter.com/uwt.js',
+        a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))
+      }(window,document,'script');
+      twq('config','p7lq0');
+    }
+    window.addEventListener("load", ()=>setTimeout(loadTwitterPixel, 2500));
     </script>
+
+
     <!-- End Twitter conversion tracking event code -->
 
+    
+
+
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+{% comment %} <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-ML2RJQVG');</script>
+})(window,document,'script','dataLayer','GTM-ML2RJQVG');</script> {% endcomment %}
+
+<script defer src="https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG"></script>
+
 <!-- End Google Tag Manager -->
   </head>
 
