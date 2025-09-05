@@ -64,6 +64,15 @@
       margin-block-start: var(--bluum-text-button-spacing) !important;
     }
 
+    {%- if request.page_type == 'index' -%}
+    /* Extra top spacing for reviews on mobile (homepage only) */
+    @media screen and (max-width: 699px) {
+      #shopify-section-{{ section.id }} .bluum-text__reviews {
+        margin-top: 12px;
+      }
+    }
+    {%- endif -%}
+
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
         --star-size: {{ section.settings.star_size_desktop }}px;
