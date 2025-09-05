@@ -25,6 +25,9 @@
     <link rel="preconnect" href="https://cdn.shopify.com">
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://static.ads-twitter.com">
+    <link rel="preconnect" href="https://www.clarity.ms">
 
     {%- unless settings.heading_font.system? -%}
       <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
@@ -65,13 +68,7 @@
 
     {{ content_for_header }}
 
-    <!-- Preload custom fonts -->
-    <link rel="preload" href="{{ 'LibreBaskerville-Regular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ 'Switzer-Bold.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="{{ 'LibreBaskerville-Bold.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ 'LibreBaskerville-Italic.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ 'Switzer-Regular.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="{{ 'Switzer-Medium.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
+    {%- comment -%}Avoid preloading multiple fonts to improve mobile performance; fonts still load with font-display: swap{%- endcomment -%}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
     <meta name="ahrefs-site-verification" content="add7c2c4d3e470a8d1e7162d3dee4ebb2f95ac69625e9b3ea788bce713a31e4d">

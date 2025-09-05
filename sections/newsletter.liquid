@@ -66,7 +66,7 @@
   {%- if section.settings.image != blank -%}
     <div class="newsletter">
       {%- capture sizes -%}(max-width: 999px) 100vw, min(50vw, {{ settings.page_width }}px / 2){%- endcapture -%}
-      {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: sizes: sizes, class: 'h-full object-cover' -}}
+      {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: 'lazy', decoding: 'async', sizes: sizes, class: 'h-full object-cover' -}}
 
       <div {% render 'surface', class: 'newsletter-box', background: section.settings.background, background_gradient: section.settings.background_gradient, background_fallback: 'bg-secondary', text_color: section.settings.text_color %}>
         {{- newsletter_content -}}

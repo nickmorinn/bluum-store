@@ -7,6 +7,14 @@
   font-display: swap;
 }
 
+/* Performance: avoid rendering offscreen sections on mobile */
+@supports (content-visibility: auto) {
+  .section {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+  }
+}
+
 @font-face {
   font-family: 'LibreBaskerville';
   src: url('LibreBaskerville-Bold.woff2') format('woff2');
