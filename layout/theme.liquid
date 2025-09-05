@@ -60,18 +60,18 @@
       }
     </script>
 
-    <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
-    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+    <script type="module" defer src="{{ 'vendor.min.js' | asset_url }}"></script>
+    <script type="module" defer src="{{ 'theme.js' | asset_url }}"></script>
 
     {{ content_for_header }}
 
     <!-- Preload custom fonts -->
     <link rel="preload" href="{{ 'LibreBaskerville-Regular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'Switzer-Bold.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="{{ 'LibreBaskerville-Bold.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ 'LibreBaskerville-Italic.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ 'Switzer-Regular.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="{{ 'Switzer-Medium.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="{{ 'Switzer-Bold.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
     <meta name="ahrefs-site-verification" content="add7c2c4d3e470a8d1e7162d3dee4ebb2f95ac69625e9b3ea788bce713a31e4d">
@@ -147,7 +147,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-ML2RJQVG');</script> {% endcomment %}
 
-<script defer src="https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG"></script>
+{% comment %} <script defer src="https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG"></script> {% endcomment %}
+
+<script>
+function loadGTM() {
+  if (window.gtmLoaded) return;
+  window.gtmLoaded = true;
+  var gtm = document.createElement("script");
+  gtm.src = "https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG";
+  gtm.async = true;
+  document.head.appendChild(gtm);
+}
+
+window.addEventListener("scroll", loadGTM, {once: true});
+window.addEventListener("mousemove", loadGTM, {once: true});
+window.addEventListener("touchstart", loadGTM, {once: true});
+</script>
 
 <!-- End Google Tag Manager -->
   </head>

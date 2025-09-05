@@ -30,7 +30,6 @@
           min({{ settings.page_width }}px, 100vw - 96px)
         {% endif %}
       {%- endcapture -%}
-
       {%- capture fetch_priority -%}{% if section.index == 1 %}high{% else %}high{% endif %}{%- endcapture -%}
 
       <picture>
