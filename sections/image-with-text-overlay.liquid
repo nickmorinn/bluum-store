@@ -14,10 +14,92 @@
       margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));
     {%- endif -%}
   }
+
+  {%- comment -%}
+    Responsive image height per device:
+    - Mobile and desktop image sizes are controlled independently via CSS variables.
+    - We mirror the theme's default heights for sm/md/lg at various breakpoints.
+  {%- endcomment -%}
+  {%- assign mobile_size = section.settings.image_size_mobile | default: section.settings.image_size -%}
+  {%- assign desktop_size = section.settings.image_size_desktop | default: section.settings.image_size -%}
+
+  #shopify-section-{{ section.id }} .content-over-media {
+    {%- case mobile_size -%}
+      {%- when 'sm' -%}
+        --content-over-media-height: 375px;
+      {%- when 'md' -%}
+        --content-over-media-height: 480px;
+      {%- when 'lg' -%}
+        --content-over-media-height: 560px;
+      {%- when 'fill' -%}
+        --content-over-media-height: calc(100vh - var(--sticky-area-height));
+      {%- else -%}
+        
+    {%- endcase -%}
+  }
+
+  {%- if mobile_size == 'fill' -%}
+    @supports (height: 100svh) {
+      #shopify-section-{{ section.id }} .content-over-media {
+        --content-over-media-height: calc(100svh - var(--sticky-area-height));
+      }
+    }
+  {%- endif -%}
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} .content-over-media {
+      {%- case desktop_size -%}
+        {%- when 'auto' -%}
+          --content-over-media-height: auto;
+        {%- when 'sm' -%}
+          --content-over-media-height: 400px;
+        {%- when 'md' -%}
+          --content-over-media-height: 460px;
+        {%- when 'lg' -%}
+          --content-over-media-height: 560px;
+        {%- when 'fill' -%}
+          --content-over-media-height: calc(100vh - var(--sticky-area-height));
+      {%- endcase -%}
+    }
+  }
+
+  {%- if desktop_size == 'fill' -%}
+    @supports (height: 100svh) {
+      @media screen and (min-width: 700px) {
+        #shopify-section-{{ section.id }} .content-over-media {
+          --content-over-media-height: calc(100svh - var(--sticky-area-height));
+        }
+      }
+    }
+  {%- endif -%}
+
+  @media screen and (min-width: 1400px) {
+    #shopify-section-{{ section.id }} .content-over-media {
+      {%- case desktop_size -%}
+        {%- when 'sm' -%}
+          --content-over-media-height: 440px;
+        {%- when 'md' -%}
+          --content-over-media-height: 500px;
+        {%- when 'lg' -%}
+          --content-over-media-height: 640px;
+      {%- endcase -%}
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    #shopify-section-{{ section.id }} .content-over-media {
+      {%- case desktop_size -%}
+        {%- when 'md' -%}
+          --content-over-media-height: 560px;
+        {%- when 'lg' -%}
+          --content-over-media-height: 720px;
+      {%- endcase -%}
+    }
+  }
 </style>
 
 <div {% render 'section-properties' %} {% if section.settings.allow_transparent_header %}allow-transparent-header{% endif %}>
-  {%- capture class -%}content-over-media content-over-media--{{ section.settings.image_size }} {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%}
+  {%- capture class -%}content-over-media {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%}
 
   <image-banner reveal-on-scroll="true" {% if section.settings.enable_parallax %}parallax="0.3"{% endif %} {% render 'surface', class: class, text_color: section.settings.text_color %}>
     {%- if section.settings.image != blank -%}
@@ -141,32 +223,31 @@
     },
     {
       "type": "select",
-      "id": "image_size",
-      "label": "Image size",
+      "id": "image_size_mobile",
+      "label": "Mobile image size",
       "options": [
-        {
-          "value": "auto",
-          "label": "Original image ratio"
-        },
-        {
-          "value": "sm",
-          "label": "Small"
-        },
-        {
-          "value": "md",
-          "label": "Medium"
-        },
-        {
-          "value": "lg",
-          "label": "Large"
-        },
-        {
-          "value": "fill",
-          "label": "Fill screen"
-        }
+        { "value": "auto", "label": "Original image ratio" },
+        { "value": "sm",   "label": "Small" },
+        { "value": "md",   "label": "Medium" },
+        { "value": "lg",   "label": "Large" },
+        { "value": "fill", "label": "Fill screen" }
       ],
-      "info": "Choose \"Original image ratio\" to avoid image cropping. [Learn more](https://help.shopify.com/en/manual/online-store/images/theme-images#best-practices-for-slideshows-and-full-widtw-images)",
+      "info": "Applies under 700px width. Choose \"Original image ratio\" to avoid cropping.",
       "default": "auto"
+    },
+    {
+      "type": "select",
+      "id": "image_size_desktop",
+      "label": "Desktop image size",
+      "options": [
+        { "value": "auto", "label": "Original image ratio" },
+        { "value": "sm",   "label": "Small" },
+        { "value": "md",   "label": "Medium" },
+        { "value": "lg",   "label": "Large" },
+        { "value": "fill", "label": "Fill screen" }
+      ],
+      "info": "Applies at 700px and above.",
+      "default": "md"
     },
     {
       "type": "image_picker",
