@@ -16,7 +16,7 @@
           "type": "item",
           "settings": {
             "show_reviews": true,
-            "review_text": "Trusted, Verified.",
+            "review_text": "Verified Purity & US Shipping",
             "title": "<h2>Research-Grade Peptides, <em>delivered</em></h2>",
             "subheading": "",
             "content": "",
@@ -105,7 +105,6 @@
         "image_size": "auto",
         "image": "shopify://shop_images/bpc-box-both-lighter_opt.png",
         "mobile_image": "shopify://shop_images/bpc-box-both-lighter_4cd238a6-d8da-4da9-9619-cd056843fc72_1_1_1.png",
-        "priority_load": true,
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -121,7 +120,7 @@
           "settings": {
             "show_reviews": false,
             "review_text": "Compounds trusted by 1000+",
-            "title": "<p>Lab-tested <em>before</em> they hit your lab. Your research starts with <span style=\"text-decoration:underline\">ours.</span></p>",
+            "title": "<h2>Lab-tested <em>before</em> they hit your lab. Your research starts with <span style=\"text-decoration:underline\">ours.</span></h2>",
             "subheading": "",
             "content": "",
             "button_text": "",
