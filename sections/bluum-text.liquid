@@ -105,11 +105,15 @@
                 </div>
               {%- endif -%}
               {%- if block.settings.title != blank -%}
-                <h2 class="bluum-text__text heading break-all">
+                {%- assign __heading_tag = 'h2' -%}
+                {%- if request.page_type == 'index' and section.settings.use_h1_heading and forloop.first -%}
+                  {%- assign __heading_tag = 'h1' -%}
+                {%- endif -%}
+                <{{ __heading_tag }} class="bluum-text__text heading break-all">
                   <bluum-text {% if block.settings.animate_bluum_text %}count-up="{{ block.settings.animate_bluum_text_duration }}"{% endif %} reveal-js>
                     {%- render 'styled-text', content: block.settings.title, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.bluum_text_style -%}
                   </bluum-text>
-                </h2>
+                </{{ __heading_tag }}>
               {%- endif -%}
 
               {%- if block.settings.subheading != blank or block.settings.content != blank or block.settings.button_text != blank -%}
@@ -337,6 +341,12 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_h1_heading",
+      "label": "Use H1 for first block on homepage",
+      "default": false
     },
     {
       "type": "select",
