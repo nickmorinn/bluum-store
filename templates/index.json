@@ -102,7 +102,8 @@
         "full_width": false,
         "allow_transparent_header": false,
         "enable_parallax": false,
-        "image_size": "auto",
+        "image_size_mobile": "auto",
+        "image_size_desktop": "md",
         "image": "shopify://shop_images/bpc-box-both-lighter_opt.png",
         "mobile_image": "shopify://shop_images/bpc-box-both-lighter_4cd238a6-d8da-4da9-9619-cd056843fc72_1_1_1.png",
         "mobile_text_position": "place-self-center text-center",
@@ -377,7 +378,7 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "<p>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></p>",
+        "title": "<h2>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></h2>",
         "content": "",
         "team_avatar_width": 160,
         "support_hours": "",
