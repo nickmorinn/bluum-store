@@ -17,8 +17,12 @@
       {%- endif -%}
 
       {%- if section.settings.title != blank -%}
+        {%- liquid
+          assign __faq_title = section.settings.title
+          assign __faq_title = __faq_title | replace: '<p>', '' | replace: '</p>', '' | replace: '<h1>', '' | replace: '</h1>', '' | replace: '<h2>', '' | replace: '</h2>', '' | replace: '<h3>', '' | replace: '</h3>', '' | replace: '<h4>', '' | replace: '</h4>', '' | replace: '<h5>', '' | replace: '</h5>', '' | replace: '<h6>', '' | replace: '</h6>'
+        -%}
         <h3 class="h1">
-          {%- render 'styled-text', content: section.settings.title, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}
+          {%- render 'styled-text', content: __faq_title, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}
         </h3>
       {%- endif -%}
 
@@ -81,7 +85,7 @@
                 <div class="prose">{{ block.settings.content }}</div>
               {%- endcapture -%}
 
-              {%- render 'accordion', title: block.settings.title, content: accordion_content, block: block -%}
+              {%- render 'accordion', title: block.settings.title, content: accordion_content, block: block, title_heading_tag: 'h4' -%}
             {%- endif -%}
           {%- endfor -%}
         </div>

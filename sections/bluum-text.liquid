@@ -109,9 +109,13 @@
                 {%- if request.page_type == 'index' and section.settings.use_h1_heading and forloop.first -%}
                   {%- assign __heading_tag = 'h1' -%}
                 {%- endif -%}
+                {%- liquid
+                  assign __title_content = block.settings.title
+                  assign __title_content = __title_content | replace: '<p>', '' | replace: '</p>', '' | replace: '<h1>', '' | replace: '</h1>', '' | replace: '<h2>', '' | replace: '</h2>', '' | replace: '<h3>', '' | replace: '</h3>', '' | replace: '<h4>', '' | replace: '</h4>', '' | replace: '<h5>', '' | replace: '</h5>', '' | replace: '<h6>', '' | replace: '</h6>'
+                -%}
                 <{{ __heading_tag }} class="bluum-text__text heading break-all">
                   <bluum-text {% if block.settings.animate_bluum_text %}count-up="{{ block.settings.animate_bluum_text_duration }}"{% endif %} reveal-js>
-                    {%- render 'styled-text', content: block.settings.title, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.bluum_text_style -%}
+                    {%- render 'styled-text', content: __title_content, text_color: section.settings.heading_text_color, gradient: section.settings.heading_gradient, style: section.settings.bluum_text_style -%}
                   </bluum-text>
                 </{{ __heading_tag }}>
               {%- endif -%}

@@ -28,10 +28,18 @@ Supported parameters
       {%- if icon -%}
         <div class="text-with-icon">
           {%- render 'icon' with icon -%}
-          <span {% if size == 'lg' %}class="h6"{% endif %}>{{- title | escape -}}</span>
+          {%- if title_heading_tag -%}
+            <{{ title_heading_tag }} class="{% if size == 'lg' %}h6{% endif %}">{{- title | escape -}}</{{ title_heading_tag }}>
+          {%- else -%}
+            <span {% if size == 'lg' %}class="h6"{% endif %}>{{- title | escape -}}</span>
+          {%- endif -%}
         </div>
       {%- else -%}
-        <span {% if size == 'lg' %}class="h6"{% endif %}>{{- title | escape -}}</span>
+        {%- if title_heading_tag -%}
+          <{{ title_heading_tag }} class="{% if size == 'lg' %}h6{% endif %}">{{- title | escape -}}</{{ title_heading_tag }}>
+        {%- else -%}
+          <span {% if size == 'lg' %}class="h6"{% endif %}>{{- title | escape -}}</span>
+        {%- endif -%}
       {%- endif -%}
     </div>
   </summary>
