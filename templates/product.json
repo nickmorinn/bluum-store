@@ -100,7 +100,7 @@
         "description": {
           "type": "description",
           "settings": {
-            "collapse_content": true
+            "collapse_content": false
           }
         }
       },
