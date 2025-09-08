@@ -337,7 +337,7 @@
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "How fast is shipping?",
+            "title": "What are typical delivery times?",
             "content": "<p>Delivery for our free shipping option typically takes 3-5 business days. We ship from right here in the USA to all US addresses. We also provide an option for next day shipping for an extra charge. Please allow 24 hours for processing. <br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>"
           }
         },
@@ -358,14 +358,14 @@
         "item_EjPNg6": {
           "type": "item",
           "settings": {
-            "title": "What are you bulk ordering options?",
+            "title": "What are your bulk ordering options?",
             "content": "<p>For bulk inquiries and volume pricing, please <a href=\"/pages/contact\" title=\"Contact\">contact us</a>. </p>"
           }
         },
         "item_cBaxBB": {
           "type": "item",
           "settings": {
-            "title": "Can I return my order? ",
+            "title": "What is your return/refund policy for research peptides?",
             "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order? We're happy to help - just reach out.</p>"
           }
         },
@@ -374,6 +374,13 @@
           "settings": {
             "title": "What payment methods do you accept?",
             "content": "<p>We accept credit/debit cards, Cash App, and Apple Pay. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>"
+          }
+        },
+        "item_WfYway": {
+          "type": "item",
+          "settings": {
+            "title": "Are these peptides legal to buy for research in the USA?",
+            "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled “Not for human consumption,” not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>"
           }
         }
       },
@@ -384,7 +391,8 @@
         "item_FzEkgP",
         "item_EjPNg6",
         "item_cBaxBB",
-        "item_ptBQK3"
+        "item_ptBQK3",
+        "item_WfYway"
       ],
       "settings": {
         "full_width": false,
