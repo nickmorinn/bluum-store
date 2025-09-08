@@ -145,6 +145,7 @@
         "content_max_width_mobile": 500,
         "content_max_width_desktop": 600,
         "text_alignment": "center",
+        "use_h1_heading": false,
         "bluum_text_style": "fill",
         "text_divider": "none",
         "bluum_text_size_ratio_mobile": 0.4,
@@ -171,6 +172,7 @@
         "content_max_width_mobile": 500,
         "content_max_width_desktop": 600,
         "text_alignment": "center",
+        "use_h1_heading": false,
         "bluum_text_style": "fill",
         "text_divider": "none",
         "bluum_text_size_ratio_mobile": 0.4,
@@ -328,15 +330,15 @@
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
-            "title": "Is this quality tested?",
+            "title": "Are these peptides quality tested?",
             "content": "<p>Absolutely. Our analytical testing is conducted by Janoshik Analytical, an independent third-party laboratory to verify the identity, purity, and composition of our research products. Each CoA includes purity analysis, peptide sequence confirmation, and date of analysis.</p>"
           }
         },
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "When should I expect my order? ",
-            "content": "<p>Delivery typically takes 3-5 business days. We ship from right here in the USA to all US addresses.<br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>"
+            "title": "How fast is shipping?",
+            "content": "<p>Delivery for our free shipping option typically takes 3-5 business days. We ship from right here in the USA to all US addresses. We also provide an option for next day shipping for an extra charge. Please allow 24 hours for processing. <br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>"
           }
         },
         "166442457738b23caf-2": {
@@ -366,6 +368,13 @@
             "title": "Can I return my order? ",
             "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order? We're happy to help - just reach out.</p>"
           }
+        },
+        "item_ptBQK3": {
+          "type": "item",
+          "settings": {
+            "title": "What payment methods do you accept?",
+            "content": "<p>We accept credit/debit cards, Cash App, and Apple Pay. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>"
+          }
         }
       },
       "block_order": [
@@ -374,7 +383,8 @@
         "166442457738b23caf-2",
         "item_FzEkgP",
         "item_EjPNg6",
-        "item_cBaxBB"
+        "item_cBaxBB",
+        "item_ptBQK3"
       ],
       "settings": {
         "full_width": false,
