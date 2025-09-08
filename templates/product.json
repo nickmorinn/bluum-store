@@ -99,12 +99,14 @@
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "collapse_content": false
           }
         },
         "liquid_QacUpJ": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "{% render 'zs-chemical-formulation' %}"
           }
@@ -146,6 +148,53 @@
         "input_text_color": ""
       }
     },
+    "rich_text_66jfz3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pQitRc": {
+          "type": "heading",
+          "settings": {
+            "text": "About {{ product.title }}",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_7wKyxn": {
+          "type": "richtext",
+          "settings": {
+            "content": "{{ product.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pQitRc",
+        "richtext_7wKyxn"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "large",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "custom_liquid_Hg4xgB": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "{% render 'zs-chemical-formulation' %}",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
       "custom_css": [
@@ -182,6 +231,8 @@
   },
   "order": [
     "main",
+    "rich_text_66jfz3",
+    "custom_liquid_Hg4xgB",
     "related-products"
   ]
 }
