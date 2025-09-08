@@ -282,12 +282,30 @@
           {%- for block in section.blocks -%}
             {%- if block.settings.image != blank -%}
               <div class="features-list__image-wrapper" data-index="{{ forloop.index }}">
-                <img 
+                {% comment %} <img 
                   src="{{ block.settings.image | image_url: width: 800 }}"
                   alt="{{ block.settings.title | escape }}"
                   loading="lazy"
                   class="features-list__main-image"
-                >
+                > {% endcomment %}
+
+                <img
+                  srcset="
+                    {{ block.settings.image | image_url: width: 320 }} 320w,
+                    {{ block.settings.image | image_url: width: 480 }} 480w,
+                    {{ block.settings.image | image_url: width: 520 }} 620w,
+                    {{ block.settings.image | image_url: width: 528 }} 828w,
+                    {{ block.settings.image | image_url: width: 960 }} 960w,
+                    {{ block.settings.image | image_url: width: 1200 }} 1200w
+                  "
+                  sizes="(max-width: 699px) 100vw, 479px"
+                  src="{{ block.settings.image | image_url: width: 480 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  loading="lazy"
+                  class="features-list__main-image"
+                />
+
+
               </div>
             {%- endif -%}
           {%- endfor -%}

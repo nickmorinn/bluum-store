@@ -60,7 +60,7 @@ html {
   -moz-tab-size: 4;
   tab-size: 4;
   interpolate-size: allow-keywords;
-  scroll-padding-block-start: calc(var(--sticky-area-height)  + 20px);
+  scroll-padding-block-start: calc(var(--sticky-area-height) + 20px);
   line-height: 1.5;
 }
 
@@ -1733,7 +1733,7 @@ scroll-carousel {
 }
 
 .input.is-floating, .select.is-floating {
-  height: calc(var(--input-height)  + .625rem);
+  height: calc(var(--input-height) + .625rem);
   padding-block-start: var(--spacing-4);
 }
 .textarea {
@@ -1782,7 +1782,7 @@ scroll-carousel {
 }
 
 .floating-label {
-  height: calc(var(--input-height)  + .625rem);
+  height: calc(var(--input-height) + .625rem);
   top: 0;
   opacity: .5;
   pointer-events: none;
@@ -2017,8 +2017,8 @@ scroll-carousel {
 }
 
 .container {
-  --container-inner-width: min((100vw - var(--scrollbar-width, 0px))  - var(--container-gutter) * 2, var(--container-max-width));
-  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px))  - var(--container-inner-width)) / 2);
+  --container-inner-width: min((100vw - var(--scrollbar-width, 0px)) - var(--container-gutter) * 2, var(--container-max-width));
+  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px)) - var(--container-inner-width)) / 2);
   margin-inline-start: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
   margin-inline-end: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
 }
@@ -2029,8 +2029,8 @@ scroll-carousel {
 
 @media screen and (min-width: 700px) {
   .sm\:container {
-    --container-inner-width: min((100vw - var(--scrollbar-width, 0px))  - var(--container-gutter) * 2, var(--container-max-width));
-    --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px))  - var(--container-inner-width)) / 2);
+    --container-inner-width: min((100vw - var(--scrollbar-width, 0px)) - var(--container-gutter) * 2, var(--container-max-width));
+    --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px)) - var(--container-inner-width)) / 2);
     margin-inline-start: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
     margin-inline-end: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
   }
@@ -2083,7 +2083,7 @@ scroll-carousel {
 
 [role="main"] .shopify-section {
   --section-is-first: 0;
-  --hash-difference: calc(var(--section-background-hash)  - var(--previous-section-background-hash, -1));
+  --hash-difference: calc(var(--section-background-hash) - var(--previous-section-background-hash, -1));
   --hash-difference-abs: max(var(--hash-difference), -1 * var(--hash-difference));
   --background-differs-from-previous: max(0, min(var(--hash-difference-abs, 1), 1));
   background: rgb(var(--background));
@@ -2109,8 +2109,8 @@ scroll-carousel {
   --calculated-section-spacing-block-start: var(--section-spacing-block-start, var(--section-spacing-block, var(--context-section-spacing-block-start)));
   --calculated-section-spacing-block-end: var(--section-spacing-block-end, var(--section-spacing-block, var(--context-section-spacing-block-end)));
   --calculated-section-spacing-inline: var(--section-spacing-inline, var(--context-section-spacing-inline));
-  --container-inner-width: min((100vw - var(--scrollbar-width, 0px))  - var(--calculated-section-spacing-inline, 0px) * 2, var(--container-max-width));
-  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px))  - var(--container-inner-width, 0px)) / 2);
+  --container-inner-width: min((100vw - var(--scrollbar-width, 0px)) - var(--calculated-section-spacing-inline, 0px) * 2, var(--container-max-width));
+  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px)) - var(--container-inner-width, 0px)) / 2);
   --section-stack-spacing-inline: var(--section-inner-spacing-inline, 0px);
   padding-inline-start: max(var(--calculated-section-spacing-inline), 50% - var(--container-max-width) / 2);
   padding-inline-end: max(var(--calculated-section-spacing-inline), 50% - var(--container-max-width) / 2);
@@ -2141,7 +2141,7 @@ scroll-carousel {
     --context-section-spacing-block-start: min(var(--section-inner-max-spacing-block, var(--section-outer-spacing-block)));
     --context-section-spacing-block-end: min(var(--section-inner-max-spacing-block, var(--section-outer-spacing-block)));
     --context-section-spacing-inline: var(--section-inner-spacing-inline);
-    --container-inner-width: calc(var(--container-max-width)  - var(--container-outer-width) * 2);
+    --container-inner-width: calc(var(--container-max-width) - var(--container-outer-width) * 2);
     --container-outer-width: var(--calculated-section-spacing-inline);
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow-block);
@@ -2381,10 +2381,10 @@ video-media:not([loaded]) > :is(video, iframe), video-media[loaded] > img, video
 video-media[suspended] ~ * {
   pointer-events: none;
 }
-    width: 64px;
+    /* width: 64px;
     height: 64px;
   }
-}
+} */
 
 model-media {
   --default-aspect-ratio: 1;
@@ -2723,7 +2723,7 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 .product-list {
   grid: var(--product-list-grid);
   gap: var(--product-list-gap);
-  scroll-padding-top: calc(var(--sticky-area-height)  + 20px);
+  scroll-padding-top: calc(var(--sticky-area-height) + 20px);
   display: grid;
   position: relative;
 }
@@ -3685,9 +3685,9 @@ tfoot td {
   50% {
     opacity: .5;
   }
-  flex-shrink: 0;
+  /* flex-shrink: 0;
   animation: 2.5s cubic-bezier(.4, 0, .6, 1) infinite pulse;
-  display: block;
+  display: block; */
 }
 
 .skeleton--tab {
@@ -4111,7 +4111,7 @@ tfoot td {
 
 .offset-icon {
   --icon-baseline-distance: calc(1em * 1.6);
-  --icon-offset: calc((var(--icon-baseline-distance)  - var(--icon-height)) / 2);
+  --icon-offset: calc((var(--icon-baseline-distance) - var(--icon-height)) / 2);
   top: var(--icon-offset);
   position: relative;
 }
@@ -4232,8 +4232,8 @@ product-rerender {
   display: grid;
 }
 
-  border-bottom-width: 2px;
-}
+  /* border-bottom-width: 2px;
+} */
 
 .account-header, .account__block-list {
   gap: var(--spacing-6);
@@ -4339,7 +4339,7 @@ product-rerender {
 @media screen and (min-width: 700px) {
   .addresses-list {
     --addresses-per-row: 2;
-    grid-template-columns: repeat(auto-fit, minmax(0, calc(100% / var(--addresses-per-row)  - var(--spacing-6) / var(--addresses-per-row) * (var(--addresses-per-row)  - 1))));
+    grid-template-columns: repeat(auto-fit, minmax(0, calc(100% / var(--addresses-per-row) - var(--spacing-6) / var(--addresses-per-row) * (var(--addresses-per-row) - 1))));
     gap: var(--spacing-6);
     justify-content: center;
     justify-items: center;
@@ -4708,7 +4708,7 @@ product-rerender {
 }
 
 .before-after__after-image {
-  clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%)  + var(--clip-path-offset, 0px)));
+  clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px)));
   position: absolute;
   top: 0;
   bottom: 0;
@@ -4717,7 +4717,7 @@ product-rerender {
 }
 
 [dir="rtl"] .before-after__after-image {
-  clip-path: inset(0 calc(var(--before-after-initial-drag-position, 50%)  - var(--clip-path-offset, 0px)) 0 0);
+  clip-path: inset(0 calc(var(--before-after-initial-drag-position, 50%) - var(--clip-path-offset, 0px)) 0 0);
 }
 
 .before-after__cursor-wrapper {
@@ -4960,7 +4960,7 @@ product-rerender {
   }
 
   .cart-order__recap {
-    top: calc(var(--sticky-area-height)  + 20px);
+    top: calc(var(--sticky-area-height) + 20px);
     position: sticky;
   }
 }
@@ -5099,7 +5099,7 @@ product-rerender {
 }
 
 .collection__results {
-  scroll-padding-top: calc(var(--sticky-area-height)  + 20px);
+  scroll-padding-top: calc(var(--sticky-area-height) + 20px);
   transition: opacity .1s;
 }
 
@@ -5153,7 +5153,7 @@ product-rerender {
   .collection__facets-scroller {
     display: block;
     position: sticky;
-    top: calc(var(--sticky-area-height)  + 20px);
+    top: calc(var(--sticky-area-height) + 20px);
   }
 
   .collection__pagination {
@@ -6262,7 +6262,7 @@ product-rerender {
   gap: var(--mega-menu-gap);
   justify-content: var(--mega-menu-justify-content);
   padding: var(--mega-menu-block-padding) max(var(--container-gutter), 50% - var(--container-max-width) / 2);
-  max-height: calc(100vh - var(--sticky-announcement-bar-enabled, 0) * var(--announcement-bar-height, 0px)  - var(--header-height, 0px)  - 20px);
+  max-height: calc(100vh - var(--sticky-announcement-bar-enabled, 0) * var(--announcement-bar-height, 0px) - var(--header-height, 0px) - 20px);
   overscroll-behavior-y: contain;
   opacity: 0;
   background: rgb(var(--header-background));
@@ -6558,13 +6558,13 @@ product-rerender {
   border-radius: 0;
 }
 
-  gap: var(--spacing-2);
+  /* gap: var(--spacing-2);
   color: rgb(var(--text-color));
   z-index: 1;
   transition: color .2s ease-in-out;
   display: flex;
   position: absolute;
-}
+} */
 
 .navigation-promo__carousel-controls:not(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
   right: var(--content-over-media-column-gap);
@@ -6825,7 +6825,7 @@ product-rerender {
 }
 
 .images-scrolling-desktop__media-wrapper {
-  top: calc(var(--sticky-area-height)  + 20px);
+  top: calc(var(--sticky-area-height) + 20px);
   grid-column: media;
   position: sticky;
 }
@@ -6837,12 +6837,12 @@ product-rerender {
 }
 
 .images-scrolling-desktop__media-wrapper > :first-child {
-  max-height: calc(100vh - var(--sticky-area-height)  - 40px);
+  max-height: calc(100vh - var(--sticky-area-height) - 40px);
 }
 
 @supports (max-height: 100svh) {
   .images-scrolling-desktop__media-wrapper > :first-child {
-    max-height: calc(100svh - var(--sticky-area-height)  - 40px);
+    max-height: calc(100svh - var(--sticky-area-height) - 40px);
   }
 }
 
@@ -7649,7 +7649,7 @@ product-rerender {
 
 @media screen and (min-width: 1000px) {
   .product-info {
-    top: calc(var(--sticky-area-height)  + 20px);
+    top: calc(var(--sticky-area-height) + 20px);
     z-index: 1;
     position: sticky;
   }
@@ -8319,8 +8319,8 @@ product-rerender {
 
 .shop-the-look__dot {
   --dot-size: 10px;
-  top: calc(var(--shop-the-look-dot-top)  - (var(--dot-size) / 2));
-  left: calc(var(--shop-the-look-dot-left)  - (var(--dot-size) / 2));
+  top: calc(var(--shop-the-look-dot-top) - (var(--dot-size) / 2));
+  left: calc(var(--shop-the-look-dot-left) - (var(--dot-size) / 2));
   width: var(--dot-size);
   height: var(--dot-size);
   border-radius: var(--rounded-full);
@@ -10121,4 +10121,83 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 .topbar p.semibold.text-base.is-selected {
     font-family: 'Switzer', sans-serif;
+}
+
+
+/* chemical formulation css */
+/* Container */
+.zs-chemical-formulation {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.zs-chemical-formulation__heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Table */
+.zs-chemical-formulation__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Rows */
+.zs-chemical-formulation__row th,
+.zs-chemical-formulation__row td {
+  padding: 14px 18px;
+  border-bottom: 2px solid #ffffff; /* thicker, white border */
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Label column */
+/* Label column */
+.zs-chemical-formulation__label {
+  width: 35%;
+  font-weight: 600;
+  background: #dbe9f5;
+  padding-left: 32px !important; 
+}
+
+
+/* Value column */
+.zs-chemical-formulation__text {
+  background: #f8f9fa;
+  color: #222;
+  word-break: break-word;
+}
+
+/* Remove border on last row */
+.zs-chemical-formulation__row:last-child th,
+.zs-chemical-formulation__row:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive - Stack on mobile */
+@media (max-width: 768px) {
+  .zs-chemical-formulation__table,
+  .zs-chemical-formulation__row,
+  .zs-chemical-formulation__row th,
+  .zs-chemical-formulation__row td {
+    display: block;
+    width: 100%;
+  }
+
+  .zs-chemical-formulation__row th {
+    background: #dbe9f5;
+    border-bottom: none;
+    padding: 12px 16px 10px 24px; 
+  }
+
+  .zs-chemical-formulation__row td {
+    background: #f8f9fa;
+    border-bottom: 2px solid 
+    padding: 10px 16px;
+  }
 }

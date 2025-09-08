@@ -5,7 +5,9 @@
 <html lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+    {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0"> {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+
     <meta name="theme-color" content="{{ settings.header_background }}">
 
     <title>{% if page_title == blank %}{{ shop.name }}{% else %}{{ page_title }}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% endif %}</title>
@@ -63,13 +65,13 @@
     <script type="module" defer src="{{ 'vendor.min.js' | asset_url }}"></script>
     <script type="module" defer src="{{ 'theme.js' | asset_url }}"></script>
 
-    {{ content_for_header }}
+    
 
     <!-- Preload custom fonts -->
     <link rel="preload" href="{{ 'LibreBaskerville-Regular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ 'Switzer-Bold.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="{{ 'LibreBaskerville-Bold.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ 'LibreBaskerville-Italic.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'Switzer-Bold.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="{{ 'Switzer-Regular.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="{{ 'Switzer-Medium.woff' | asset_url }}" as="font" type="font/woff" crossorigin>
 
@@ -165,6 +167,13 @@ window.addEventListener("touchstart", loadGTM, {once: true});
 </script>
 
 <!-- End Google Tag Manager -->
+
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://static.klaviyo.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+   {{ content_for_header }}
   </head>
 
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">

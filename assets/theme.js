@@ -817,24 +817,45 @@ var Updater = class {
     this.resizeObserver.unobserve(this.element);
     this.element = null;
   }
+  // update(targetElement, style) {
+  //   if (!this.element) {
+  //     return;
+  //   }
+  //   const maxSize = style.getPropertyValue("--scroll-shadow-size") ? parseInt(style.getPropertyValue("--scroll-shadow-size")) : 0;
+  //   const scroll5 = {
+  //     top: Math.max(this.element.scrollTop, 0),
+  //     bottom: Math.max(this.element.scrollHeight - this.element.offsetHeight - this.element.scrollTop, 0),
+  //     left: Math.max(this.element.scrollLeft, 0),
+  //     right: Math.max(this.element.scrollWidth - this.element.offsetWidth - this.element.scrollLeft, 0)
+  //   };
+  //   requestAnimationFrame(() => {
+  //     for (const position of ["top", "bottom", "left", "right"]) {
+  //       targetElement.style.setProperty(
+  //         `--${position}`,
+  //         `${scroll5[position] > maxSize ? maxSize : scroll5[position]}px`
+  //       );
+  //     }
+  //   });
+  // }
   update(targetElement, style) {
-    if (!this.element) {
-      return;
-    }
-    const maxSize = style.getPropertyValue("--scroll-shadow-size") ? parseInt(style.getPropertyValue("--scroll-shadow-size")) : 0;
-    const scroll5 = {
-      top: Math.max(this.element.scrollTop, 0),
-      bottom: Math.max(this.element.scrollHeight - this.element.offsetHeight - this.element.scrollTop, 0),
-      left: Math.max(this.element.scrollLeft, 0),
-      right: Math.max(this.element.scrollWidth - this.element.offsetWidth - this.element.scrollLeft, 0)
-    };
+    if (!this.element) return;
+
+    const maxSize = style.getPropertyValue("--scroll-shadow-size")
+      ? parseInt(style.getPropertyValue("--scroll-shadow-size"))
+      : 0;
+
     requestAnimationFrame(() => {
-      for (const position of ["top", "bottom", "left", "right"]) {
-        targetElement.style.setProperty(
-          `--${position}`,
-          `${scroll5[position] > maxSize ? maxSize : scroll5[position]}px`
-        );
-      }
+      // ✅ Do reads inside rAF (so they’re batched with writes)
+      const scrollTop = Math.max(this.element.scrollTop, 0);
+      const scrollLeft = Math.max(this.element.scrollLeft, 0);
+      const bottom = Math.max(this.element.scrollHeight - this.element.offsetHeight - scrollTop, 0);
+      const right = Math.max(this.element.scrollWidth - this.element.offsetWidth - scrollLeft, 0);
+
+      // ✅ Writes
+      targetElement.style.setProperty("--top", `${scrollTop > maxSize ? maxSize : scrollTop}px`);
+      targetElement.style.setProperty("--bottom", `${bottom > maxSize ? maxSize : bottom}px`);
+      targetElement.style.setProperty("--left", `${scrollLeft > maxSize ? maxSize : scrollLeft}px`);
+      targetElement.style.setProperty("--right", `${right > maxSize ? maxSize : right}px`);
     });
   }
 };
