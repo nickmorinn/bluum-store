@@ -396,6 +396,13 @@
             "title": "Do I need a business or institutional account to order?",
             "content": "<p>No. Individual researchers, labs, and institutions can order. During checkout you must confirm research intent and agree to our Terms. For certain items or larger orders, we may request additional verification or documentation and reserve the right to decline orders that don’t meet compliance standards.</p>"
           }
+        },
+        "item_86jjdL": {
+          "type": "item",
+          "settings": {
+            "title": "What is the shelf life/expiration of unopened vials?",
+            "content": "<p>Each lot lists a best-by/expiration on the vial label and COA. As general guidance, lyophilized peptides stored as directed are typically stable 12–24 months (often longer at –20 °C). Short shipping periods at ambient temperature are normal. Actual stability depends on sequence and storage conditions. </p>"
+          }
         }
       },
       "block_order": [
@@ -408,7 +415,8 @@
         "item_ptBQK3",
         "item_WfYway",
         "item_88gHaa",
-        "item_m79Lh3"
+        "item_m79Lh3",
+        "item_86jjdL"
       ],
       "settings": {
         "full_width": false,
