@@ -197,6 +197,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "custom_css": [
         ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
       ],
