@@ -41,7 +41,7 @@
   @media screen and (min-width: 750px) {
     .features-list__wrapper {
       margin-right: 0;
-      padding-right: var(--spacing-16);
+      /* padding-right: var(--spacing-16); */
       max-width: none;
     }
   }
@@ -134,42 +134,30 @@
     border-color: rgb(var(--text-color));
     background: #EAEAEA;
   }
-
   .features-list__button-content {
     display: flex;
     gap: var(--spacing-2);
-    align-items: flex-start;
   }
 
   @media screen and (min-width: 750px) {
     .features-list__button-content {
-      gap: var(--spacing-8);
+      gap: var(--spacing-4);
     }
   }
 
   .features-list__icon {
     flex-shrink: 0;
     width: var(--spacing-12);
-    height: var(--spacing-12);
     display: grid;
-    place-items: center;
     border-radius: var(--rounded-lg);
     padding-left: var(--spacing-3);
     padding-right: var(--spacing-3);
-    padding-bottom: var(--spacing-4);
     transition: background-color 0.2s ease-in-out;
-    margin-top: var(--spacing-1);
-  }
-
-  @media screen and (min-width: 750px) {
-    .features-list__icon {
-      padding-bottom: var(--spacing-6);
-    }
   }
 
   .features-list__icon img {
     width: 100%;
-    height: 100%;
+    margin-top: 5px;
   }
 
   .features-list__text-content {
@@ -188,11 +176,11 @@
     font-size: var(--text-base);
     line-height: 1.6;
     margin-top: var(--spacing-2);
-    max-width: 42ch;
     height: 0;
     opacity: 0;
     overflow: hidden;
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    margin: 0;
   }
 
   .features-list__button.is-active .features-list__text {
@@ -228,12 +216,11 @@
 
     .features-list__text-area {
       display: grid;
-      gap: var(--spacing-6);
+      gap: var(--spacing-3);
     }
 
     .features-list__icon {
       width: var(--spacing-14);
-      height: var(--spacing-14);
     }
 
     .features-list__button-title {
@@ -243,7 +230,7 @@
 
   @media screen and (min-width: 1000px) {
     .features-list__content-container {
-      gap: var(--spacing-6);
+      gap: 50px;
     }
   }
 {%- endstyle -%}
@@ -261,11 +248,11 @@
                 <div class="features-list__icon">
                   {%- case forloop.index -%}
                     {%- when 1 -%}
-                      <img src="{{ 'icon-flask.svg' | asset_url }}" alt="Bluum" class="icon" width="24" height="24" loading="lazy">
+                      <img src="{{ 'icon-flask.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
                     {%- when 2 -%}
-                      <img src="{{ 'icon-plane.svg' | asset_url }}" alt="Bluum Peptide" class="icon" width="24" height="24" loading="lazy">
+                      <img src="{{ 'icon-plane.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
                     {%- when 3 -%}
-                      <img src="{{ 'icon-molecule.svg' | asset_url }}" alt="Bluum Peptide Online" class="icon" width="24" height="24" loading="lazy">
+                      <img src="{{ 'icon-molecule.svg' | asset_url }}" alt="" class="icon" width="24" height="24" loading="lazy">
                   {%- endcase -%}
                 </div>
                 <div class="features-list__text-content">

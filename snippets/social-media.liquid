@@ -156,6 +156,14 @@ Supported variables
       </a>
     </li>
   {%- endif -%}
+
+  {%- if settings.email != blank -%}
+    <li>
+      <a href="{{ settings.email }}" class="tap-area zs-email-icon" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Email' }}">
+        {%- render 'icon' with 'email' -%}
+      </a>
+    </li>
+  {%- endif -%}
 {%- endcapture -%}
 
 {%- if social_media != blank -%}

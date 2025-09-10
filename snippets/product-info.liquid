@@ -168,6 +168,9 @@ Supported variables
               </div>
             {%- endif -%}
           {%- endif -%}
+        
+        {%- when 'chemical-formulation' -%}
+          {%- render 'zs-chemical-formulation', block: block -%}
 
         {%- when 'variant_picker' -%}
           <div class="product-info__variant-picker">

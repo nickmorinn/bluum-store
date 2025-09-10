@@ -1,26 +1,43 @@
+{% if product.metafields.custom.chemical_formulation %}
 <div class="zs-chemical-formulation">
-  <h6 class="zs-chemical-formulation__heading">Chemical Formulation</h6>
+
+  {% if block.settings.title != blank %}
+  <h6 class="zs-chemical-formulation__heading">{{block.settings.title}}</h6>
+  {% endif %}
+
+ {% assign chemical_formulation = product.metafields.custom.chemical_formulation.value %}
 
   <table class="zs-chemical-formulation__table">
+    {% if chemical_formulation.entry_1_label != blank or chemical_formulation.entry_1_value != blank %}
     <tr class="zs-chemical-formulation__row">
-      <th class="zs-chemical-formulation__label">Sequence</th>
-      <td class="zs-chemical-formulation__text">HXEGTFTSDVSSYLEGQAAK-OH.steric diacid-EFIAWLVRGRG</td>
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_1_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_1_value | metafield_tag }}</td>
     </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_2_label != blank or chemical_formulation.entry_2_value != blank %}
     <tr class="zs-chemical-formulation__row">
-      <th class="zs-chemical-formulation__label">Molecular Formula</th>
-      <td class="zs-chemical-formulation__text">C187H291N45O59</td>
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_2_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_2_value | metafield_tag }}</td>
     </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_3_label != blank or chemical_formulation.entry_3_value != blank %}
     <tr class="zs-chemical-formulation__row">
-      <th class="zs-chemical-formulation__label">Molecular Weight</th>
-      <td class="zs-chemical-formulation__text">4113.64 g/mol</td>
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_3_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_3_value | metafield_tag }}</td>
     </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_4_label != blank or chemical_formulation.entry_4_value != blank %}
     <tr class="zs-chemical-formulation__row">
-      <th class="zs-chemical-formulation__label">PubChem CID</th>
-      <td class="zs-chemical-formulation__text">56843331</td>
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_4_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_4_value | metafield_tag }}</td>
     </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_5_label != blank or chemical_formulation.entry_5_value != blank %}
     <tr class="zs-chemical-formulation__row">
-      <th class="zs-chemical-formulation__label">CAS Number</th>
-      <td class="zs-chemical-formulation__text">910463-68-2</td>
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_5_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_5_value | metafield_tag }}</td>
     </tr>
+    {% endif %}
   </table>
 </div>
+{% endif %}

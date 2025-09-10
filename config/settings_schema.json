@@ -918,6 +918,11 @@
         "type": "url",
         "id": "social_21buttons",
         "label": "21 Buttons"
+      },
+      {
+        "type": "url",
+        "id": "email",
+        "label": "Email"
       }
     ]
   },

@@ -10125,61 +10125,88 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
 
 /* chemical formulation css */
-/* Container */
 .zs-chemical-formulation {
   max-width: 800px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
 }
-
-/* Heading */
 .zs-chemical-formulation__heading {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
-
-/* Table */
 .zs-chemical-formulation__table {
   width: 100%;
   border-collapse: collapse;
   border-radius: 12px;
   overflow: hidden;
 }
-
-/* Rows */
 .zs-chemical-formulation__row th,
 .zs-chemical-formulation__row td {
-  padding: 14px 18px;
-  border-bottom: 2px solid #ffffff; /* thicker, white border */
+  padding: 14px 18px !important;
+  border-bottom: 2px solid #ffffff; 
   text-align: left;
   vertical-align: middle;
+      font-size: 16px;
 }
-
-/* Label column */
-/* Label column */
 .zs-chemical-formulation__label {
   width: 35%;
   font-weight: 600;
-  background: #dbe9f5;
+  background: #c8dae8;
   padding-left: 32px !important; 
 }
-
-
-/* Value column */
 .zs-chemical-formulation__text {
-  background: #f8f9fa;
-  color: #222;
+  background: rgb(234, 234, 234);
+  color: rgb(var(--text-color));
   word-break: break-word;
 }
-
-/* Remove border on last row */
 .zs-chemical-formulation__row:last-child th,
 .zs-chemical-formulation__row:last-child td {
   border-bottom: none;
 }
-
-/* Responsive - Stack on mobile */
+tr.zs-chemical-formulation__row p {
+    font-size: 14px;
+}
+a.tap-area.zs-email-icon svg.icon.icon-email {
+    width: 27px;
+    height: 27px;
+}
+.zs-button {
+    background-color: #eaeaea;
+    grid-column-gap: 5px;
+    border-radius: 32px;
+    align-items: center;
+    padding: 12px 20px;
+    line-height: 120%;
+    transition: background-color .2s;
+    display: flex;
+}
+.zs-button .cta-arrow.w-embed {
+    width: 0px;
+    transform: translate3d(-10px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    opacity: 0;
+    height: 20px;
+        transition: 0.3s;
+}
+.zs-button:hover .cta-arrow.w-embed {
+    width: 20px;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    opacity: 1;
+    height: 20px;
+}
+.zs-review-slider__slide {
+    --product-card-badge-spacing: var(--spacing-2);
+    --product-card-info-padding: var(--spacing-4);
+    --product-card-quick-buy-inset: var(--spacing-2);
+    border-radius: var(--rounded);
+    isolation: isolate;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    align-items: start;
+    display: grid;
+    position: relative;
+}
 @media (max-width: 768px) {
   .zs-chemical-formulation__table,
   .zs-chemical-formulation__row,
@@ -10190,7 +10217,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 
   .zs-chemical-formulation__row th {
-    background: #dbe9f5;
+    background: #c8dae8;
     border-bottom: none;
     padding: 12px 16px 10px 24px; 
   }
@@ -10201,3 +10228,4 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     padding: 10px 16px;
   }
 }
+

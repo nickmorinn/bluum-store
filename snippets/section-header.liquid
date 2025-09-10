@@ -38,9 +38,13 @@ Supported variables
     {%- endif -%}
 
     {%- if link_text != blank -%}
-      <a href="{{ link_url }}" class="text-with-icon group">
+      <a href="{{ link_url }}" class="text-with-icon zs-button">
         <span class="reversed-link">{{- link_text | escape -}}</span>
-        <span class="circle-chevron group-hover:colors">{%- render 'icon' with 'chevron-right-small', direction_aware: true -%}</span>
+        <div class="cta-arrow w-embed"><svg width="20" height="20" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12L18 12" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+        <path d="M13 6L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+        <path d="M13 18L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+        </svg></div>
       </a>
     {%- endif -%}
   </section-header>
