@@ -179,8 +179,8 @@
                         <input type="checkbox" 
                                class="flex-shrink-0" 
                                id="terms-checkbox" 
-                               onchange="document.querySelector('[name=checkout]').disabled = !this.checked;
-                                        document.querySelector('#checkout-wrapper').style.opacity = this.checked ? '1' : '0.5';">
+                               onchange="document.querySelector('.zs-cart-page-button [name=checkout]').disabled = !this.checked;
+                                        document.querySelector('.zs-cart-page-button').style.opacity = this.checked ? '1' : '0.5';">
                         <div class="text-sm flex-1">I have read, understood and agreed with your <a href="{{ section.settings.terms_of_service_url }}" class="link" target="_blank">Terms of Service</a> and <a href="{{ section.settings.waiver_agreement_url }}" class="link" target="_blank">Waiver Agreement</a>. I certify that these products will not be used on humans.</div>
                       </div>
 
