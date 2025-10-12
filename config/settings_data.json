@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "page_width": 1300,
@@ -67,6 +76,13 @@
         "type": "shopify://apps/essential-upsell/blocks/app-embed/50627fd9-24fd-4250-8614-accc12826d80",
         "disabled": false,
         "settings": {}
+      },
+      "1530068250781986104": {
+        "type": "shopify://apps/fbp-fast-bundle/blocks/fast_bundle/9e87fbe2-9041-4c23-acf5-322413994cef",
+        "disabled": false,
+        "settings": {
+          "home": false
+        }
       }
     }
   },
@@ -168,6 +184,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [".klaviyo-form input:focus {outline: none;}"]
+    "custom_css": [
+      ".klaviyo-form input:focus {outline: none;}"
+    ]
   }
 }

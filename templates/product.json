@@ -24,6 +24,7 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {
             "show_taxes_notice": false
           }
@@ -41,6 +42,11 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "fbp_fast_bundle_volume_position_MkgDht": {
+          "type": "shopify://apps/fbp-fast-bundle/blocks/volume_position/9e87fbe2-9041-4c23-acf5-322413994cef",
           "settings": {}
         },
         "buy_buttons": {
@@ -118,6 +124,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "fbp_fast_bundle_volume_position_MkgDht",
         "buy_buttons",
         "offer_NH3yPe",
         "offer_Rn3tCi",
