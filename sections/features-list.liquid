@@ -235,7 +235,9 @@
   }
 {%- endstyle -%}
 
-{{ 'features-list.js' | asset_url | script_tag }}
+{% comment %} {{ 'features-list.js' | asset_url | script_tag }} {% endcomment %}
+
+<script src="{{ 'features-list.js' | asset_url }}" defer></script>
 
 <div data-features-list class="section features-list section-{{ section.id }}-padding{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="features-list__wrapper page-width">

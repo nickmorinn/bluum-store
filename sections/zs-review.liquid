@@ -16,6 +16,14 @@
     --product-list-grid: {% if section.settings.stack_products %}auto / repeat(var(--product-list-items-per-row), minmax(0, 1fr)){% else %}auto / auto-flow var(--product-list-carousel-item-width){% endif %};
   }
 
+  @media screen and (max-width: 699px) {
+    #shopify-section-{{ section.id }} .product-list {
+      --product-list-gap: 10px;
+      --product-list-items-per-row: 2;
+      --product-list-carousel-item-width: 60vw;
+    }
+  }
+
   @media screen and (min-width: 700px) {
     #shopify-section-{{ section.id }} .product-list {
       --product-list-gap: var(--product-list-row-gap) var(--product-list-column-gap);
@@ -141,30 +149,55 @@
   border-radius: 50%;
   background-color: #c8dae7;
 }
-
+@media (min-width: 769px) and (max-width: 999px) {
+.shopify-section--zs-review .zs-review__quote {
+    font-size: 28px;
+}
+}
 @media (max-width: 768px) {
+  .shopify-section--zs-review .section.section-full.bg-custom {
+    margin-bottom: 60px;
+  }
   .shopify-section--zs-review .section-header h1 {
-    font-size: 36px;
+    font-size: 28px;
+            margin: 0;
   }
 
   .shopify-section--zs-review product-card {
     flex-direction: column;
-    padding: 24px;
+    padding: 18px;
     gap: 24px;
     border-radius: 40px;
+    margin-top: 10px;
   }
 
   .shopify-section--zs-review .zs-review__quote {
-    font-size: 22px;
-
-  .shopify-section--zs-review .zs-review__author {
-    font-size: 18px;
+    font-size: 16px;
   }
-
+  .shopify-section--zs-review .zs-review__author {
+    font-size: 14px;
+  }
+  .zs-review__location {
+    font-size: 14px;
+  }
+.zs-review__content {
+    gap: 10px;
+}
   .shopify-section--zs-review .circle-button {
     width: 48px;
     height: 48px;
   }
+.shopify-section--zs-review .circle-button {
+    width: 30px;
+    height: 30px;
+}
+.shopify-section--zs-review button.circle-button:last-of-type {
+    right: 0px !important;
+}
+.shopify-section--zs-review button.circle-button:first-of-type {
+    left: 0px !important;
+}
+
 }
 
 </style>

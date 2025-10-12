@@ -4026,7 +4026,6 @@ tfoot td {
   gap: var(--spacing-3) var(--spacing-6);
   flex-wrap: wrap;
   display: flex;
-  align-items: center; /* vertically center icons of different intrinsic sizes */
 }
 
 .social-media--sm svg {
@@ -10169,10 +10168,10 @@ tr.zs-chemical-formulation__row p {
 }
 a.tap-area.zs-email-icon svg.icon.icon-email {
     /* Match social icon visual width while preserving aspect ratio */
-    width: 26px;
+    width: 25px;
     height: auto;
-    margin-left: 4px; 
-    padding-top: 2px; 
+    margin-left: 5px; 
+    padding-top: 5px; 
 }
 /* Ensure consistency when the compact social size is used */
 .social-media--sm a.tap-area.zs-email-icon svg.icon.icon-email {
@@ -10210,17 +10209,15 @@ a.tap-area.zs-email-icon svg.icon.icon-email {
     opacity: 1;
     height: 20px;
 }
-.zs-review-slider__slide {
-    --product-card-badge-spacing: var(--spacing-2);
-    --product-card-info-padding: var(--spacing-4);
-    --product-card-quick-buy-inset: var(--spacing-2);
-    border-radius: var(--rounded);
-    isolation: isolate;
-    grid-template-columns: minmax(0, 1fr);
-    align-content: start;
-    align-items: start;
-    display: grid;
-    position: relative;
+.zs-review {
+    height: 100%;
+}
+.zs-review__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+        gap: 25px;
 }
 @media (max-width: 768px) {
   .zs-chemical-formulation__table,
@@ -10243,3 +10240,4 @@ a.tap-area.zs-email-icon svg.icon.icon-email {
     padding: 10px 16px;
   }
 }
+

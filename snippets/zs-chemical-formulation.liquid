@@ -38,6 +38,42 @@
       <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_5_value | metafield_tag }}</td>
     </tr>
     {% endif %}
+    {% if chemical_formulation.entry_6_label != blank or chemical_formulation.entry_6_value != blank %}
+    <tr class="zs-chemical-formulation__row">
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_6_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_6_value | metafield_tag }}</td>
+    </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_7_label != blank or chemical_formulation.entry_7_value != blank %}
+    <tr class="zs-chemical-formulation__row">
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_7_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_7_value | metafield_tag }}</td>
+    </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_8_label != blank or chemical_formulation.entry_8_value != blank %}
+    <tr class="zs-chemical-formulation__row">
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_8_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_8_value | metafield_tag }}</td>
+    </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_9_label != blank or chemical_formulation.entry_9_value != blank %}
+    <tr class="zs-chemical-formulation__row">
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_9_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_9_value | metafield_tag }}</td>
+    </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_10_label != blank or chemical_formulation.entry_10_value != blank %}
+    <tr class="zs-chemical-formulation__row">
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_10_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_10_value | metafield_tag }}</td>
+    </tr>
+    {% endif %}
+    {% if chemical_formulation.entry_11_label != blank or chemical_formulation.entry_11_value != blank %}
+    <tr class="zs-chemical-formulation__row">
+      <th class="zs-chemical-formulation__label">{{chemical_formulation.entry_11_label}}</th>
+      <td class="zs-chemical-formulation__text">{{chemical_formulation.entry_11_value | metafield_tag }}</td>
+    </tr>
+    {% endif %}
   </table>
 </div>
 {% endif %}
