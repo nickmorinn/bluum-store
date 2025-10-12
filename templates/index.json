@@ -201,7 +201,7 @@
         "subheading": "",
         "title": "Featured Products",
         "content": "",
-        "link_url": "shopify://collections/featured-products",
+        "link_url": "shopify://collections/frontpage?sort_by=title-ascending",
         "link_text": "View all",
         "background": "",
         "background_gradient": "",
