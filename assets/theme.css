@@ -7563,6 +7563,10 @@ product-rerender {
   --product-info-block-spacing: var(--spacing-4);
 }
 
+._flexContainer_oclh5_39 {
+    gap: 0px !important; 
+}
+
 .product-info__sku {
   display: block;
 }
@@ -7632,6 +7636,14 @@ product-rerender {
 
   .product-info__block-item:where([data-block-type="buy-buttons"]) {
     --product-info-block-spacing: var(--spacing-8);
+  }
+
+  .product-info__block-item[data-block-type="@app"] {
+    --product-info-block-spacing: var(--spacing-4);
+  }
+
+  .product-info__block-item[data-block-type="@app"] + .product-info__block-item[data-block-type="buy-buttons"] {
+    --product-info-block-spacing: var(--spacing-4);
   }
 
   .product-info__offer-list {
@@ -10240,4 +10252,3 @@ a.tap-area.zs-email-icon svg.icon.icon-email {
     padding: 10px 16px;
   }
 }
-
