@@ -104,23 +104,6 @@ Parameters (all optional):
   {%- assign smart_shipping_box_script_rendered = true -%}
   <script>
     (function() {
-      var countryMap = {
-        US: { flag: 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg', text: 'FREE Shipping', alt: 'United States flag' },
-        FR: { flag: 'https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg', text: 'LIVRAISON GRATUITE', alt: 'France flag' },
-        DE: { flag: 'https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg', text: 'KOSTENLOSER VERSAND', alt: 'Germany flag' },
-        TR: { flag: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg', text: 'ÜCRETSİZ KARGO', alt: 'Turkey flag' },
-        IT: { flag: 'https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg', text: 'SPEDIZIONE GRATUITA', alt: 'Italy flag' },
-        ES: { flag: 'https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg', text: 'ENVÍO GRATUITO', alt: 'Spain flag' },
-        NL: { flag: 'https://upload.wikimedia.org/wikipedia/en/2/20/Flag_of_the_Netherlands.svg', text: 'GRATIS VERZENDING', alt: 'Netherlands flag' },
-        JP: { flag: 'https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg', text: '送料無料', alt: 'Japan flag' },
-        KR: { flag: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg', text: '무료 배송', alt: 'South Korea flag' },
-        CN: { flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg', text: '免运费', alt: 'China flag' },
-        IN: { flag: 'https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg', text: 'फ्री शिपिंग', alt: 'India flag' },
-        BR: { flag: 'https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg', text: 'FRETE GRÁTIS', alt: 'Brazil flag' },
-        RU: { flag: 'https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg', text: 'БЕСПЛАТНАЯ ДОСТАВКА', alt: 'Russia flag' },
-        PL: { flag: 'https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg', text: 'DOSTAWA GRATIS', alt: 'Poland flag' }
-      };
-
       function forEachNode(list, handler) {
         Array.prototype.forEach.call(list, handler);
       }
@@ -159,12 +142,6 @@ Parameters (all optional):
         return result;
       }
 
-      var fallback = {
-        flag: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Globe_icon.svg',
-        text: 'Free Worldwide Shipping',
-        alt: 'Worldwide shipping'
-      };
-
       function formatShipDate(date, format) {
         var formats = {
           'long': { weekday: 'long', month: 'long', day: 'numeric' },
@@ -180,19 +157,6 @@ Parameters (all optional):
         } catch (e) {
           return date.toDateString();
         }
-      }
-
-      var geoPromise;
-      function getGeo() {
-        if (!geoPromise) {
-          geoPromise = fetch('https://ipapi.co/json/').then(function(response) {
-            if (!response.ok) return null;
-            return response.json();
-          }).catch(function() {
-            return null;
-          });
-        }
-        return geoPromise;
       }
 
       function updateBox(box) {
@@ -212,21 +176,14 @@ Parameters (all optional):
           dateEl.textContent = formatShipDate(shipDate, format);
         }
 
-        getGeo().then(function(data) {
-          var selected = fallback;
-          if (data && data.country && countryMap[data.country]) {
-            selected = countryMap[data.country];
-          }
+        if (flagEl) {
+          flagEl.src = 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg';
+          flagEl.alt = 'United States flag';
+        }
 
-          if (flagEl) {
-            flagEl.src = selected.flag;
-            flagEl.alt = selected.alt || 'Flag';
-          }
-
-          if (textEl) {
-            textEl.textContent = selected.text;
-          }
-        });
+        if (textEl) {
+          textEl.textContent = 'FREE Shipping';
+        }
       }
 
       function init(root) {

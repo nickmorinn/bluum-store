@@ -1,0 +1,42 @@
+{%- comment -%}
+Highlighted customer quote with configurable styling.
+{%- endcomment -%}
+
+{%- assign margin_top = margin_top | default: '0.3rem' -%}
+{%- assign margin_bottom = margin_bottom | default: '0.3rem' -%}
+{%- assign gap = gap | default: '4px' -%}
+{%- assign font_weight = font_weight | default: '500' -%}
+{%- assign font_size = font_size | default: '20px' -%}
+{%- assign background_color = background_color | default: '#fffdfa' -%}
+{%- assign border_radius = border_radius | default: '12px' -%}
+{%- assign padding = padding | default: '1.5rem' -%}
+{%- assign border = border | default: '1px solid #e5e5e5' -%}
+{%- assign text_color = text_color | default: '#24211f' -%}
+{%- assign line_height = line_height | default: '1.5' -%}
+{%- assign quote_font_weight = quote_font_weight | default: '500' -%}
+{%- assign quote_font_size = quote_font_size | default: '20px' -%}
+{%- assign quote_text = quote_text | default: 'Legit and very well priced!' -%}
+{%- assign name_margin_top = name_margin_top | default: '6px' -%}
+{%- assign name_font_size = name_font_size | default: '16px' -%}
+{%- assign customer_name = customer_name | default: 'Nick C.' -%}
+{%- assign verification_font_size = verification_font_size | default: '14px' -%}
+{%- assign verification_font_weight = verification_font_weight | default: '400' -%}
+{%- assign verification_gap = verification_gap | default: '4px' -%}
+{%- assign verification_color = verification_color | default: '#24211f' -%}
+{%- assign verification_text = verification_text | default: 'Verified Buyer' -%}
+{%- assign verification_margin_top = verification_margin_top | default: '4px' -%}
+
+<div style="margin-top: {{ margin_top }}; margin-bottom: {{ margin_bottom }}; width: 100%;">
+  <div style="width: 100%; gap: {{ gap }}; font-weight: {{ font_weight }}; font-size: {{ font_size }}; background-color: {{ background_color }}; border-radius: {{ border_radius }}; padding: {{ padding }}; border: {{ border }}; color: {{ text_color }}; line-height: {{ line_height }};">
+    <div style="font-weight: {{ quote_font_weight }}; font-size: {{ quote_font_size }};">“{{ quote_text }}”</div>
+
+    <div style="margin-top: {{ name_margin_top }}; font-size: {{ name_font_size }};">{{ customer_name }}</div>
+
+    <div style="margin-top: {{ verification_margin_top }}; font-size: {{ verification_font_size }}; font-weight: {{ verification_font_weight }}; display: flex; gap: {{ verification_gap }}; align-items: center; color: {{ verification_color }};">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path>
+      </svg>
+      {{ verification_text }}
+    </div>
+  </div>
+</div>
