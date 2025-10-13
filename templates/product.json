@@ -72,6 +72,13 @@
             "liquid": "{% render 'smart-shipping-box' %}"
           }
         },
+        "liquid_review_quote": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "{% render 'review-quote' %}"
+          }
+        },
         "rating": {
           "type": "rating",
           "disabled": true,
@@ -114,6 +121,7 @@
         "buy_buttons",
         "liquid_payment_icons",
         "liquid_smart_shipping_box",
+        "liquid_review_quote",
         "rating",
         "payment_terms",
         "text_RYM3iC",
@@ -129,7 +137,7 @@
         "desktop_media_width": 50,
         "desktop_media_layout": "grid_highlight",
         "mobile_media_size": "expanded",
-        "mobile_carousel_control": "floating_dots",
+        "mobile_carousel_control": "hidden",
         "enable_video_autoplay": false,
         "enable_video_looping": true,
         "enable_image_zoom": true,
