@@ -1,0 +1,116 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+PAYMENT ICONS
+----------------------------------------------------------------------------------------------------------------------
+
+Displays a list of payment icons with optional customization via snippet parameters.
+
+Supported parameters:
+- icon_height: desktop icon height (defaults to 28px)
+- mobile_icon_height: icon height on mobile (defaults to 20px)
+- gap: desktop gap between icons (defaults to 6px)
+- padding: desktop padding around container (defaults to 12px)
+- mobile_gap: mobile gap between icons (defaults to 4px)
+- mobile_padding: mobile padding around container (defaults to 8px)
+- background_color: container background (defaults to transparent)
+- border_radius: container border radius (defaults to 8px)
+- alignment: icon alignment (defaults to center)
+- margin_top: container top margin (defaults to 0.25rem)
+- margin_bottom: container bottom margin (defaults to 0.25rem)
+- icon_filter: CSS filter applied to icons (defaults to none)
+{%- endcomment -%}
+
+{%- assign icon_height = icon_height | default: '28px' -%}
+{%- assign mobile_icon_height = mobile_icon_height | default: '20px' -%}
+{%- assign gap = gap | default: '6px' -%}
+{%- assign padding = padding | default: '12px' -%}
+{%- assign mobile_gap = mobile_gap | default: '4px' -%}
+{%- assign mobile_padding = mobile_padding | default: '8px' -%}
+{%- assign background_color = background_color | default: 'transparent' -%}
+{%- assign border_radius = border_radius | default: '8px' -%}
+{%- assign alignment = alignment | default: 'center' -%}
+{%- assign margin_top = margin_top | default: '0.25rem' -%}
+{%- assign margin_bottom = margin_bottom | default: '0.25rem' -%}
+{%- assign icon_filter = icon_filter | default: 'none' -%}
+
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/visa.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/master.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/american_express.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/paypal.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/apple_pay.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/google_pay.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/ideal.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/klarna.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/stripe.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/unionpay.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/discover.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/jcb.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/diners_club.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/maestro.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/sofort.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/bancontact.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/giropay.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/eps.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/sepa.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/afterpay.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/alipay.svg">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/wechat_pay.svg">
+
+<style>
+  .payment-methods-container .payment-icon {
+    height: {{ icon_height }};
+    width: auto;
+    filter: {{ icon_filter }};
+  }
+
+  @media (max-width: 768px) {
+    .payment-methods-container .payment-icon {
+      height: {{ mobile_icon_height }} !important;
+    }
+
+    .payment-methods-container {
+      gap: {{ mobile_gap }} !important;
+      padding: {{ mobile_padding }} !important;
+    }
+  }
+</style>
+
+<div style="margin-top: {{ margin_top }}; margin-bottom: {{ margin_bottom }}; width: 100%;">
+  <div class="payment-methods-container" style="
+    display: flex;
+    align-items: center;
+    justify-content: {{ alignment }};
+    flex-wrap: wrap;
+    width: 100%;
+    gap: {{ gap }};
+    padding: {{ padding }};
+    background: {{ background_color }};
+    border-radius: {{ border_radius }};
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  ">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/visa.svg" alt="Visa" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/master.svg" alt="Mastercard" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/american_express.svg" alt="American Express" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/discover.svg" alt="Discover" class="payment-icon">
+    {% comment %} <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/paypal.svg" alt="PayPal" class="payment-icon"> {% endcomment %}
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/apple_pay.svg" alt="Apple&nbsp;Pay" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/google_pay.svg" alt="Google&nbsp;Pay" class="payment-icon">
+    {% comment %} <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/ideal.svg" alt="iDEAL" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/klarna.svg" alt="Klarna" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/stripe.svg" alt="Stripe" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/unionpay.svg" alt="UnionPay" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/jcb.svg" alt="JCB" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/diners_club.svg" alt="Diners Club" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/maestro.svg" alt="Maestro" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/sofort.svg" alt="Sofort" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/bancontact.svg" alt="Bancontact" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/giropay.svg" alt="Giropay" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/eps.svg" alt="EPS" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/sepa.svg" alt="SEPA" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/afterpay.svg" alt="Afterpay" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/alipay.svg" alt="Alipay" class="payment-icon">
+    <img src="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/wechat_pay.svg" alt="WeChat Pay" class="payment-icon"> {% endcomment %}
+  </div>
+</div>
