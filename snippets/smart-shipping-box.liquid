@@ -125,6 +125,40 @@ Parameters (all optional):
         Array.prototype.forEach.call(list, handler);
       }
 
+      function isWeekend(date) {
+        var day = date.getDay();
+        return day === 0 || day === 6;
+      }
+
+      function nextBusinessDay(date) {
+        var result = new Date(date);
+        while (isWeekend(result)) {
+          result.setDate(result.getDate() + 1);
+        }
+        return result;
+      }
+
+      function addBusinessDays(startDate, days) {
+        var result = new Date(startDate);
+        var remaining = parseInt(days, 10);
+        if (isNaN(remaining) || remaining < 0) {
+          remaining = 0;
+        }
+
+        if (remaining === 0) {
+          return isWeekend(result) ? nextBusinessDay(result) : result;
+        }
+
+        while (remaining > 0) {
+          result.setDate(result.getDate() + 1);
+          if (!isWeekend(result)) {
+            remaining -= 1;
+          }
+        }
+
+        return result;
+      }
+
       var fallback = {
         flag: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Globe_icon.svg',
         text: 'Free Worldwide Shipping',
@@ -167,12 +201,11 @@ Parameters (all optional):
         var textEl = box.querySelector('[data-shipping-badge-text]');
 
         var days = parseInt(box.getAttribute('data-shipping-days'), 10);
-        if (isNaN(days)) {
+        if (isNaN(days) || days < 0) {
           days = 0;
         }
 
-        var shipDate = new Date();
-        shipDate.setDate(shipDate.getDate() + days);
+        var shipDate = addBusinessDays(new Date(), days);
 
         if (dateEl) {
           var format = box.getAttribute('data-date-format') || 'short';

@@ -1,0 +1,27 @@
+{%- comment -%}
+Simple review summary badge with customizable spacing, alignment, star styling, and text.
+{%- endcomment -%}
+
+{%- assign margin_top = margin_top | default: '4px' -%}
+{%- assign margin_bottom = margin_bottom | default: 'px' -%}
+{%- assign alignment = alignment | default: 'start' -%}
+{%- assign gap = gap | default: '8px' -%}
+{%- assign star_color = star_color | default: '#c8dae8' -%}
+{%- assign star_size = star_size | default: '24px' -%}
+{%- assign font_size = font_size | default: '18px' -%}
+{%- assign font_weight = font_weight | default: '400' -%}
+{%- assign text_color = text_color | default: '#24211f' -%}
+{%- assign text = text | default: '4.9/5' -%}
+
+<div style="margin-top: {{ margin_top }}; margin-bottom: {{ margin_bottom }}; width: 100%;">
+  <div style="width: 100%; display: flex; align-items: center; justify-content: {{ alignment }}; text-align: left; gap: {{ gap }};">
+    <div style="display: flex; align-items: center;">
+      {%- for i in (1..5) -%}
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" style="fill: {{ star_color }}; height: {{ star_size }}; width: {{ star_size }};" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>
+        </svg>
+      {%- endfor -%}
+    </div>
+    <span style="font-size: {{ font_size }}; font-weight: {{ font_weight }}; color: {{ text_color }};">{{ text }}</span>
+  </div>
+</div>
