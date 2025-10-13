@@ -20,7 +20,18 @@
         },
         "badges": {
           "type": "badges",
-          "settings": {}
+          "settings": {
+            "show_custom_lab_badges": false,
+            "badge_batch_value": "1234",
+            "badge_report_value": "5678",
+            "badge_tested_value": "98% purity"
+          }
+        },
+        "liquid_lab_badges": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% assign lab_badge_block = section.blocks | where: 'type', 'badges' | first %}{% if lab_badge_block and lab_badge_block.settings.show_custom_lab_badges %}{% render 'product-lab-badges', badge_1_value: lab_badge_block.settings.badge_batch_value, badge_2_value: lab_badge_block.settings.badge_report_value, badge_3_value: lab_badge_block.settings.badge_tested_value %}{% endif %}"
+          }
         },
         "price": {
           "type": "price",
@@ -93,7 +104,7 @@
         "text_RYM3iC": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>RESEARCH USE ONLY</strong><br/>These compounds are NOT  intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>"
+            "text": "<p><strong>RESEARCH USE ONLY</strong><br/>These compounds are NOT \u00a0intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>"
           }
         },
         "description": {
@@ -116,6 +127,7 @@
         "badges",
         "price",
         "variant_picker",
+        "liquid_lab_badges",
         "quantity_selector",
         "fbp_fast_bundle_volume_position_MkgDht",
         "buy_buttons",

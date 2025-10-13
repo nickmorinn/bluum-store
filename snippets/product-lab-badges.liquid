@@ -1,0 +1,107 @@
+{%- comment -%}
+Displays a trio of inline badges to highlight batch, report, and lab details.
+Values can be customized via snippet parameters (and corresponding section settings).
+{%- endcomment -%}
+
+{%- assign margin_top = margin_top | default: '0px' -%}
+{%- assign margin_bottom = margin_bottom | default: '0px' -%}
+{%- assign badge_gap = badge_gap | default: '5px' -%}
+{%- assign badge_padding = badge_padding | default: '3px 7px' -%}
+{%- assign badge_border_radius = badge_border_radius | default: '12px' -%}
+{%- assign badge_font_size = badge_font_size | default: '11px' -%}
+{%- assign badge_font_weight = badge_font_weight | default: '500' -%}
+{%- assign badge_text_color = badge_text_color | default: '#24211f' -%}
+{%- assign badge_background_color = badge_background_color | default: '#eaeaea' -%}
+{%- assign icon_brightness = icon_brightness | default: '0.5' -%}
+{%- assign icon_size = icon_size | default: '14px' -%}
+
+{%- assign badge_1_icon = badge_1_icon | default: 'https://www.svgrepo.com//show/520561/box-open.svg' -%}
+{%- assign badge_1_text = badge_1_text | default: 'Batch #' -%}
+{%- assign badge_1_value = badge_1_value | default: '' -%}
+
+{%- assign badge_2_icon = badge_2_icon | default: 'https://www.svgrepo.com//show/486820/report-text.svg' -%}
+{%- assign badge_2_text = badge_2_text | default: 'Report #' -%}
+{%- assign badge_2_value = badge_2_value | default: '' -%}
+
+{%- assign badge_3_icon = badge_3_icon | default: 'https://www.svgrepo.com//show/455759/lab-test-tube.svg' -%}
+{%- assign badge_3_text = badge_3_text | default: 'Tested at ' -%}
+{%- assign badge_3_value = badge_3_value | default: '' -%}
+
+{%- capture container_styles -%}
+margin-top: {{ margin_top }};
+margin-bottom: {{ margin_bottom }};
+--badge-gap: {{ badge_gap }};
+--badge-padding: {{ badge_padding }};
+--badge-border-radius: {{ badge_border_radius }};
+--badge-font-size: {{ badge_font_size }};
+--badge-font-weight: {{ badge_font_weight }};
+--badge-text-color: {{ badge_text_color }};
+--badge-background-color: {{ badge_background_color }};
+--icon-brightness: {{ icon_brightness }};
+{%- endcapture -%}
+{%- assign container_styles = container_styles | strip | replace: '\n', ' ' -%}
+
+{%- assign has_badge_content = false -%}
+{%- if badge_1_value != blank or badge_1_text != blank -%}
+  {%- assign has_badge_content = true -%}
+{%- endif -%}
+{%- if badge_2_value != blank or badge_2_text != blank -%}
+  {%- assign has_badge_content = true -%}
+{%- endif -%}
+{%- if badge_3_value != blank or badge_3_text != blank -%}
+  {%- assign has_badge_content = true -%}
+{%- endif -%}
+
+{%- if has_badge_content -%}
+  <div class="badge-container" data-lab-badges style="{{ container_styles }}">
+    {%- if badge_1_text != blank or badge_1_value != blank -%}
+      <div class="badge-item">
+        <img src="{{ badge_1_icon }}" alt="{{ badge_1_text }}{{ badge_1_value }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {{- badge_1_text -}}{{- badge_1_value -}}
+      </div>
+    {%- endif -%}
+
+    {%- if badge_2_text != blank or badge_2_value != blank -%}
+      <div class="badge-item">
+        <img src="{{ badge_2_icon }}" alt="{{ badge_2_text }}{{ badge_2_value }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {{- badge_2_text -}}{{- badge_2_value -}}
+      </div>
+    {%- endif -%}
+
+    {%- if badge_3_text != blank or badge_3_value != blank -%}
+      <div class="badge-item">
+        <img src="{{ badge_3_icon }}" alt="{{ badge_3_text }}{{ badge_3_value }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {{- badge_3_text -}}{{- badge_3_value -}}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- unless lab_badges_styles_rendered -%}
+    {%- assign lab_badges_styles_rendered = true -%}
+    <style>
+      .badge-container[data-lab-badges] {
+        display: flex;
+        gap: var(--badge-gap);
+        flex-wrap: wrap;
+      }
+
+      .badge-container[data-lab-badges] .badge-item {
+        display: flex;
+        align-items: center;
+        padding: var(--badge-padding);
+        border-radius: var(--badge-border-radius);
+        font-size: var(--badge-font-size);
+        font-weight: var(--badge-font-weight);
+        color: var(--badge-text-color);
+        background-color: var(--badge-background-color);
+      }
+
+      .badge-container[data-lab-badges] .badge-item img {
+        margin-right: 3px;
+        filter: brightness(var(--icon-brightness));
+        flex-shrink: 0;
+        display: inline-block;
+      }
+    </style>
+  {%- endunless -%}
+{%- endif -%}
