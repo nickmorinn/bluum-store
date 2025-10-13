@@ -60,30 +60,16 @@
             "payment_button_text_color": ""
           }
         },
-        "offer_NH3yPe": {
-          "type": "offer",
+        "liquid_payment_icons": {
+          "type": "liquid",
           "settings": {
-            "text_alignment": "center",
-            "icon_position": "aligned",
-            "icon": "picto-box",
-            "icon_width": 24,
-            "title": "FREE SHIPPING",
-            "content": "",
-            "background": "#eaeaea",
-            "text_color": "#24201f"
+            "liquid": "{% render 'payment-icons' %}"
           }
         },
-        "offer_Rn3tCi": {
-          "type": "offer",
+        "liquid_smart_shipping_box": {
+          "type": "liquid",
           "settings": {
-            "text_alignment": "center",
-            "icon_position": "aligned",
-            "icon": "picto-validation",
-            "icon_width": 24,
-            "title": "LAB-TESTED",
-            "content": "",
-            "background": "#eaeaea",
-            "text_color": "#24201f"
+            "liquid": "{% render 'smart-shipping-box' %}"
           }
         },
         "rating": {
@@ -126,8 +112,8 @@
         "quantity_selector",
         "fbp_fast_bundle_volume_position_MkgDht",
         "buy_buttons",
-        "offer_NH3yPe",
-        "offer_Rn3tCi",
+        "liquid_payment_icons",
+        "liquid_smart_shipping_box",
         "rating",
         "payment_terms",
         "text_RYM3iC",
