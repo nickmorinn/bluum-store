@@ -22,6 +22,7 @@ Values can be customized via snippet parameters (and corresponding section setti
 {%- assign badge_2_icon = badge_2_icon | default: 'https://www.svgrepo.com//show/486820/report-text.svg' -%}
 {%- assign badge_2_text = badge_2_text | default: 'Report #' -%}
 {%- assign badge_2_value = badge_2_value | default: '' -%}
+{%- assign badge_2_url = badge_2_url | default: '' -%}
 
 {%- assign badge_3_icon = badge_3_icon | default: 'https://www.svgrepo.com//show/455759/lab-test-tube.svg' -%}
 {%- assign badge_3_text = badge_3_text | default: 'Tested at ' -%}
@@ -109,7 +110,13 @@ margin-bottom: {{ margin_bottom }};
         {%- if badge_2_icon != blank -%}
           <img src="{{ badge_2_icon }}" alt="{{ badge_2_icon_alt | strip }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
         {%- endif -%}
-        {{- badge_2_text -}}{{- badge_2_value -}}
+        {%- if badge_2_url != blank -%}
+          <a href="{{ badge_2_url }}" target="_blank" rel="noopener noreferrer">
+            {{- badge_2_text -}}{{- badge_2_value -}}
+          </a>
+        {%- else -%}
+          {{- badge_2_text -}}{{- badge_2_value -}}
+        {%- endif -%}
       </div>
     {%- endif -%}
 
@@ -148,6 +155,11 @@ margin-bottom: {{ margin_bottom }};
         filter: brightness(var(--icon-brightness));
         flex-shrink: 0;
         display: inline-block;
+      }
+
+      .badge-container[data-lab-badges] .badge-item a {
+        color: inherit;
+        text-decoration: none;
       }
     </style>
   {%- endunless -%}

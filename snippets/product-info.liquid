@@ -91,61 +91,110 @@ Supported variables
           {%- endif -%}
 
         {%- when 'badges' -%}
-          {%- if block.settings.show_custom_lab_badges -%}
-            {% liquid
-              assign badge_1_icon = ''
-              if block.settings.badge_1_icon_url != blank
-                assign badge_1_icon = block.settings.badge_1_icon_url
-              elsif block.settings.badge_1_icon_image != blank
-                assign badge_1_icon = block.settings.badge_1_icon_image | image_url: width: 64
+          {% liquid
+            assign selected_variant = product.selected_or_first_available_variant
+            assign lab_badge_metaobject = blank
+
+            comment
+              Update the namespace/key below if the Testing Data metafield uses different handles.
+            endcomment
+            if selected_variant and selected_variant.metafields.custom and selected_variant.metafields.custom.testing_data != blank
+              assign lab_badge_metaobject = selected_variant.metafields.custom.testing_data.value
+            elsif product.metafields.custom and product.metafields.custom.testing_data != blank
+              assign lab_badge_metaobject = product.metafields.custom.testing_data.value
+            endif
+
+            assign badge_1_icon = ''
+            if block.settings.badge_1_icon_url != blank
+              assign badge_1_icon = block.settings.badge_1_icon_url
+            elsif block.settings.badge_1_icon_image != blank
+              assign badge_1_icon = block.settings.badge_1_icon_image | image_url: width: 64
+            endif
+
+            assign badge_2_icon = ''
+            if block.settings.badge_2_icon_url != blank
+              assign badge_2_icon = block.settings.badge_2_icon_url
+            elsif block.settings.badge_2_icon_image != blank
+              assign badge_2_icon = block.settings.badge_2_icon_image | image_url: width: 64
+            endif
+
+            assign badge_3_icon = ''
+            if block.settings.badge_3_icon_url != blank
+              assign badge_3_icon = block.settings.badge_3_icon_url
+            elsif block.settings.badge_3_icon_image != blank
+              assign badge_3_icon = block.settings.badge_3_icon_image | image_url: width: 64
+            endif
+
+            assign badge_1_value = block.settings.badge_1_value
+            assign badge_2_value = block.settings.badge_2_value
+            assign badge_3_value = block.settings.badge_3_value
+
+            assign badge_2_url = blank
+
+            if lab_badge_metaobject
+              if lab_badge_metaobject.lot != blank
+                assign badge_1_value = lab_badge_metaobject.lot
+              elsif lab_badge_metaobject.batch != blank
+                assign badge_1_value = lab_badge_metaobject.batch
               endif
 
-              assign badge_2_icon = ''
-              if block.settings.badge_2_icon_url != blank
-                assign badge_2_icon = block.settings.badge_2_icon_url
-              elsif block.settings.badge_2_icon_image != blank
-                assign badge_2_icon = block.settings.badge_2_icon_image | image_url: width: 64
+              if lab_badge_metaobject.report != blank
+                assign badge_2_value = lab_badge_metaobject.report
+              elsif lab_badge_metaobject.report_label != blank
+                assign badge_2_value = lab_badge_metaobject.report_label
               endif
 
-              assign badge_3_icon = ''
-              if block.settings.badge_3_icon_url != blank
-                assign badge_3_icon = block.settings.badge_3_icon_url
-              elsif block.settings.badge_3_icon_image != blank
-                assign badge_3_icon = block.settings.badge_3_icon_image | image_url: width: 64
+              if lab_badge_metaobject.report_url != blank
+                assign badge_2_url = lab_badge_metaobject.report_url
+              elsif lab_badge_metaobject.report_link != blank
+                assign badge_2_url = lab_badge_metaobject.report_link
               endif
-            %}
 
-            {%- render 'product-lab-badges',
-              margin_top: block.settings.margin_top,
-              margin_bottom: block.settings.margin_bottom,
-              badge_gap: block.settings.badge_gap,
-              badge_padding: block.settings.badge_padding,
-              badge_border_radius: block.settings.badge_border_radius,
-              badge_font_size: block.settings.badge_font_size,
-              badge_font_weight: block.settings.badge_font_weight,
-              badge_text_color: block.settings.badge_text_color,
-              badge_background_color: block.settings.badge_background_color,
-              icon_brightness: block.settings.icon_brightness,
-              icon_size: block.settings.icon_size,
-              badge_1_enabled: block.settings.badge_1_enabled,
-              badge_1_icon: badge_1_icon,
-              badge_1_icon_alt: block.settings.badge_1_icon_alt,
-              badge_1_text: block.settings.badge_1_text,
-              badge_1_value: block.settings.badge_1_value,
-              badge_2_enabled: block.settings.badge_2_enabled,
-              badge_2_icon: badge_2_icon,
-              badge_2_icon_alt: block.settings.badge_2_icon_alt,
-              badge_2_text: block.settings.badge_2_text,
-              badge_2_value: block.settings.badge_2_value,
-              badge_3_enabled: block.settings.badge_3_enabled,
-              badge_3_icon: badge_3_icon,
-              badge_3_icon_alt: block.settings.badge_3_icon_alt,
-              badge_3_text: block.settings.badge_3_text,
-              badge_3_value: block.settings.badge_3_value
-            -%}
-          {%- else -%}
-            {%- render 'product-badges', product: product, context: 'product', types: 'custom', class: 'product-info__badge-list' -%}
-          {%- endif -%}
+              if lab_badge_metaobject.result != blank
+                assign badge_3_value = lab_badge_metaobject.result
+              elsif lab_badge_metaobject.tested_text != blank
+                assign badge_3_value = lab_badge_metaobject.tested_text
+              endif
+            endif
+
+            assign badge_container_id = 'variant-meta-' | append: section.id | append: '-' | append: block.id
+          %}
+
+          <div id="{{ badge_container_id }}">
+            {%- if lab_badge_metaobject or block.settings.show_custom_lab_badges -%}
+              {%- render 'product-lab-badges',
+                margin_top: block.settings.margin_top,
+                margin_bottom: block.settings.margin_bottom,
+                badge_gap: block.settings.badge_gap,
+                badge_padding: block.settings.badge_padding,
+                badge_border_radius: block.settings.badge_border_radius,
+                badge_font_size: block.settings.badge_font_size,
+                badge_font_weight: block.settings.badge_font_weight,
+                badge_text_color: block.settings.badge_text_color,
+                badge_background_color: block.settings.badge_background_color,
+                icon_brightness: block.settings.icon_brightness,
+                icon_size: block.settings.icon_size,
+                badge_1_enabled: block.settings.badge_1_enabled,
+                badge_1_icon: badge_1_icon,
+                badge_1_icon_alt: block.settings.badge_1_icon_alt,
+                badge_1_text: block.settings.badge_1_text,
+                badge_1_value: badge_1_value,
+                badge_2_enabled: block.settings.badge_2_enabled,
+                badge_2_icon: badge_2_icon,
+                badge_2_icon_alt: block.settings.badge_2_icon_alt,
+                badge_2_text: block.settings.badge_2_text,
+                badge_2_value: badge_2_value,
+                badge_2_url: badge_2_url,
+                badge_3_enabled: block.settings.badge_3_enabled,
+                badge_3_icon: badge_3_icon,
+                badge_3_icon_alt: block.settings.badge_3_icon_alt,
+                badge_3_text: block.settings.badge_3_text,
+                badge_3_value: badge_3_value
+              -%}
+            {%- else -%}
+              {%- render 'product-badges', product: product, context: 'product', types: 'custom', class: 'product-info__badge-list' -%}
+            {%- endif -%}
+          </div>
 
         {%- when 'sku' -%}
           {% if product.selected_or_first_available_variant.sku != blank %}
