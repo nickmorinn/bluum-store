@@ -21,7 +21,7 @@
         "badges": {
           "type": "badges",
           "settings": {
-            "show_custom_lab_badges": true,
+            "show_custom_lab_badges": false,
             "margin_top": "0px",
             "margin_bottom": "0px",
             "badge_gap": "5px",
