@@ -91,7 +91,61 @@ Supported variables
           {%- endif -%}
 
         {%- when 'badges' -%}
-          {%- render 'product-badges', product: product, context: 'product', types: 'custom', class: 'product-info__badge-list' -%}
+          {%- if block.settings.show_custom_lab_badges -%}
+            {% liquid
+              assign badge_1_icon = ''
+              if block.settings.badge_1_icon_url != blank
+                assign badge_1_icon = block.settings.badge_1_icon_url
+              elsif block.settings.badge_1_icon_image != blank
+                assign badge_1_icon = block.settings.badge_1_icon_image | image_url: width: 64
+              endif
+
+              assign badge_2_icon = ''
+              if block.settings.badge_2_icon_url != blank
+                assign badge_2_icon = block.settings.badge_2_icon_url
+              elsif block.settings.badge_2_icon_image != blank
+                assign badge_2_icon = block.settings.badge_2_icon_image | image_url: width: 64
+              endif
+
+              assign badge_3_icon = ''
+              if block.settings.badge_3_icon_url != blank
+                assign badge_3_icon = block.settings.badge_3_icon_url
+              elsif block.settings.badge_3_icon_image != blank
+                assign badge_3_icon = block.settings.badge_3_icon_image | image_url: width: 64
+              endif
+            %}
+
+            {%- render 'product-lab-badges',
+              margin_top: block.settings.margin_top,
+              margin_bottom: block.settings.margin_bottom,
+              badge_gap: block.settings.badge_gap,
+              badge_padding: block.settings.badge_padding,
+              badge_border_radius: block.settings.badge_border_radius,
+              badge_font_size: block.settings.badge_font_size,
+              badge_font_weight: block.settings.badge_font_weight,
+              badge_text_color: block.settings.badge_text_color,
+              badge_background_color: block.settings.badge_background_color,
+              icon_brightness: block.settings.icon_brightness,
+              icon_size: block.settings.icon_size,
+              badge_1_enabled: block.settings.badge_1_enabled,
+              badge_1_icon: badge_1_icon,
+              badge_1_icon_alt: block.settings.badge_1_icon_alt,
+              badge_1_text: block.settings.badge_1_text,
+              badge_1_value: block.settings.badge_1_value,
+              badge_2_enabled: block.settings.badge_2_enabled,
+              badge_2_icon: badge_2_icon,
+              badge_2_icon_alt: block.settings.badge_2_icon_alt,
+              badge_2_text: block.settings.badge_2_text,
+              badge_2_value: block.settings.badge_2_value,
+              badge_3_enabled: block.settings.badge_3_enabled,
+              badge_3_icon: badge_3_icon,
+              badge_3_icon_alt: block.settings.badge_3_icon_alt,
+              badge_3_text: block.settings.badge_3_text,
+              badge_3_value: block.settings.badge_3_value
+            -%}
+          {%- else -%}
+            {%- render 'product-badges', product: product, context: 'product', types: 'custom', class: 'product-info__badge-list' -%}
+          {%- endif -%}
 
         {%- when 'sku' -%}
           {% if product.selected_or_first_available_variant.sku != blank %}

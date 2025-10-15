@@ -172,29 +172,210 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       "limit": 1,
       "settings": [
         {
-          "type": "paragraph",
-          "content": "Display product badges such as 'Sale', 'Sold Out', or custom badges configured in your product settings."
-        },
-        {
           "type": "checkbox",
           "id": "show_custom_lab_badges",
           "label": "Show lab detail badges",
           "default": false
         },
         {
-          "type": "text",
-          "id": "badge_batch_value",
-          "label": "Batch number"
+          "type": "header",
+          "content": "Layout"
         },
         {
           "type": "text",
-          "id": "badge_report_value",
-          "label": "Report number"
+          "id": "margin_top",
+          "label": "Margin top",
+          "default": "0px",
+          "info": "Accepts any valid CSS length."
         },
         {
           "type": "text",
-          "id": "badge_tested_value",
-          "label": "Tested at"
+          "id": "margin_bottom",
+          "label": "Margin bottom",
+          "default": "0px",
+          "info": "Accepts any valid CSS length."
+        },
+        {
+          "type": "text",
+          "id": "badge_gap",
+          "label": "Badge gap",
+          "default": "5px",
+          "info": "Spacing between badges."
+        },
+        {
+          "type": "text",
+          "id": "badge_padding",
+          "label": "Badge padding",
+          "default": "3px 7px"
+        },
+        {
+          "type": "text",
+          "id": "badge_border_radius",
+          "label": "Badge border radius",
+          "default": "12px"
+        },
+        {
+          "type": "text",
+          "id": "badge_font_size",
+          "label": "Badge font size",
+          "default": "11px"
+        },
+        {
+          "type": "select",
+          "id": "badge_font_weight",
+          "label": "Badge font weight",
+          "default": "500",
+          "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "500", "label": "Medium" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text color",
+          "default": "#24211f"
+        },
+        {
+          "type": "color",
+          "id": "badge_background_color",
+          "label": "Badge background color",
+          "default": "#eaeaea"
+        },
+        {
+          "type": "text",
+          "id": "icon_brightness",
+          "label": "Icon brightness",
+          "default": "0.5",
+          "info": "CSS brightness multiplier (e.g., 0.5, 1, 1.5)."
+        },
+        {
+          "type": "text",
+          "id": "icon_size",
+          "label": "Icon size",
+          "default": "14px"
+        },
+        {
+          "type": "header",
+          "content": "Batch badge"
+        },
+        {
+          "type": "checkbox",
+          "id": "badge_1_enabled",
+          "label": "Show badge",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "badge_1_text",
+          "label": "Badge label",
+          "default": "Batch #",
+          "info": "Supports dynamic sources such as metafields and metaobjects."
+        },
+        {
+          "type": "text",
+          "id": "badge_1_value",
+          "label": "Badge value",
+          "default": "1234",
+          "info": "Supports dynamic sources such as metafields and metaobjects."
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_1_icon_image",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "badge_1_icon_url",
+          "label": "Icon URL override",
+          "info": "Optional. Provide an external URL or dynamic source. Overrides the selected image."
+        },
+        {
+          "type": "text",
+          "id": "badge_1_icon_alt",
+          "label": "Icon alt text"
+        },
+        {
+          "type": "header",
+          "content": "Report badge"
+        },
+        {
+          "type": "checkbox",
+          "id": "badge_2_enabled",
+          "label": "Show badge",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "badge_2_text",
+          "label": "Badge label",
+          "default": "Report #",
+          "info": "Supports dynamic sources such as metafields and metaobjects."
+        },
+        {
+          "type": "text",
+          "id": "badge_2_value",
+          "label": "Badge value",
+          "default": "5678",
+          "info": "Supports dynamic sources such as metafields and metaobjects."
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_2_icon_image",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "badge_2_icon_url",
+          "label": "Icon URL override",
+          "info": "Optional. Provide an external URL or dynamic source. Overrides the selected image."
+        },
+        {
+          "type": "text",
+          "id": "badge_2_icon_alt",
+          "label": "Icon alt text"
+        },
+        {
+          "type": "header",
+          "content": "Tested badge"
+        },
+        {
+          "type": "checkbox",
+          "id": "badge_3_enabled",
+          "label": "Show badge",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "badge_3_text",
+          "label": "Badge label",
+          "default": "Tested at ",
+          "info": "Supports dynamic sources such as metafields and metaobjects."
+        },
+        {
+          "type": "text",
+          "id": "badge_3_value",
+          "label": "Badge value",
+          "default": "98% purity",
+          "info": "Supports dynamic sources such as metafields and metaobjects."
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_3_icon_image",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "badge_3_icon_url",
+          "label": "Icon URL override",
+          "info": "Optional. Provide an external URL or dynamic source. Overrides the selected image."
+        },
+        {
+          "type": "text",
+          "id": "badge_3_icon_alt",
+          "label": "Icon alt text"
         }
       ]
     },

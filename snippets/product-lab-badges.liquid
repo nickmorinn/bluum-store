@@ -27,6 +27,32 @@ Values can be customized via snippet parameters (and corresponding section setti
 {%- assign badge_3_text = badge_3_text | default: 'Tested at ' -%}
 {%- assign badge_3_value = badge_3_value | default: '' -%}
 
+{%- assign badge_1_enabled = badge_1_enabled -%}
+{%- if badge_1_enabled == nil -%}
+  {%- assign badge_1_enabled = true -%}
+{%- endif -%}
+{%- assign badge_2_enabled = badge_2_enabled -%}
+{%- if badge_2_enabled == nil -%}
+  {%- assign badge_2_enabled = true -%}
+{%- endif -%}
+{%- assign badge_3_enabled = badge_3_enabled -%}
+{%- if badge_3_enabled == nil -%}
+  {%- assign badge_3_enabled = true -%}
+{%- endif -%}
+
+{%- assign badge_1_icon_alt = badge_1_icon_alt -%}
+{%- if badge_1_icon_alt == blank -%}
+  {%- capture badge_1_icon_alt -%}{{ badge_1_text }}{{ badge_1_value }}{%- endcapture -%}
+{%- endif -%}
+{%- assign badge_2_icon_alt = badge_2_icon_alt -%}
+{%- if badge_2_icon_alt == blank -%}
+  {%- capture badge_2_icon_alt -%}{{ badge_2_text }}{{ badge_2_value }}{%- endcapture -%}
+{%- endif -%}
+{%- assign badge_3_icon_alt = badge_3_icon_alt -%}
+{%- if badge_3_icon_alt == blank -%}
+  {%- capture badge_3_icon_alt -%}{{ badge_3_text }}{{ badge_3_value }}{%- endcapture -%}
+{%- endif -%}
+
 {%- capture container_styles -%}
 margin-top: {{ margin_top }};
 margin-bottom: {{ margin_bottom }};
@@ -41,36 +67,57 @@ margin-bottom: {{ margin_bottom }};
 {%- endcapture -%}
 {%- assign container_styles = container_styles | strip | replace: '\n', ' ' -%}
 
+{%- assign badge_1_has_content = false -%}
+{%- if badge_1_value != blank or badge_1_text != blank or badge_1_icon != blank -%}
+  {%- assign badge_1_has_content = true -%}
+{%- endif -%}
+
+{%- assign badge_2_has_content = false -%}
+{%- if badge_2_value != blank or badge_2_text != blank or badge_2_icon != blank -%}
+  {%- assign badge_2_has_content = true -%}
+{%- endif -%}
+
+{%- assign badge_3_has_content = false -%}
+{%- if badge_3_value != blank or badge_3_text != blank or badge_3_icon != blank -%}
+  {%- assign badge_3_has_content = true -%}
+{%- endif -%}
+
 {%- assign has_badge_content = false -%}
-{%- if badge_1_value != blank or badge_1_text != blank -%}
+{%- if badge_1_enabled and badge_1_has_content -%}
   {%- assign has_badge_content = true -%}
 {%- endif -%}
-{%- if badge_2_value != blank or badge_2_text != blank -%}
+{%- if badge_2_enabled and badge_2_has_content -%}
   {%- assign has_badge_content = true -%}
 {%- endif -%}
-{%- if badge_3_value != blank or badge_3_text != blank -%}
+{%- if badge_3_enabled and badge_3_has_content -%}
   {%- assign has_badge_content = true -%}
 {%- endif -%}
 
 {%- if has_badge_content -%}
   <div class="badge-container" data-lab-badges style="{{ container_styles }}">
-    {%- if badge_1_text != blank or badge_1_value != blank -%}
+    {%- if badge_1_enabled and badge_1_has_content -%}
       <div class="badge-item">
-        <img src="{{ badge_1_icon }}" alt="{{ badge_1_text }}{{ badge_1_value }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {%- if badge_1_icon != blank -%}
+          <img src="{{ badge_1_icon }}" alt="{{ badge_1_icon_alt | strip }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {%- endif -%}
         {{- badge_1_text -}}{{- badge_1_value -}}
       </div>
     {%- endif -%}
 
-    {%- if badge_2_text != blank or badge_2_value != blank -%}
+    {%- if badge_2_enabled and badge_2_has_content -%}
       <div class="badge-item">
-        <img src="{{ badge_2_icon }}" alt="{{ badge_2_text }}{{ badge_2_value }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {%- if badge_2_icon != blank -%}
+          <img src="{{ badge_2_icon }}" alt="{{ badge_2_icon_alt | strip }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {%- endif -%}
         {{- badge_2_text -}}{{- badge_2_value -}}
       </div>
     {%- endif -%}
 
-    {%- if badge_3_text != blank or badge_3_value != blank -%}
+    {%- if badge_3_enabled and badge_3_has_content -%}
       <div class="badge-item">
-        <img src="{{ badge_3_icon }}" alt="{{ badge_3_text }}{{ badge_3_value }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {%- if badge_3_icon != blank -%}
+          <img src="{{ badge_3_icon }}" alt="{{ badge_3_icon_alt | strip }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
+        {%- endif -%}
         {{- badge_3_text -}}{{- badge_3_value -}}
       </div>
     {%- endif -%}
