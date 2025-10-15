@@ -18,6 +18,38 @@
             "heading_tag": "h2"
           }
         },
+        "badges": {
+          "type": "badges",
+          "settings": {
+            "show_custom_lab_badges": true,
+            "margin_top": "0px",
+            "margin_bottom": "0px",
+            "badge_gap": "5px",
+            "badge_padding": "3px 7px",
+            "badge_border_radius": "12px",
+            "badge_font_size": "11px",
+            "badge_font_weight": "500",
+            "badge_text_color": "#24211f",
+            "badge_background_color": "#eaeaea",
+            "icon_brightness": "0.5",
+            "icon_size": "14px",
+            "badge_1_enabled": true,
+            "badge_1_text": "Batch #",
+            "badge_1_value": "{{ product.metafields.custom.testing_data.value.lot.value }}",
+            "badge_1_icon_url": "",
+            "badge_1_icon_alt": "",
+            "badge_2_enabled": true,
+            "badge_2_text": "Report #",
+            "badge_2_value": "{{ product.metafields.custom.testing_data.value.report.value }}",
+            "badge_2_icon_url": "",
+            "badge_2_icon_alt": "",
+            "badge_3_enabled": true,
+            "badge_3_text": "Tested at",
+            "badge_3_value": "{{ product.metafields.custom.testing_data.value.result.value }}",
+            "badge_3_icon_url": "",
+            "badge_3_icon_alt": ""
+          }
+        },
         "price": {
           "type": "price",
           "disabled": true,
@@ -104,41 +136,6 @@
           "disabled": true,
           "settings": {
             "liquid": "{% render 'zs-chemical-formulation' %}"
-          }
-        },
-        "badges": {
-          "type": "badges",
-          "settings": {
-            "show_custom_lab_badges": false,
-            "margin_top": "0px",
-            "margin_bottom": "0px",
-            "badge_gap": "5px",
-            "badge_padding": "3px 7px",
-            "badge_border_radius": "12px",
-            "badge_font_size": "11px",
-            "badge_font_weight": "500",
-            "badge_text_color": "#24211f",
-            "badge_background_color": "#eaeaea",
-            "icon_brightness": "0.5",
-            "icon_size": "14px",
-            "badge_1_enabled": true,
-            "badge_1_text": "Batch #",
-            "badge_1_value": "1234",
-            "badge_1_icon_image": null,
-            "badge_1_icon_url": "",
-            "badge_1_icon_alt": "",
-            "badge_2_enabled": true,
-            "badge_2_text": "Report #",
-            "badge_2_value": "5678",
-            "badge_2_icon_image": null,
-            "badge_2_icon_url": "",
-            "badge_2_icon_alt": "",
-            "badge_3_enabled": true,
-            "badge_3_text": "Tested at ",
-            "badge_3_value": "98% purity",
-            "badge_3_icon_image": null,
-            "badge_3_icon_url": "",
-            "badge_3_icon_alt": ""
           }
         }
       },
