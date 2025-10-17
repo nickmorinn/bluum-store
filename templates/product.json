@@ -274,6 +274,115 @@
         "product_card_background": "",
         "product_card_text_color": ""
       }
+    },
+    "product_faq": {
+      "type": "faq",
+      "blocks": {
+        "166442457738b23caf-0": {
+          "type": "item",
+          "settings": {
+            "title": "Are these peptides quality tested?",
+            "content": "<p>Absolutely. Our analytical testing is conducted by Janoshik Analytical, an independent third-party laboratory to verify the identity, purity, and composition of our research products. Each CoA includes purity analysis, peptide sequence confirmation, and date of analysis.</p>"
+          }
+        },
+        "166442457738b23caf-1": {
+          "type": "item",
+          "settings": {
+            "title": "What are typical delivery times?",
+            "content": "<p>Delivery for our free shipping option typically takes 3-5 business days. We ship from right here in the USA to all US addresses. We also provide an option for next day shipping for an extra charge. Please allow 24 hours for processing. <br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>"
+          }
+        },
+        "166442457738b23caf-2": {
+          "type": "item",
+          "settings": {
+            "title": "How should these compounds be stored?",
+            "content": "<p>Our peptides are shipping in lyophilized form, which is stable at room temperature during transit. Once received, store unopened vials in a cool, dry place.</p>"
+          }
+        },
+        "item_FzEkgP": {
+          "type": "item",
+          "settings": {
+            "title": "Are products stable during shipping?",
+            "content": "<p>Our peptides are shipped in lyophilized (freeze-dried) form, which ensures stability during transit. This powder form is highly stable at room temperature and resistant to temperature fluctuations that occur during shipping.<br/><br/>Research has shown no significant degradation or loss of purity when lyophilized peptides are exposed to room temperature during typical shipping timeframes. Each batch is verified for purity upon production, and our stability testing confirms maintenance of product integrity during standard shipping conditions.</p>"
+          }
+        },
+        "item_EjPNg6": {
+          "type": "item",
+          "settings": {
+            "title": "What are your bulk ordering options?",
+            "content": "<p>For bulk inquiries and volume pricing, please <a href=\"/pages/contact\" title=\"Contact\">contact us</a>. </p>"
+          }
+        },
+        "item_cBaxBB": {
+          "type": "item",
+          "settings": {
+            "title": "What is your return/refund policy for research peptides?",
+            "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order?\u00a0We're happy to help - just reach out.</p>"
+          }
+        },
+        "item_ptBQK3": {
+          "type": "item",
+          "settings": {
+            "title": "What payment methods do you accept?",
+            "content": "<p>We accept credit/debit cards, Cash App, and Apple Pay. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>"
+          }
+        },
+        "item_WfYway": {
+          "type": "item",
+          "settings": {
+            "title": "Are these peptides legal to buy for research in the USA?",
+            "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled \u201cNot for human consumption,\u201d not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>"
+          }
+        },
+        "item_m79Lh3": {
+          "type": "item",
+          "settings": {
+            "title": "Do I need a business or institutional account to order?",
+            "content": "<p>No. Individual researchers, labs, and institutions can order. During checkout you must confirm research intent and agree to our Terms. For certain items or larger orders, we may request additional verification or documentation and reserve the right to decline orders that don\u2019t meet compliance standards.</p>"
+          }
+        },
+        "item_86jjdL": {
+          "type": "item",
+          "settings": {
+            "title": "What is the shelf life/expiration of unopened vials?",
+            "content": "<p>Each lot lists a best-by/expiration on the vial label and COA. As general guidance, lyophilized peptides stored as directed are typically stable 12\u201324 months (often longer at \u201320 \u00b0C). Short shipping periods at ambient temperature are normal. Actual stability depends on sequence and storage conditions. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "166442457738b23caf-0",
+        "166442457738b23caf-1",
+        "166442457738b23caf-2",
+        "item_FzEkgP",
+        "item_EjPNg6",
+        "item_cBaxBB",
+        "item_ptBQK3",
+        "item_WfYway",
+        "item_m79Lh3",
+        "item_86jjdL"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "",
+        "title": "<p>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></p>",
+        "content": "",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "mobile_title_alignment": "center",
+        "text_position": "start",
+        "background": "#fffdfa",
+        "background_gradient": "",
+        "text_color": "#24201f",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "#fffdfa",
+        "accordion_text_color": ""
+      }
     }
   },
   "order": [
@@ -281,6 +390,7 @@
     "rich_text_66jfz3",
     "custom_liquid_Hg4xgB",
     "product_research",
-    "related-products"
+    "related-products",
+    "product_faq"
   ]
 }
