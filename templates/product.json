@@ -44,7 +44,7 @@
             "badge_2_icon_url": "",
             "badge_2_icon_alt": "",
             "badge_3_enabled": true,
-            "badge_3_text": "Tested at ",
+            "badge_3_text": "Tested at",
             "badge_3_value": "",
             "badge_3_icon_url": "",
             "badge_3_icon_alt": ""
@@ -250,21 +250,18 @@
       "settings": {
         "recommendations_count": 6,
         "products": [
-          "retatrutide",
           "pt-141",
-          "mazdutide",
           "bpc-157-2",
-          "cagrilintide",
           "ghk-cu",
           "tesamorelin"
         ],
         "full_width": true,
-        "stack_products": false,
+        "stack_products": true,
         "show_progress_bar": false,
         "products_per_row_mobile": "2",
-        "products_per_row_desktop": 5,
+        "products_per_row_desktop": 4,
         "subheading": "",
-        "title": "You may also like",
+        "title": "Related Compounds",
         "content": "",
         "background": "",
         "background_gradient": "",
@@ -317,7 +314,7 @@
           "type": "item",
           "settings": {
             "title": "What is your return/refund policy for research peptides?",
-            "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order?\u00a0We're happy to help - just reach out.</p>"
+            "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order? We're happy to help - just reach out.</p>"
           }
         },
         "item_ptBQK3": {
@@ -331,21 +328,21 @@
           "type": "item",
           "settings": {
             "title": "Are these peptides legal to buy for research in the USA?",
-            "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled \u201cNot for human consumption,\u201d not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>"
+            "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled “Not for human consumption,” not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>"
           }
         },
         "item_m79Lh3": {
           "type": "item",
           "settings": {
             "title": "Do I need a business or institutional account to order?",
-            "content": "<p>No. Individual researchers, labs, and institutions can order. During checkout you must confirm research intent and agree to our Terms. For certain items or larger orders, we may request additional verification or documentation and reserve the right to decline orders that don\u2019t meet compliance standards.</p>"
+            "content": "<p>No. Individual researchers, labs, and institutions can order. During checkout you must confirm research intent and agree to our Terms. For certain items or larger orders, we may request additional verification or documentation and reserve the right to decline orders that don’t meet compliance standards.</p>"
           }
         },
         "item_86jjdL": {
           "type": "item",
           "settings": {
             "title": "What is the shelf life/expiration of unopened vials?",
-            "content": "<p>Each lot lists a best-by/expiration on the vial label and COA. As general guidance, lyophilized peptides stored as directed are typically stable 12\u201324 months (often longer at \u201320 \u00b0C). Short shipping periods at ambient temperature are normal. Actual stability depends on sequence and storage conditions. </p>"
+            "content": "<p>Each lot lists a best-by/expiration on the vial label and COA. As general guidance, lyophilized peptides stored as directed are typically stable 12–24 months (often longer at –20 °C). Short shipping periods at ambient temperature are normal. Actual stability depends on sequence and storage conditions. </p>"
           }
         }
       },
