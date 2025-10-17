@@ -383,13 +383,6 @@
             "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled “Not for human consumption,” not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>"
           }
         },
-        "item_88gHaa": {
-          "type": "item",
-          "settings": {
-            "title": "Are these products FDA-approved or for human use?",
-            "content": "<p>No. Our products are not FDA-approved drugs, devices, or dietary supplements. They are supplied strictly as research-use-only (RUO) materials, not for human or veterinary use, diagnosis, treatment, or cure of any disease.</p>"
-          }
-        },
         "item_m79Lh3": {
           "type": "item",
           "settings": {
@@ -414,7 +407,6 @@
         "item_cBaxBB",
         "item_ptBQK3",
         "item_WfYway",
-        "item_88gHaa",
         "item_m79Lh3",
         "item_86jjdL"
       ],
