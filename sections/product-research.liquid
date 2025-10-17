@@ -49,9 +49,9 @@
 {%- if research_page and research_content != blank -%}
   {%- render 'section-spacing-collapsing' -%}
 
-  {% assign width_class = section.settings.content_width | default: 'full' %}
-  <section {% render 'section-properties', full_width: width_class == 'full' %}>
-    <div class="{% if width_class == 'full' %}page-width{% elsif width_class == 'default' %}page-width page-width--wide{% else %}page-width page-width--narrow{% endif %}">
+  <section {% render 'section-properties', full_width: section.settings.full_width %}>
+    <div class="page-width">
+      <div class="v-stack gap-6">
       {%- assign heading_text = section.settings.heading -%}
       {%- if heading_text == blank and section.settings.show_page_title and research_page.title != blank -%}
         {%- assign heading_text = research_page.title -%}
@@ -66,8 +66,9 @@
         -%}
       {%- endif -%}
 
-      <div class="prose" style="{% if width_class == 'narrow' %}max-width: var(--page-width-narrow, 60ch);{% else %}max-width: none;{% endif %}">
-        {{ research_content }}
+        <div class="prose">
+          {{ research_content }}
+        </div>
       </div>
     </div>
   </section>
@@ -168,26 +169,6 @@
       "type": "color",
       "id": "text_color",
       "label": "Text color"
-    },
-    {
-      "type": "select",
-      "id": "content_width",
-      "label": "Content width",
-      "default": "full",
-      "options": [
-        {
-          "value": "narrow",
-          "label": "Narrow"
-        },
-        {
-          "value": "default",
-          "label": "Default"
-        },
-        {
-          "value": "full",
-          "label": "Full"
-        }
-      ]
     }
   ],
   "presets": [
