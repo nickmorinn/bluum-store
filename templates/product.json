@@ -244,6 +244,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "custom_css": [
         ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
       ],
@@ -263,6 +264,37 @@
         "subheading": "",
         "title": "Related Compounds",
         "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "featured_collection_FRmEmp": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "bpc-157-2",
+          "pt-141",
+          "ghk-cu",
+          "tb-500"
+        ],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 4,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Related Compounds",
+        "content": "",
+        "link_url": "https://bluumpeptides.com/collections/frontpage",
+        "link_text": "View all",
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -388,6 +420,7 @@
     "custom_liquid_Hg4xgB",
     "product_research",
     "related-products",
+    "featured_collection_FRmEmp",
     "product_faq"
   ]
 }
