@@ -49,32 +49,25 @@
 {%- if research_page and research_content != blank -%}
   {%- render 'section-spacing-collapsing' -%}
 
-  <section {% render 'section-properties' %}>
-    <div class="section-stack">
+  {% assign width_class = section.settings.content_width | default: 'full' %}
+  <section {% render 'section-properties', full_width: width_class == 'full' %}>
+    <div class="{% if width_class == 'full' %}page-width{% elsif width_class == 'default' %}page-width page-width--wide{% else %}page-width page-width--narrow{% endif %}">
       {%- assign heading_text = section.settings.heading -%}
       {%- if heading_text == blank and section.settings.show_page_title and research_page.title != blank -%}
         {%- assign heading_text = research_page.title -%}
       {%- endif -%}
 
       {%- if section.settings.subheading != blank or heading_text != blank -%}
-        <div class="section-stack__intro">
-          {%- if section.settings.subheading != blank -%}
-            <p class="subheading">{{ section.settings.subheading | escape }}</p>
-          {%- endif -%}
-
-          {%- if heading_text != blank -%}
-            {%- assign heading_tag = section.settings.heading_tag | default: 'h2' -%}
-            <{{ heading_tag }} class="{{ heading_tag }}">
-              {%- render 'styled-text', content: heading_text, text_color: section.settings.heading_color, gradient: section.settings.heading_gradient -%}
-            </{{ heading_tag }}>
-          {%- endif -%}
-        </div>
+        {%- render 'section-header',
+          subheading: section.settings.subheading,
+          heading: heading_text,
+          heading_color: section.settings.heading_color,
+          heading_gradient: section.settings.heading_gradient
+        -%}
       {%- endif -%}
 
-      <div class="section-stack__main">
-        <div class="prose">
-          {{ research_content }}
-        </div>
+      <div class="prose" style="{% if width_class == 'narrow' %}max-width: var(--page-width-narrow, 60ch);{% else %}max-width: none;{% endif %}">
+        {{ research_content }}
       </div>
     </div>
   </section>
@@ -85,7 +78,9 @@
   "name": "Product research",
   "tag": "section",
   "enabled_on": {
-    "templates": ["product"]
+    "templates": [
+      "product"
+    ]
   },
   "settings": [
     {
@@ -135,9 +130,18 @@
       "label": "Heading style",
       "default": "h2",
       "options": [
-        { "value": "h2", "label": "Large" },
-        { "value": "h3", "label": "Medium" },
-        { "value": "h4", "label": "Small" }
+        {
+          "value": "h2",
+          "label": "Large"
+        },
+        {
+          "value": "h3",
+          "label": "Medium"
+        },
+        {
+          "value": "h4",
+          "label": "Small"
+        }
       ]
     },
     {
@@ -164,6 +168,26 @@
       "type": "color",
       "id": "text_color",
       "label": "Text color"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content width",
+      "default": "full",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
     }
   ],
   "presets": [
