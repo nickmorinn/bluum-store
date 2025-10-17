@@ -239,7 +239,7 @@
         "richtext_g9BtmU": {
           "type": "richtext",
           "settings": {
-            "content": ""
+            "content": "{{ product.metafields.product.research | metafield_tag }}"
           }
         }
       },
@@ -251,7 +251,7 @@
       "name": "Rich text",
       "settings": {
         "full_width": true,
-        "content_width": "small",
+        "content_width": "large",
         "text_position": "start",
         "background": "",
         "background_gradient": "",
