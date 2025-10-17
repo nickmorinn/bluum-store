@@ -5,24 +5,36 @@
   assign research_content = ''
 
   if product
-    assign namespace_object = product.metafields[namespace]
+    assign selected_variant = product.selected_or_first_available_variant
+    assign research_source = nil
 
-    if namespace_object != blank
-      assign research_source = namespace_object[key]
-      if research_source != blank
-        assign candidate = research_source.value | default: research_source
+    if selected_variant
+      assign variant_namespace = selected_variant.metafields[namespace]
+      if variant_namespace != blank and variant_namespace[key] != blank
+        assign research_source = variant_namespace[key]
+      endif
+    endif
 
-        if candidate.content != blank or candidate.title != blank
-          assign research_page = candidate
-        else
-          assign page_field_handle = section.settings.metaobject_page_field | default: 'page'
-          assign candidate_page = candidate[page_field_handle]
+    if research_source == blank
+      assign product_namespace = product.metafields[namespace]
+      if product_namespace != blank and product_namespace[key] != blank
+        assign research_source = product_namespace[key]
+      endif
+    endif
 
-          if candidate_page != blank
-            assign page_drop = candidate_page.value | default: candidate_page
-            if page_drop.content != blank or page_drop.title != blank
-              assign research_page = page_drop
-            endif
+    if research_source != blank
+      assign direct_page = research_source.value | default: research_source
+
+      if direct_page.content != blank or direct_page.body_html != blank or direct_page.body != blank
+        assign research_page = direct_page
+      else
+        assign page_field_handle = section.settings.metaobject_page_field | default: 'page'
+        assign candidate_page = direct_page[page_field_handle]
+
+        if candidate_page != blank
+          assign page_drop = candidate_page.value | default: candidate_page
+          if page_drop.content != blank or page_drop.body_html != blank or page_drop.body != blank
+            assign research_page = page_drop
           endif
         endif
       endif
@@ -30,7 +42,7 @@
   endif
 
   if research_page
-    assign research_content = research_page.content
+    assign research_content = research_page.content | default: research_page.body_html | default: research_page.body
   endif
 -%}
 
