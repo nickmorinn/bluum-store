@@ -224,6 +224,24 @@
         "text_color": ""
       }
     },
+    "product_research": {
+      "type": "product-research",
+      "settings": {
+        "metafield_namespace": "custom",
+        "metafield_key": "research",
+        "metaobject_page_field": "page",
+        "full_width": true,
+        "subheading": "",
+        "heading": "",
+        "show_page_title": true,
+        "heading_tag": "h2",
+        "heading_color": "",
+        "heading_gradient": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
       "custom_css": [
@@ -262,6 +280,7 @@
     "main",
     "rich_text_66jfz3",
     "custom_liquid_Hg4xgB",
+    "product_research",
     "related-products"
   ]
 }
