@@ -44,7 +44,7 @@
             "badge_2_icon_url": "",
             "badge_2_icon_alt": "",
             "badge_3_enabled": true,
-            "badge_3_text": "Tested at ",
+            "badge_3_text": "Tested at",
             "badge_3_value": "",
             "badge_3_icon_url": "",
             "badge_3_icon_alt": ""
@@ -224,9 +224,42 @@
         "text_color": ""
       }
     },
+    "rich_text_rMPFP6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3BEdUC": {
+          "type": "heading",
+          "settings": {
+            "text": "{{ product.title }} Research",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_g9BtmU": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_3BEdUC",
+        "richtext_g9BtmU"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
-      "disabled": true,
       "custom_css": [
         ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
       ],
@@ -263,6 +296,7 @@
     "main",
     "rich_text_66jfz3",
     "custom_liquid_Hg4xgB",
+    "rich_text_rMPFP6",
     "related-products"
   ]
 }
