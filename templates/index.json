@@ -324,6 +324,29 @@
         "button_text_color": "#fffdfa"
       }
     },
+    "1760814910939ed96a": {
+      "type": "apps",
+      "blocks": {
+        "gsc_instagram_feed_instafeed_EpieRe": {
+          "type": "shopify://apps/gsc-instagram-feed/blocks/instafeed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
+          "settings": {
+            "widget_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "gsc_instagram_feed_instafeed_EpieRe"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -444,6 +467,7 @@
     "press",
     "features_list",
     "multiple_images_with_text_zwMTBW",
+    "1760814910939ed96a",
     "faq"
   ]
 }
