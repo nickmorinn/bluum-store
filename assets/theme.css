@@ -10252,3 +10252,7 @@ a.tap-area.zs-email-icon svg.icon.icon-email {
     padding: 10px 16px;
   }
 }
+
+div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baserville, Helvetica, Arial, sans-serif; font-weight: 400; font-style: italic;"] {
+    letter-spacing: var(--heading-letter-spacing);
+}
