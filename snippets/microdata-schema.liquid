@@ -7,7 +7,59 @@ managed at the theme level.
 
 {%- if request.page_type == 'product' -%}
   <script type="application/ld+json">
-    {{- product | structured_data -}}
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | strip_html | json }},
+    "url": {{ shop.url | append: product.url | json }},
+    "image": [
+      {% for image in product.images %}
+        {{ image.src | img_url: 'master' | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    "description": {{ product.description | strip_html | json }},
+    "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    "brand": {
+      "@type": "Brand",
+      "name": {{ product.vendor | json }}
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": {{ shop.url | append: product.url | json }},
+      "priceCurrency": {{ shop.currency | json }},
+      "price": {{ product.selected_or_first_available_variant.price | money_without_currency | strip | json }},
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+      "seller": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    },
+    {% if product.metafields.reviews.rating.value %}
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ product.metafields.reviews.rating.value | json }},
+      "reviewCount": {{ product.metafields.reviews.rating_count.value | json }}
+    },
+    {% endif %}
+    {% if product.metafields.reviews.recent_reviews %}
+    "review": [
+      {% for review in product.metafields.reviews.recent_reviews.value %}
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": {{ review.author | json }} },
+        "reviewBody": {{ review.body | json }},
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": {{ review.rating | json }},
+          "bestRating": "5"
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    {% endif %}
+    "mpn": {{ product.id | json }}
+  }
   </script>
 {%- elsif request.page_type == 'article' -%}
   <script type="application/ld+json">
