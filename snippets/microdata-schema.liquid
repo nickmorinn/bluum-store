@@ -28,6 +28,7 @@ managed at the theme level.
       "url": {{ shop.url | append: product.url | json }},
       "priceCurrency": {{ shop.currency | json }},
       "price": {{ product.selected_or_first_available_variant.price | money_without_currency | strip | json }},
+      "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
       "itemCondition": "https://schema.org/NewCondition",
       "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
       "seller": {
