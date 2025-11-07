@@ -334,7 +334,7 @@
       "order_note": "Order note",
       "save_note": "Save",
       "view_cart": "View cart",
-      "checkout": "Checkout (PAY BY EMAIL)",
+      "checkout": "Checkout (PAY BY EMAIL LINK)",
       "we_accept": "We accept"
     },
     "order": {
