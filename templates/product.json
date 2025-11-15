@@ -44,7 +44,7 @@
             "badge_2_icon_url": "",
             "badge_2_icon_alt": "",
             "badge_3_enabled": true,
-            "badge_3_text": "Tested at ",
+            "badge_3_text": "Tested at",
             "badge_3_value": "",
             "badge_3_icon_url": "",
             "badge_3_icon_alt": ""
@@ -226,6 +226,7 @@
     },
     "product_research": {
       "type": "product-research",
+      "disabled": true,
       "settings": {
         "metafield_namespace": "custom",
         "metafield_key": "research",
