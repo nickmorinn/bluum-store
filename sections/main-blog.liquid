@@ -194,9 +194,12 @@
     <div class="custom-blog-heading">
       <div class="custom-blog-heading__wrapper">
         <div class="custom-blog-heading__content">
-          
-          <h2 class="custom-blog-heading__text"><span style="font-family: LibreBaskerville, serif;font-style: italic;">Bluum</span><br>Stories</h2>
-          
+          <h2 class="custom-blog-heading__text">
+            <span style="font-family: LibreBaskerville, serif;font-style: italic;">
+              {{- section.settings.custom_heading_line_one | escape -}}
+            </span><br>
+            {{- section.settings.custom_heading_line_two | escape -}}
+          </h2>
         </div>
       </div>
     </div>
@@ -338,6 +341,22 @@
     }
   ],
   "settings": [
+    {
+      "type": "header",
+      "content": "Hero heading"
+    },
+    {
+      "type": "text",
+      "id": "custom_heading_line_one",
+      "label": "Heading line one",
+      "default": "Peptide"
+    },
+    {
+      "type": "text",
+      "id": "custom_heading_line_two",
+      "label": "Heading line two",
+      "default": "Research"
+    },
     {
       "type": "header",
       "content": "Banner"
