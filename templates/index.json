@@ -260,15 +260,15 @@
           "type": "feature",
           "settings": {
             "image": "shopify://shop_images/674cce339044297326183ec2_IMG_6967_2-2-p-800.jpg",
-            "title": "Lab-Verified",
-            "text": "<p>Every batch undergoes third-party testing by Janoshik Analytical (an independent lab). We provide Certificates of Analysis because you deserve to know what's in your products. No fake reports (unlike some of our competitors).</p>"
+            "title": "Lab-Verified Purity",
+            "text": "<p>Every batch undergoes third-party testing by Janoshik Analytical or BioRegen (independent labs). We publish full Certificates of Analysis so you can see identity, purity, and potency for yourself. No recycled PDFs, no mystery vials.</p>"
           }
         },
         "feature_2": {
           "type": "feature",
           "settings": {
             "image": "shopify://shop_images/674ccefaaf8ff5b2eaaba233_motion_blur-2.jpg",
-            "title": "Free and Fast Shipping",
+            "title": "Fast USA Shipping",
             "text": "<p>Forget about customs clearance and international delays. Our U.S. facility ships your order the same day. Pure simplicity from our lab to yours.</p>"
           }
         },
