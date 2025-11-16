@@ -346,6 +346,41 @@
         "text_color": ""
       }
     },
+    "blog_posts_qE3wN9": {
+      "type": "blog-posts",
+      "blocks": {
+        "blog_7zX9KU": {
+          "type": "blog",
+          "settings": {
+            "blog": "research",
+            "posts_count": 3,
+            "stack_items": false
+          }
+        }
+      },
+      "block_order": [
+        "blog_7zX9KU"
+      ],
+      "name": "Blog posts",
+      "settings": {
+        "full_width": true,
+        "show_excerpt": false,
+        "show_date": false,
+        "show_author": false,
+        "show_comments_count": false,
+        "show_category": false,
+        "subheading": "",
+        "title": "The Research",
+        "content": "",
+        "link_url": "shopify://blogs/research",
+        "link_text": "View all",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -467,6 +502,7 @@
     "features_list",
     "multiple_images_with_text_zwMTBW",
     "1760814910939ed96a",
+    "blog_posts_qE3wN9",
     "faq"
   ]
 }

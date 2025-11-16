@@ -1,1 +1,69 @@
-{"sections":{"main":{"type":"main-blog","custom_css":["header.blog-banner {display: none;}"],"settings":{"allow_transparent_header":false,"content":"","show_newsletter_form":false,"show_tags":false,"banner_background":"","banner_text_color":"","button_background":"","button_text_color":"","articles_per_page":6,"feature_first_article":false,"feature_article_background":"","feature_article_text_color":"","show_excerpt":false,"show_date":true,"show_author":false,"show_comments_count":false,"show_category":false}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "custom_css": [
+        "header.blog-banner {display: none;}"
+      ],
+      "settings": {
+        "allow_transparent_header": false,
+        "content": "",
+        "show_newsletter_form": false,
+        "show_tags": false,
+        "banner_background": "",
+        "banner_text_color": "",
+        "button_background": "",
+        "button_text_color": "",
+        "articles_per_page": 6,
+        "feature_first_article": false,
+        "feature_article_background": "",
+        "feature_article_text_color": "",
+        "show_excerpt": false,
+        "show_date": false,
+        "show_author": false,
+        "show_comments_count": false,
+        "show_category": false
+      }
+    },
+    "featured_collection_VmNKnx": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_count": 6,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Featured collection",
+        "content": "",
+        "link_url": "",
+        "link_text": "View all",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_VmNKnx"
+  ]
+}
