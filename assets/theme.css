@@ -728,6 +728,47 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
   }
 }
 
+/* Match Instagram app follow button to theme button styling */
+.shopify-section .gfa-widget .gfa-content__button {
+  background-color: rgb(var(--button-background-primary));
+  color: rgb(var(--button-text-primary));
+  border: none;
+  border-radius: var(--rounded-button);
+  font-size: var(--text-sm);
+  letter-spacing: var(--text-letter-spacing);
+  font-weight: 500;
+  line-height: 1.6;
+  padding-block: var(--spacing-2-5);
+  padding-inline: var(--spacing-5);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  transition: background-color .15s ease-in-out, color .15s ease-in-out, box-shadow .15s ease-in-out;
+  width: auto;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  .shopify-section .gfa-widget .gfa-content__button {
+    padding-block: var(--spacing-3);
+    padding-inline: var(--spacing-6);
+  }
+}
+
+.shopify-section .gfa-widget .gfa-content__button:hover,
+.shopify-section .gfa-widget .gfa-content__button:focus-visible {
+  color: rgb(var(--button-text-primary));
+  background-color: rgb(var(--button-background-primary));
+}
+
+.shopify-section .gfa-widget .gfa-content__button:focus-visible {
+  outline: 2px solid rgb(var(--button-background-primary) / .35);
+  outline-offset: 2px;
+}
+
 .back-button {
   align-items: center;
   gap: var(--spacing-4);
