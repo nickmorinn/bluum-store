@@ -3103,7 +3103,7 @@ onRerender_fn = function(event) {
   if (!this.hasAttribute("allow-partial-rerender") || event.detail.productChange) {
     this.replaceWith(matchingElement);
   } else {
-    const blockTypes = ["sku", "badges", "price", "payment-terms", "variant-picker", "quantity-selector", "volume-pricing", "inventory", "buy-buttons", "pickup-availability", "liquid", "@app"];
+    const blockTypes = ["sku", "badges", "price", "payment-terms", "variant-picker", "quantity-selector", "volume-pricing", "inventory", "buy-buttons", "pickup-availability", "liquid"];
     blockTypes.forEach((blockType) => {
       this.querySelectorAll(`[data-block-type="${blockType}"]`).forEach((element) => {
         const matchingBlock = matchingElement.querySelector(`[data-block-type="${blockType}"][data-block-id="${element.getAttribute("data-block-id")}"]`);
