@@ -3,7 +3,7 @@
 ARTICLE NAVIGATION
 ----------------------------------------------------------------------------------------------------------------------
 
-Shows the prev next articles for a given blog post.
+Shows up to two related articles from the same blog (excluding the current article).
 
 * show_date
 * show_author
@@ -18,12 +18,18 @@ Shows the prev next articles for a given blog post.
   </h2>
 
   <div class="article-prev-next scroll-area bleed sm:unbleed">
-    {%- if blog.previous_article -%}
-      {%- render 'blog-post-card', article: blog.previous_article, heading_size: 'h5', show_date: section.settings.show_date, show_author: section.settings.show_author, show_comments_count: show_comments_count -%}
-    {%- endif -%}
+    {%- assign related_rendered = 0 -%}
+    {%- for related_article in blog.articles -%}
+      {%- if related_article.id == article.id -%}
+        {%- continue -%}
+      {%- endif -%}
 
-    {%- if blog.next_article -%}
-      {%- render 'blog-post-card', article: blog.next_article, heading_size: 'h5', show_date: section.settings.show_date, show_author: section.settings.show_author, show_comments_count: show_comments_count -%}
-    {%- endif -%}
+      {%- render 'blog-post-card', article: related_article, heading_size: 'h5', show_date: section.settings.show_date, show_author: section.settings.show_author, show_comments_count: show_comments_count -%}
+
+      {%- assign related_rendered = related_rendered | plus: 1 -%}
+      {%- if related_rendered == 2 -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
   </div>
 </div>

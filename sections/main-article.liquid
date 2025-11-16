@@ -8,6 +8,7 @@
   #shopify-section-{{ section.id }} .article-banner {
     --article-banner-background: {%- if background_color != blank -%}{{ background_color.rgb }}{%- else -%}var(--text-color) / 0.05{%- endif -%};
     --article-banner-badge-background: var(--text-color) / 0.12;
+    --article-banner-image-max-height: {{ section.settings.image_max_height }};
 
     {% if text_color != blank %}
       --text-color: {{ text_color.rgb }};
@@ -46,6 +47,11 @@
   {%- endif -%}
 
   {%- if article_image != blank -%}
+    #shopify-section-{{ section.id }} .article-banner__image > img {
+      max-height: var(--article-banner-image-max-height);
+      object-fit: cover;
+    }
+
     @media screen and (min-width: 1150px) {
       #shopify-section-{{ section.id }} {
         --article-banner-before-height: calc(100% - (var(--article-banner-image-offset) * min(100vw, var(--container-max-width))));
@@ -177,6 +183,30 @@
       "id": "image",
       "label": "Image",
       "info": "If none is set, blog post image is used."
+    },
+    {
+      "type": "select",
+      "id": "image_max_height",
+      "label": "Banner image max height",
+      "options": [
+        {
+          "label": "Small",
+          "value": "420px"
+        },
+        {
+          "label": "Medium",
+          "value": "520px"
+        },
+        {
+          "label": "Large",
+          "value": "640px"
+        },
+        {
+          "label": "No limit",
+          "value": "none"
+        }
+      ],
+      "default": "420px"
     },
     {
       "type": "checkbox",

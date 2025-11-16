@@ -10364,7 +10364,7 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgb(var(--background) / 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10378,19 +10378,8 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
 
 /* CTA Button */
 .blog-post-card__cta {
-  background: #50575c;
-  color: white;
-  border: none;
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.blog-post-card__cta:hover {
-  transform: scale(1);
+  color: rgb(var(--text-color));
+  box-shadow: inset 0 0 0 2px rgb(var(--text-color));
 }
 
 /* .blog-post-card__info {
