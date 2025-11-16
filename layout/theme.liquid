@@ -153,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% comment %} <script defer src="https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG"></script> {% endcomment %}
 
-{% comment %} <script>
+<script>
 function loadGTM() {
   if (window.gtmLoaded) return;
   window.gtmLoaded = true;
@@ -166,7 +166,7 @@ function loadGTM() {
 window.addEventListener("scroll", loadGTM, {once: true});
 window.addEventListener("mousemove", loadGTM, {once: true});
 window.addEventListener("touchstart", loadGTM, {once: true});
-</script> {% endcomment %}
+</script>
 
 <!-- End Google Tag Manager -->
 
@@ -209,7 +209,7 @@ window.addEventListener("touchstart", loadGTM, {once: true});
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
-    
+    {% render 'age_restriction' %}
   </body>
 
 <style>

@@ -1,0 +1,229 @@
+{% comment %}
+  Age Restriction Popup
+  Usage: Include this snippet in your theme.liquid file, preferably before the closing </body> tag
+  {% render 'age_restriction' %}
+{% endcomment %}
+
+<style>
+  .age-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99999999999999999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .age-popup-overlay.active {
+    display: flex;
+  }
+
+  .age-popup-content {
+    background: white;
+    padding: 50px 45px;
+    border-radius: 8px;
+    max-width: 580px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        max-height: 90vh;
+    overflow: auto;
+  }
+  
+  @media (max-width: 520px) {
+    .age-popup-content {
+      padding: 35px 25px;
+    }
+  }
+
+  .age-popup-logo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+
+  .age-popup-content h2 {
+font-size: 28px;
+    margin-bottom: 5px;
+    color: #000;
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+    letter-spacing: var(--heading-letter-spacing);
+    text-transform: var(--heading-text-transform);
+  }
+
+  .age-popup-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: rgb(var(--text-color));
+    opacity: 0.85;
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight);
+    line-height: 1.2;
+    letter-spacing: var(--text-letter-spacing);
+  }
+
+  .age-popup-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 25px 0;
+  }
+
+  .age-popup-btn {
+    display: flex
+;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.2s 
+ease, background-color 0.2s 
+ease, opacity 0.2s 
+ease;
+    font-size: 15px;
+    font-weight: 600;
+    color: #231f1e;
+    box-sizing: border-box;
+    padding: 16px 48px 16px 48px;
+    margin: 12px 0px 0px 0px;
+    background: #c8dae8;
+    border: none;
+    width: auto;
+    text-transform: unset;
+    letter-spacing: 0;
+    border-radius: 12px;
+  }
+
+  .age-popup-btn.decline {
+    background-color: #4a4a4a;
+    color: white;
+  }
+
+  .age-popup-btn.decline:hover {
+    background-color: #333;
+  }
+
+  .age-popup-btn.accept:hover {
+        color: #231f1e !important;
+    border: none;
+    text-decoration: none !important;
+    opacity: 0.9;
+  }
+
+  .age-popup-remember {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .age-popup-remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .age-popup-remember label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .age-popup-disclaimer {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .age-popup-error {
+    display: none;
+    color: #d32f2f;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+
+  .age-popup-error.show {
+    display: block;
+  }
+</style>
+
+<div class="age-popup-overlay" id="agePopup">
+  <div class="age-popup-content">
+    <img src="{{ 'bluum.svg' | asset_url }}" alt="Logo" class="age-popup-logo">
+    
+
+    <p><strong>You must be at least 21 to visit this site.</strong></p>
+    
+    <p>By entering this site, you are accepting our Terms of Service</p>
+    
+    <div class="age-popup-buttons">
+      <button class="age-popup-btn decline" id="declineBtn">Decline</button>
+      <button class="age-popup-btn accept" id="acceptBtn">Accept</button>
+    </div>
+    
+    <div class="age-popup-remember">
+      <input type="checkbox" id="rememberMe">
+      <label for="rememberMe">Remember me</label>
+    </div>
+    
+    <div class="age-popup-error" id="errorMsg">
+      You are not old enough to view this content
+    </div>
+    
+    <div class="age-popup-disclaimer">
+      <strong>DISCLAIMER:</strong> All products sold by Bluum are strictly intended for laboratory research use only. They are not approved for human or animal consumption, or for any form of therapeutic or diagnostic use.
+      <br><br>
+      We do not provide usage instructions, dosing guidelines, or any advice regarding the application of our products.
+      <br><br>
+      This is a research supply company only.
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const popup = document.getElementById('agePopup');
+    const acceptBtn = document.getElementById('acceptBtn');
+    const declineBtn = document.getElementById('declineBtn');
+    const rememberMe = document.getElementById('rememberMe');
+    const errorMsg = document.getElementById('errorMsg');
+    
+    const hasAccepted = localStorage.getItem('ageVerified');
+    
+    if (!hasAccepted) {
+      setTimeout(function() {
+        popup.classList.add('active');
+      }, 500);
+    }
+    
+    acceptBtn.addEventListener('click', function() {
+      if (rememberMe.checked) {
+        localStorage.setItem('ageVerified', 'true');
+      }
+      popup.classList.remove('active');
+    });
+    
+    declineBtn.addEventListener('click', function() {
+      errorMsg.classList.add('show');
+      
+      {% comment %} setTimeout(function() {
+        errorMsg.classList.remove('show');
+      }, 3000); {% endcomment %}
+    });
+  })();
+</script>

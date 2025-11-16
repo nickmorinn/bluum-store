@@ -11,7 +11,11 @@ Shows the prev next articles for a given blog post.
 {%- endcomment -%}
 
 <div class="article-navigation">
-  <h2 class="article-navigation__title text-with-icon h4">{%- render 'icon' with 'blog-nav-right', width: 19, height: 20, direction_aware: true -%} {{ 'blog.post.continue_reading' | t }}</h2>
+  {% comment %} <h2 class="article-navigation__title text-with-icon h4">{%- render 'icon' with 'blog-nav-right', width: 19, height: 20, direction_aware: true -%} {{ 'blog.post.continue_reading' | t }}</h2> {% endcomment %}
+
+  <h2 class="article-navigation__title" style="text-align: center; font-size: 72px; font-weight: normal;">
+    <span style="font-weight: 500; text-decoration: underline;">Related</span> <em style="font-style: italic;">articles</em>
+  </h2>
 
   <div class="article-prev-next scroll-area bleed sm:unbleed">
     {%- if blog.previous_article -%}
