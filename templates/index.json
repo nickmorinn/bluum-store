@@ -20,8 +20,8 @@
             "title": "<p>Research-Grade Peptides, <em>delivered</em></p>",
             "subheading": "",
             "content": "",
-            "button_text": "Shop Now",
-            "button_url": "shopify://collections/frontpage",
+            "button_text": "Shop Peptides",
+            "button_url": "shopify://collections/all",
             "animate_bluum_text": false,
             "animate_bluum_text_duration": 2
           }
