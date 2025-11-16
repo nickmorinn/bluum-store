@@ -10409,3 +10409,11 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
   font-weight: bold;
   font-size: 24px;
 }
+
+/* Normalize Embedded Essential Upsell font to match theme */
+[data-essential-upsell-element],
+[data-essential-upsell-element] * {
+  font-family: var(--text-font-family) !important;
+  letter-spacing: var(--text-letter-spacing) !important;
+  color: rgb(var(--text-color)) !important;
+}
