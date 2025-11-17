@@ -431,7 +431,7 @@
           "type": "item",
           "settings": {
             "title": "What payment methods do you accept?",
-            "content": "<p>We accept credit/debit cards, Cash App, and Apple Pay. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>"
+            "content": "<p>We accept credit/debit cards. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>"
           }
         },
         "item_WfYway": {
