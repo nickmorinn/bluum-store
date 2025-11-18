@@ -446,13 +446,13 @@
       "thank_you": {
         "thank_you_title": "Your order is on hold!",
         "thank_you_confirmed_with_email_description": {
-          "single_store": "You'll receive a payment link soon."
+          "single_store": " "
         },
         "thank_you_confirmed_with_email_and_phone_description": {
-          "single_store": "You'll receive a payment link soon."
+          "single_store": " "
         },
         "thank_you_confirmed_items_with_email": {
-          "one": "You'll receive a payment link soon."
+          "one": " "
         }
       }
     }
