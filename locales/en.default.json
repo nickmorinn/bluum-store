@@ -440,5 +440,12 @@
         "other": "It has received {{ count }} reviews."
       }
     }
+  },
+  "shopify": {
+    "checkout": {
+      "thank_you": {
+        "thank_you_title": "Your order is on hold!"
+      }
+    }
   }
 }
