@@ -10447,3 +10447,12 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
   letter-spacing: var(--text-letter-spacing) !important;
   color: rgb(var(--text-color)) !important;
 }
+
+/* Put Fast Bundle's "Price" label on the same rhythm as other selectors */
+._titlecontainer_tde9m_29 {
+  margin-block-end: var(--spacing-2);
+}
+
+._fillerline_tde9m_40 {
+  display: none !important;
+}
