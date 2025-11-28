@@ -212,9 +212,8 @@ ease;
     }
     
     acceptBtn.addEventListener('click', function() {
-      if (rememberMe.checked) {
-        localStorage.setItem('ageVerified', 'true');
-      }
+      // Persist acceptance so the popup is only shown once after the user confirms.
+      localStorage.setItem('ageVerified', 'true');
       popup.classList.remove('active');
     });
     
