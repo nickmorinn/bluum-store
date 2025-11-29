@@ -54,7 +54,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"topbar\"><p class=\"semibold text-base is-selected\"> Black Friday: 20% Off &amp; Free Shipping\n</p></div>",
+        "html": "<div class=\"topbar\"><p class=\"semibold text-base is-selected\"> Cyber Monday: 20% Off &amp; Free Shipping\n</p></div>",
         "background": "#c8dae8",
         "background_gradient": "",
         "text_color": "#24201f"
