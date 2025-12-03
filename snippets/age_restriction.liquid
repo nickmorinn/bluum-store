@@ -174,10 +174,23 @@ ease;
     const acceptBtn = document.getElementById('acceptBtn');
     const declineBtn = document.getElementById('declineBtn');
     const errorMsg = document.getElementById('errorMsg');
-    
+
+    const referrer = document.referrer;
+    const isReferredFromBluumScience = (() => {
+      if (!referrer) return false;
+
+      try {
+        const referrerHost = new URL(referrer).hostname.toLowerCase();
+
+        return referrerHost === 'bluumscience.com' || referrerHost.endsWith('.bluumscience.com');
+      } catch (error) {
+        return false;
+      }
+    })();
+
     const hasAccepted = localStorage.getItem('ageVerified');
-    
-    if (!hasAccepted) {
+
+    if (!hasAccepted && !isReferredFromBluumScience) {
       setTimeout(function() {
         popup.classList.add('active');
       }, 500);
