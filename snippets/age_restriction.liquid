@@ -190,7 +190,15 @@ ease;
 
     const hasAccepted = localStorage.getItem('ageVerified');
 
-    if (!hasAccepted && !isReferredFromBluumScience) {
+    if (isReferredFromBluumScience) {
+      // Automatically treat visitors from bluumscience.com as verified so
+      // the popup does not reappear on subsequent navigation within the site.
+      localStorage.setItem('ageVerified', 'true');
+      popup.classList.remove('active');
+      return;
+    }
+
+    if (!hasAccepted) {
       setTimeout(function() {
         popup.classList.add('active');
       }, 500);
