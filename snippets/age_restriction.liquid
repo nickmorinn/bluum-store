@@ -175,17 +175,31 @@ ease;
     const declineBtn = document.getElementById('declineBtn');
     const errorMsg = document.getElementById('errorMsg');
 
-    const referrer = document.referrer;
     const isReferredFromBluumScience = (() => {
-      if (!referrer) return false;
+      const referrer = document.referrer;
+      const searchParams = new URLSearchParams(window.location.search);
 
-      try {
-        const referrerHost = new URL(referrer).hostname.toLowerCase();
+      // Check the referrer first and fall back to query params when the referrer
+      // is not available due to browser privacy settings.
+      const referrerMatches = (() => {
+        if (!referrer) return false;
 
-        return referrerHost === 'bluumscience.com' || referrerHost.endsWith('.bluumscience.com');
-      } catch (error) {
-        return false;
-      }
+        try {
+          const referrerHost = new URL(referrer).hostname.toLowerCase();
+
+          return referrerHost === 'bluumscience.com' || referrerHost.endsWith('.bluumscience.com');
+        } catch (error) {
+          // Fallback to a plain string match if URL parsing fails.
+          return referrer.toLowerCase().includes('bluumscience.com');
+        }
+      })();
+
+      const queryParamMatches = ['ref', 'utm_source', 'utm_medium', 'utm_campaign'].some((param) => {
+        const value = searchParams.get(param);
+        return value ? value.toLowerCase().includes('bluumscience') : false;
+      });
+
+      return referrerMatches || queryParamMatches;
     })();
 
     const hasAccepted = localStorage.getItem('ageVerified');
