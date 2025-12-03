@@ -205,23 +205,22 @@ ease;
     const hasAccepted = localStorage.getItem('ageVerified');
 
     if (isReferredFromBluumScience) {
-      // Automatically treat visitors from bluumscience.com as verified so
-      // the popup does not reappear on subsequent navigation within the site.
+      // Automatically treat visitors from bluumscience.com as verified so the popup does not reappear on subsequent navigation within the site.
       localStorage.setItem('ageVerified', 'true');
       popup.classList.remove('active');
       return;
     }
 
- // If coming from BluumScience OR already verified, never show popup.
-if (isReferredFromBluumScience || hasAccepted) {
-  popup.classList.remove('active');
-  return;
-}
+    // If coming from BluumScience OR already verified, never show popup.
+    if (isReferredFromBluumScience || hasAccepted) {
+      popup.classList.remove('active');
+      return;
+    }
 
-// Otherwise show popup normally
-setTimeout(function() {
-  popup.classList.add('active');
-}, 500);
+    // Otherwise show popup normally
+    setTimeout(function() {
+      popup.classList.add('active');
+    }, 500);
     
     acceptBtn.addEventListener('click', function() {
       // Persist acceptance so the popup is only shown once after the user confirms.
@@ -231,10 +230,6 @@ setTimeout(function() {
     
     declineBtn.addEventListener('click', function() {
       errorMsg.classList.add('show');
-      
-      {% comment %} setTimeout(function() {
-        errorMsg.classList.remove('show');
-      }, 3000); {% endcomment %}
     });
   })();
 </script>
