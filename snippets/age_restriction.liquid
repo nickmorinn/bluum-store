@@ -212,11 +212,16 @@ ease;
       return;
     }
 
-    if (!hasAccepted) {
-      setTimeout(function() {
-        popup.classList.add('active');
-      }, 500);
-    }
+ // If coming from BluumScience OR already verified, never show popup.
+if (isReferredFromBluumScience || hasAccepted) {
+  popup.classList.remove('active');
+  return;
+}
+
+// Otherwise show popup normally
+setTimeout(function() {
+  popup.classList.add('active');
+}, 500);
     
     acceptBtn.addEventListener('click', function() {
       // Persist acceptance so the popup is only shown once after the user confirms.
