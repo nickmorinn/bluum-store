@@ -175,22 +175,13 @@
 
                   {%- when 'checkout_button' -%}
                     <div class="v-stack gap-4">
-                      <div class="h-stack items-start gap-4">
-                        <input type="checkbox" 
-                               class="flex-shrink-0" 
-                               id="terms-checkbox" 
-                               onchange="document.querySelector('.zs-cart-page-button [name=checkout]').disabled = !this.checked;
-<<<<<<< HEAD
-                                        document.querySelector('.zs-cart-page-button').style.opacity = this.checked ? '1' : '0.5';">
-=======
-                                        document.querySelector('#checkout-wrapper').style.opacity = this.checked ? '1' : '0.5';">
->>>>>>> 9ea191c (Fix cart, add review module (needs fixing), featured product button, social media button)
-                        <div class="text-sm flex-1">I have read, understood and agreed with your <a href="{{ section.settings.terms_of_service_url }}" class="link" target="_blank">Terms of Service</a> and <a href="{{ section.settings.waiver_agreement_url }}" class="link" target="_blank">Waiver Agreement</a>. I certify that these products will not be used on humans.</div>
+                      <div class="text-sm">
+                        By checking out, I confirm that I have read, understood and agreed with your <a href="{{ section.settings.terms_of_service_url }}" class="link" target="_blank">Terms of Service</a> and <a href="{{ section.settings.waiver_agreement_url }}" class="link" target="_blank">Waiver Agreement</a>. I certify that these products will not be used on humans.
                       </div>
 
-                      <div id="checkout-wrapper" class="zs-cart-page-button w-full" style="opacity: 0.5">
+                      <div id="checkout-wrapper" class="zs-cart-page-button w-full">
                         {%- assign checkout_button = 'cart.general.checkout' | t -%}
-                        {%- render 'button', type: 'submit', icon: 'picto-lock', content: checkout_button, size: 'xl', name: 'checkout', stretch: true, block: block, disabled: true -%}
+                        {%- render 'button', type: 'submit', icon: 'picto-lock', content: checkout_button, size: 'xl', name: 'checkout', stretch: true, block: block -%}
                       </div>
                     </div>
                 {%- endcase -%}

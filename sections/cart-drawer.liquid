@@ -164,13 +164,8 @@
         {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
         <div class="v-stack gap-4">
-          <div class="h-stack items-start gap-4">
-            <input type="checkbox" 
-                   class="flex-shrink-0" 
-                   id="terms-checkbox" 
-                   onchange="document.querySelector('[name=checkout]').disabled = !this.checked;
-                            document.querySelector('#checkout-wrapper').style.opacity = this.checked ? '1' : '0.5';">
-            <div class="text-sm flex-1">I have read, understood and agreed with your <a href="{{ section.settings.terms_of_service_url }}" class="link" target="_blank">Terms of Service</a> and <a href="{{ section.settings.waiver_agreement_url }}" class="link" target="_blank">Waiver Agreement</a>. I certify that these products will not be used on humans.</div>
+          <div class="text-sm">
+            By checking out, I confirm that I have read, understood and agreed with your <a href="{{ section.settings.terms_of_service_url }}" class="link" target="_blank">Terms of Service</a> and <a href="{{ section.settings.waiver_agreement_url }}" class="link" target="_blank">Waiver Agreement</a>. I certify that these products will not be used on humans.
           </div>
 
           {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
@@ -180,8 +175,8 @@
           {%- endif -%}
 
           {%- if section.settings.show_checkout_button -%}
-            <div id="checkout-wrapper" class="w-full" style="opacity: 0.5">
-              {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl', disabled: true, stretch: true -%}
+            <div id="checkout-wrapper" class="w-full">
+              {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl', stretch: true -%}
             </div>
           {%- endif -%}
         </div>
