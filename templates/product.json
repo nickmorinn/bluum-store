@@ -44,7 +44,7 @@
             "badge_2_icon_url": "",
             "badge_2_icon_alt": "",
             "badge_3_enabled": true,
-            "badge_3_text": "Tested at ",
+            "badge_3_text": "Tested at",
             "badge_3_value": "",
             "badge_3_icon_url": "",
             "badge_3_icon_alt": ""
@@ -413,6 +413,32 @@
         "accordion_background": "#fffdfa",
         "accordion_text_color": ""
       }
+    },
+    "17649546184ec1b9eb": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_ykNd6F": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_ykNd6F"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -422,6 +448,7 @@
     "product_research",
     "related-products",
     "featured_collection_FRmEmp",
-    "product_faq"
+    "product_faq",
+    "17649546184ec1b9eb"
   ]
 }
