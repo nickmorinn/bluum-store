@@ -177,29 +177,20 @@ ease;
 
     const isReferredFromBluumScience = (() => {
       const referrer = document.referrer;
-      const searchParams = new URLSearchParams(window.location.search);
 
-      // Check the referrer first and fall back to query params when the referrer
-      // is not available due to browser privacy settings.
-      const referrerMatches = (() => {
-        if (!referrer) return false;
+      // Only trust the referrer if it's explicitly BluumScience.
+      if (!referrer) return false;
 
-        try {
-          const referrerHost = new URL(referrer).hostname.toLowerCase();
-
-          return referrerHost === 'bluumscience.com' || referrerHost.endsWith('.bluumscience.com');
-        } catch (error) {
-          // Fallback to a plain string match if URL parsing fails.
-          return referrer.toLowerCase().includes('bluumscience.com');
-        }
-      })();
-
-      const queryParamMatches = ['ref', 'utm_source', 'utm_medium', 'utm_campaign'].some((param) => {
-        const value = searchParams.get(param);
-        return value ? value.toLowerCase().includes('bluumscience') : false;
-      });
-
-      return referrerMatches || queryParamMatches;
+      try {
+        const referrerHost = new URL(referrer).hostname.toLowerCase();
+        return (
+          referrerHost === "bluumscience.com" ||
+          referrerHost.endsWith(".bluumscience.com")
+        );
+      } catch {
+        // In case URL parsing fails (very rare), rely on a strict substring match.
+        return referrer.toLowerCase().includes("bluumscience.com");
+      }
     })();
 
     const hasAccepted = localStorage.getItem('ageVerified');
