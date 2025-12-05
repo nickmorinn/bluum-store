@@ -179,13 +179,11 @@ ease;
       const referrer = document.referrer;
       const searchParams = new URLSearchParams(window.location.search);
 
-      // 1. Detect if ANY UTM param exists
+
       const hasUtmParams = ["utm_source", "utm_medium", "utm_campaign", "utm_content"]
         .some(param => searchParams.has(param));
 
-      if (!hasUtmParams) return false; // must have at least one UTM to qualify
-
-      // 2. Check referrer ONLY if UTMs exist
+      if (!hasUtmParams) return false; 
       if (!referrer) return false;
 
       try {
@@ -198,29 +196,25 @@ ease;
         return referrer.toLowerCase().includes("bluumscience.com");
       }
     })();
-    
+
     const hasAccepted = localStorage.getItem('ageVerified');
 
     if (isReferredFromBluumScience) {
-      // Automatically treat visitors from bluumscience.com as verified so the popup does not reappear on subsequent navigation within the site.
       localStorage.setItem('ageVerified', 'true');
       popup.classList.remove('active');
       return;
     }
 
-    // If coming from BluumScience OR already verified, never show popup.
     if (isReferredFromBluumScience || hasAccepted) {
       popup.classList.remove('active');
       return;
     }
 
-    // Otherwise show popup normally
     setTimeout(function() {
       popup.classList.add('active');
     }, 500);
     
     acceptBtn.addEventListener('click', function() {
-      // Persist acceptance so the popup is only shown once after the user confirms.
       localStorage.setItem('ageVerified', 'true');
       popup.classList.remove('active');
     });
