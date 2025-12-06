@@ -101,7 +101,7 @@ margin-bottom: {{ margin_bottom }};
         {%- if badge_1_icon != blank -%}
           <img src="{{ badge_1_icon }}" alt="{{ badge_1_icon_alt | strip }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
         {%- endif -%}
-        {{- badge_1_text -}}{{- badge_1_value -}}
+        {{- badge_1_text -}}{%- if badge_1_text != blank and badge_1_value != blank -%}&nbsp;{%- endif -%}{{- badge_1_value -}}
       </div>
     {%- endif -%}
 
@@ -112,10 +112,10 @@ margin-bottom: {{ margin_bottom }};
         {%- endif -%}
         {%- if badge_2_url != blank -%}
           <a href="{{ badge_2_url }}" target="_blank" rel="noopener noreferrer">
-            {{- badge_2_text -}}{{- badge_2_value -}}
+            {{- badge_2_text -}}{%- if badge_2_text != blank and badge_2_value != blank -%}&nbsp;{%- endif -%}{{- badge_2_value -}}
           </a>
         {%- else -%}
-          {{- badge_2_text -}}{{- badge_2_value -}}
+          {{- badge_2_text -}}{%- if badge_2_text != blank and badge_2_value != blank -%}&nbsp;{%- endif -%}{{- badge_2_value -}}
         {%- endif -%}
       </div>
     {%- endif -%}
@@ -125,7 +125,7 @@ margin-bottom: {{ margin_bottom }};
         {%- if badge_3_icon != blank -%}
           <img src="{{ badge_3_icon }}" alt="{{ badge_3_icon_alt | strip }}" style="width: {{ icon_size }}; height: {{ icon_size }}; max-width: {{ icon_size }}; max-height: {{ icon_size }}; object-fit: contain;">
         {%- endif -%}
-        {{- badge_3_text -}}{{- badge_3_value -}}
+        {{- badge_3_text -}}{%- if badge_3_text != blank and badge_3_value != blank -%}&nbsp;{%- endif -%}{{- badge_3_value -}}
       </div>
     {%- endif -%}
   </div>
