@@ -154,18 +154,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% comment %} <script defer src="https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG"></script> {% endcomment %}
 
 <script>
-function loadGTM() {
-  if (window.gtmLoaded) return;
-  window.gtmLoaded = true;
-  var gtm = document.createElement("script");
-  gtm.src = "https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG";
-  gtm.async = true;
-  document.head.appendChild(gtm);
-}
+(function () {
+  function loadGTM() {
+    if (window.gtmLoaded) return;
+    window.gtmLoaded = true;
 
-window.addEventListener("scroll", loadGTM, {once: true});
-window.addEventListener("mousemove", loadGTM, {once: true});
-window.addEventListener("touchstart", loadGTM, {once: true});
+    var gtm = document.createElement("script");
+    gtm.src = "https://www.googletagmanager.com/gtm.js?id=GTM-ML2RJQVG";
+    gtm.async = true;
+    document.head.appendChild(gtm);
+  }
+
+  // Load after first user interaction
+  window.addEventListener("scroll", loadGTM, { once: true, passive: true });
+  window.addEventListener("mousemove", loadGTM, { once: true });
+  window.addEventListener("touchstart", loadGTM, { once: true, passive: true });
+
+  // Critical fallback: load anyway after 1 second
+  setTimeout(loadGTM, 1000);
+
+  // Optional: load when browser is idle
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(loadGTM, { timeout: 1500 });
+  }
+})();
 </script>
 
 <!-- End Google Tag Manager -->
