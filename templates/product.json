@@ -105,6 +105,10 @@
             "liquid": "{% render 'smart-shipping-box' %}"
           }
         },
+        "essential_upsell_app_block_WAgweX": {
+          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
+        },
         "liquid_review_quote": {
           "type": "liquid",
           "disabled": true,
@@ -155,6 +159,7 @@
         "buy_buttons",
         "liquid_payment_icons",
         "liquid_smart_shipping_box",
+        "essential_upsell_app_block_WAgweX",
         "liquid_review_quote",
         "rating",
         "payment_terms",
