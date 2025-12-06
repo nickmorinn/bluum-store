@@ -9,28 +9,28 @@ Supported parameters:
 - icon_height: desktop icon height (defaults to 28px)
 - mobile_icon_height: icon height on mobile (defaults to 20px)
 - gap: desktop gap between icons (defaults to 6px)
-- padding: desktop padding around container (defaults to 12px)
+- padding: desktop padding around container (defaults to 4px 8px)
 - mobile_gap: mobile gap between icons (defaults to 4px)
 - mobile_padding: mobile padding around container (defaults to 8px)
 - background_color: container background (defaults to transparent)
 - border_radius: container border radius (defaults to 8px)
 - alignment: icon alignment (defaults to center)
 - margin_top: container top margin (defaults to 0.25rem)
-- margin_bottom: container bottom margin (defaults to 0.25rem)
+- margin_bottom: container bottom margin (defaults to 0)
 - icon_filter: CSS filter applied to icons (defaults to none)
 {%- endcomment -%}
 
 {%- assign icon_height = icon_height | default: '28px' -%}
 {%- assign mobile_icon_height = mobile_icon_height | default: '20px' -%}
 {%- assign gap = gap | default: '6px' -%}
-{%- assign padding = padding | default: '12px' -%}
+{%- assign padding = padding | default: '4px 8px' -%}
 {%- assign mobile_gap = mobile_gap | default: '4px' -%}
 {%- assign mobile_padding = mobile_padding | default: '8px' -%}
 {%- assign background_color = background_color | default: 'transparent' -%}
 {%- assign border_radius = border_radius | default: '8px' -%}
 {%- assign alignment = alignment | default: 'center' -%}
 {%- assign margin_top = margin_top | default: '0.25rem' -%}
-{%- assign margin_bottom = margin_bottom | default: '0.25rem' -%}
+{%- assign margin_bottom = margin_bottom | default: '0rem' -%}
 {%- assign icon_filter = icon_filter | default: 'none' -%}
 
 <link rel="preload" as="image" href="https://raw.githubusercontent.com/activemerchant/payment_icons/refs/heads/master/app/assets/images/payment_icons/visa.svg">
