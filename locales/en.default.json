@@ -453,7 +453,8 @@
         },
         "thank_you_confirmed_items_with_email": {
           "one": " "
-        }
+        },
+        "page_title": "Please wait! We're creating your payment link."
       }
     }
   }
