@@ -5178,10 +5178,8 @@ import { Delegate as Delegate7 } from "vendor";
     });
   }
   const setScrollbarWidth = () => {
-    const scrollbarWidth = window.innerWidth - document.body.clientWidth;
-    if (scrollbarWidth > 0) {
-      document.documentElement.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
-    }
+    const scrollbarWidth = Math.max(window.innerWidth - document.documentElement.clientWidth, 0);
+    document.documentElement.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
   };
   setScrollbarWidth();
   window.addEventListener("resize", throttle(setScrollbarWidth));

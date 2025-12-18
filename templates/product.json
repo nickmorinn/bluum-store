@@ -1,465 +1,470 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
+    "related-products": {
+      "disabled": true, 
+      "custom_css": [
+        ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
+      ], 
+      "type": "related-products", 
+      "settings": {
+        "stack_products": true, 
+        "product_card_text_color": "", 
+        "full_width": true, 
+        "heading_gradient": "", 
+        "title": "Related Compounds", 
+        "heading_color": "", 
+        "subheading": "", 
+        "text_color": "", 
+        "background_gradient": "", 
+        "product_card_background": "", 
+        "show_progress_bar": false, 
+        "background": "", 
+        "recommendations_count": 6, 
+        "products": [
+          "pt-141", 
+          "bpc-157", 
+          "ghk-cu", 
+          "tesamorelin"
+        ], 
+        "content": "", 
+        "products_per_row_mobile": "2", 
+        "products_per_row_desktop": 4
+      }
+    }, 
     "main": {
-      "type": "main-product",
+      "type": "main-product", 
+      "custom_css": [
+        ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
+      ], 
       "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h2"
-          }
-        },
-        "judge_me_reviews_preview_badge_3hynWc": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {}
-        },
-        "badges": {
-          "type": "badges",
-          "settings": {
-            "show_custom_lab_badges": true,
-            "margin_top": "0px",
-            "margin_bottom": "0px",
-            "badge_gap": "5px",
-            "badge_padding": "3px 7px",
-            "badge_border_radius": "12px",
-            "badge_font_size": "11px",
-            "badge_font_weight": "500",
-            "badge_text_color": "#24211f",
-            "badge_background_color": "#eaeaea",
-            "icon_brightness": "0.5",
-            "icon_size": "14px",
-            "badge_1_enabled": true,
-            "badge_1_text": "Batch #",
-            "badge_1_value": "",
-            "badge_1_icon_url": "",
-            "badge_1_icon_alt": "",
-            "badge_2_enabled": true,
-            "badge_2_text": "Report #",
-            "badge_2_value": "",
-            "badge_2_icon_url": "",
-            "badge_2_icon_alt": "",
-            "badge_3_enabled": true,
-            "badge_3_text": "Tested at",
-            "badge_3_value": "",
-            "badge_3_icon_url": "",
-            "badge_3_icon_alt": ""
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
-        "fbp_fast_bundle_volume_position_MkgDht": {
-          "type": "shopify://apps/fbp-fast-bundle/blocks/volume_position/9e87fbe2-9041-4c23-acf5-322413994cef",
-          "settings": {}
-        },
         "buy_buttons": {
-          "type": "buy_buttons",
+          "type": "buy_buttons", 
           "settings": {
-            "show_payment_button": false,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
+            "atc_button_background": "", 
+            "payment_button_text_color": "", 
+            "atc_button_text_color": "", 
+            "show_gift_card_recipient": true, 
+            "payment_button_background": "", 
+            "show_payment_button": false
           }
-        },
-        "liquid_payment_icons": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "{% render 'payment-icons' %}"
-          }
-        },
-        "liquid_smart_shipping_box": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "{% render 'smart-shipping-box' %}"
-          }
-        },
-        "essential_upsell_app_block_WAgweX": {
-          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
-          "settings": {}
-        },
-        "liquid_review_quote": {
-          "type": "liquid",
-          "disabled": true,
-          "settings": {
-            "liquid": "{% render 'review-quote' %}"
-          }
-        },
+        }, 
         "rating": {
-          "type": "rating",
-          "disabled": true,
+          "disabled": true, 
+          "type": "rating", 
           "settings": {
             "show_empty": false
           }
-        },
-        "payment_terms": {
-          "type": "payment_terms",
-          "settings": {}
-        },
-        "text_RYM3iC": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>RESEARCH USE ONLY</strong><br/>These compounds are NOT intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>"
-          }
-        },
+        }, 
         "description": {
-          "type": "description",
-          "disabled": true,
+          "disabled": true, 
+          "type": "description", 
           "settings": {
             "collapse_content": false
           }
-        },
+        }, 
+        "title": {
+          "type": "title", 
+          "settings": {
+            "heading_tag": "h2"
+          }
+        }, 
+        "quantity_selector": {
+          "disabled": true, 
+          "type": "quantity_selector", 
+          "settings": {}
+        }, 
+        "price": {
+          "disabled": true, 
+          "type": "price", 
+          "settings": {
+            "show_taxes_notice": false
+          }
+        }, 
         "liquid_QacUpJ": {
-          "type": "liquid",
-          "disabled": true,
+          "disabled": true, 
+          "type": "liquid", 
           "settings": {
             "liquid": "{% render 'zs-chemical-formulation' %}"
           }
+        }, 
+        "text_RYM3iC": {
+          "type": "text", 
+          "settings": {
+            "text": "<p><strong>RESEARCH USE ONLY</strong><br/>These compounds are NOT intended for human consumption, clinical use, or veterinary applications. We are not affiliated with any pharmaceutical companies or their commercial medications. By placing an order, you certify these materials will be used exclusively for in vitro testing and laboratory experimentation only. Bodily introduction of any kind into humans or animals is strictly forbidden by law. This product should only be handled by licensed, qualified professionals. This product is not a drug, food, or cosmetic and may not be misbranded, misused or mislabeled as a drug, food or cosmetic.</p>"
+          }
+        }, 
+        "essential_upsell_app_block_WAgweX": {
+          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80", 
+          "settings": {}
+        }, 
+        "variant_picker": {
+          "type": "variant_picker", 
+          "settings": {
+            "swatch_selector_style": "swatch", 
+            "stack_blocks": true, 
+            "variant_image_options": "", 
+            "size_chart_page": "", 
+            "selector_style": "block", 
+            "hide_sold_out_variants": false
+          }
+        }, 
+        "judge_me_reviews_preview_badge_3hynWc": {
+          "disabled": true, 
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8", 
+          "settings": {}
+        }, 
+        "liquid_payment_icons": {
+          "type": "liquid", 
+          "settings": {
+            "liquid": "{% render 'payment-icons' %}"
+          }
+        }, 
+        "liquid_review_quote": {
+          "disabled": true, 
+          "type": "liquid", 
+          "settings": {
+            "liquid": "{% render 'review-quote' %}"
+          }
+        }, 
+        "guarantee_icons": {
+          "type": "guarantee_icons", 
+          "settings": {
+            "show_icons": true, 
+            "icon_7_text": "Batch & Lot Tracking", 
+            "icon_1_text": "Money Back Guarantee", 
+            "icon_2_text": "Satisfaction Guarantee", 
+            "icon_3_text": "Easy Returns", 
+            "icon_4_text": "Secure Ordering", 
+            "icon_5_text": "2-Day Shipping", 
+            "icon_6_text": "Third Party Tested"
+          }
+        }, 
+        "fbp_fast_bundle_volume_position_MkgDht": {
+          "type": "shopify://apps/fbp-fast-bundle/blocks/volume_position/9e87fbe2-9041-4c23-acf5-322413994cef", 
+          "settings": {}
+        }, 
+        "liquid_smart_shipping_box": {
+          "type": "liquid", 
+          "settings": {
+            "liquid": "{% render 'smart-shipping-box' %}"
+          }
+        }, 
+        "badges": {
+          "type": "badges", 
+          "settings": {
+            "badge_gap": "5px", 
+            "badge_2_icon_url": "", 
+            "badge_3_enabled": true, 
+            "badge_1_value": "", 
+            "badge_1_icon_url": "", 
+            "icon_brightness": "0.5", 
+            "icon_size": "14px", 
+            "badge_border_radius": "12px", 
+            "badge_text_color": "#24211f", 
+            "badge_3_text": "Tested at", 
+            "badge_font_size": "11px", 
+            "badge_1_icon_alt": "", 
+            "badge_1_text": "Batch #", 
+            "show_custom_lab_badges": true, 
+            "badge_3_icon_url": "", 
+            "badge_3_value": "", 
+            "badge_2_text": "Report #", 
+            "badge_3_icon_alt": "", 
+            "badge_background_color": "#eaeaea", 
+            "badge_font_weight": "500", 
+            "badge_2_value": "", 
+            "badge_2_enabled": true, 
+            "margin_top": "0px", 
+            "margin_bottom": "0px", 
+            "badge_2_icon_alt": "", 
+            "badge_1_enabled": true, 
+            "badge_padding": "3px 7px"
+          }
+        }, 
+        "payment_terms": {
+          "type": "payment_terms", 
+          "settings": {}
         }
-      },
+      }, 
       "block_order": [
-        "title",
-        "judge_me_reviews_preview_badge_3hynWc",
-        "badges",
-        "price",
-        "variant_picker",
-        "quantity_selector",
-        "fbp_fast_bundle_volume_position_MkgDht",
-        "buy_buttons",
-        "liquid_payment_icons",
-        "liquid_smart_shipping_box",
-        "essential_upsell_app_block_WAgweX",
-        "liquid_review_quote",
-        "rating",
-        "payment_terms",
-        "text_RYM3iC",
-        "description",
+        "title", 
+        "judge_me_reviews_preview_badge_3hynWc", 
+        "badges", 
+        "price", 
+        "variant_picker", 
+        "quantity_selector", 
+        "fbp_fast_bundle_volume_position_MkgDht", 
+        "buy_buttons", 
+        "guarantee_icons", 
+        "liquid_payment_icons", 
+        "liquid_smart_shipping_box", 
+        "essential_upsell_app_block_WAgweX", 
+        "liquid_review_quote", 
+        "rating", 
+        "payment_terms", 
+        "text_RYM3iC", 
+        "description", 
         "liquid_QacUpJ"
-      ],
-      "custom_css": [
-        ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
-      ],
+      ], 
       "settings": {
-        "full_width": true,
-        "show_fixed_add_to_cart": true,
-        "desktop_media_width": 50,
-        "desktop_media_layout": "grid_highlight",
-        "mobile_media_size": "expanded",
-        "mobile_carousel_control": "hidden",
-        "enable_video_autoplay": false,
-        "enable_video_looping": true,
-        "enable_image_zoom": true,
-        "max_image_zoom_level": 3,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
+        "mobile_media_size": "expanded", 
+        "mobile_carousel_control": "hidden", 
+        "full_width": true, 
+        "background": "", 
+        "enable_video_autoplay": false, 
+        "max_image_zoom_level": 3, 
+        "desktop_media_layout": "grid_highlight", 
+        "input_background": "rgba(0,0,0,0)", 
+        "show_fixed_add_to_cart": true, 
+        "background_gradient": "", 
+        "input_text_color": "", 
+        "desktop_media_width": 50, 
+        "enable_video_looping": true, 
+        "enable_image_zoom": true, 
+        "text_color": ""
       }
-    },
+    }, 
+    "product_research": {
+      "disabled": true, 
+      "type": "product-research", 
+      "settings": {
+        "background_gradient": "", 
+        "metafield_key": "research", 
+        "full_width": true, 
+        "heading_gradient": "", 
+        "heading_color": "", 
+        "subheading": "", 
+        "text_color": "", 
+        "heading_tag": "h2", 
+        "show_page_title": true, 
+        "background": "", 
+        "metaobject_page_field": "page", 
+        "heading": "", 
+        "metafield_namespace": "custom"
+      }
+    }, 
     "rich_text_66jfz3": {
-      "type": "rich-text",
+      "type": "rich-text", 
       "blocks": {
         "heading_pQitRc": {
-          "type": "heading",
+          "type": "heading", 
           "settings": {
-            "text": "About {{ product.title }}",
-            "heading_tag": "h1",
-            "text_color": "",
-            "gradient": ""
+            "heading_tag": "h1", 
+            "text": "About {{ product.title }}", 
+            "gradient": "", 
+            "text_color": ""
           }
-        },
+        }, 
         "richtext_7wKyxn": {
-          "type": "richtext",
+          "type": "richtext", 
           "settings": {
             "content": "{{ product.description }}"
           }
         }
-      },
+      }, 
       "block_order": [
-        "heading_pQitRc",
+        "heading_pQitRc", 
         "richtext_7wKyxn"
-      ],
-      "name": "Rich text",
+      ], 
+      "name": "Rich text", 
       "settings": {
-        "full_width": true,
-        "content_width": "large",
-        "text_position": "start",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "full_width": true, 
+        "text_color": "", 
+        "background_gradient": "", 
+        "content_width": "large", 
+        "text_position": "start", 
+        "background": ""
       }
-    },
-    "custom_liquid_Hg4xgB": {
-      "type": "custom-liquid",
-      "custom_css": [],
-      "name": "Custom Liquid",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "liquid": "{% render 'zs-chemical-formulation' %}",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "product_research": {
-      "type": "product-research",
-      "disabled": true,
-      "settings": {
-        "metafield_namespace": "custom",
-        "metafield_key": "research",
-        "metaobject_page_field": "page",
-        "full_width": true,
-        "subheading": "",
-        "heading": "",
-        "show_page_title": true,
-        "heading_tag": "h2",
-        "heading_color": "",
-        "heading_gradient": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "custom_css": [
-        ".product-info__text {background: #eaeaea; padding: 40px; border-radius: 40px;}"
-      ],
-      "settings": {
-        "recommendations_count": 6,
-        "products": [
-          "pt-141",
-          "bpc-157",
-          "ghk-cu",
-          "tesamorelin"
-        ],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "subheading": "",
-        "title": "Related Compounds",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
+    }, 
     "featured_collection_FRmEmp": {
-      "type": "featured-collection",
-      "name": "Featured collection",
+      "type": "featured-collection", 
+      "name": "Featured collection", 
       "settings": {
-        "collection": "",
+        "stack_products": true, 
+        "link_text": "Shop All Peptides", 
+        "full_width": true, 
+        "products_count": 4, 
+        "title": "Related Peptides", 
+        "products_per_row_desktop": 4, 
+        "link_url": "https://bluumpeptides.com/collections/frontpage", 
+        "heading_color": "", 
+        "collection": "", 
+        "text_color": "", 
+        "background_gradient": "", 
+        "product_card_background": "", 
         "products": [
-          "bpc-157",
-          "pt-141",
-          "ghk-cu",
+          "bpc-157", 
+          "pt-141", 
+          "ghk-cu", 
           "tb-500"
-        ],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 4,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "subheading": "",
-        "title": "Related Peptides",
-        "content": "",
-        "link_url": "https://bluumpeptides.com/collections/frontpage",
-        "link_text": "Shop All Peptides",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
+        ], 
+        "subheading": "", 
+        "background": "", 
+        "show_progress_bar": false, 
+        "product_card_text_color": "", 
+        "content": "", 
+        "products_per_row_mobile": "2", 
+        "heading_gradient": ""
       }
-    },
+    }, 
     "product_faq": {
-      "type": "faq",
+      "type": "faq", 
       "blocks": {
-        "166442457738b23caf-0": {
-          "type": "item",
-          "settings": {
-            "title": "Are these peptides quality tested?",
-            "content": "<p>Absolutely. Our analytical testing is conducted by Janoshik Analytical, an independent third-party laboratory to verify the identity, purity, and composition of our research products. Each CoA includes purity analysis, peptide sequence confirmation, and date of analysis.</p>"
-          }
-        },
-        "166442457738b23caf-1": {
-          "type": "item",
-          "settings": {
-            "title": "What are typical delivery times?",
-            "content": "<p>Delivery for our free shipping option typically takes 3-5 business days. We ship from right here in the USA to all US addresses. We also provide an option for next day shipping for an extra charge. Please allow 24 hours for processing. <br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>"
-          }
-        },
-        "166442457738b23caf-2": {
-          "type": "item",
-          "settings": {
-            "title": "How should these compounds be stored?",
-            "content": "<p>Our peptides are shipping in lyophilized form, which is stable at room temperature during transit. Once received, store unopened vials in a cool, dry place.</p>"
-          }
-        },
         "item_FzEkgP": {
-          "type": "item",
+          "type": "item", 
           "settings": {
-            "title": "Are products stable during shipping?",
-            "content": "<p>Our peptides are shipped in lyophilized (freeze-dried) form, which ensures stability during transit. This powder form is highly stable at room temperature and resistant to temperature fluctuations that occur during shipping.<br/><br/>Research has shown no significant degradation or loss of purity when lyophilized peptides are exposed to room temperature during typical shipping timeframes. Each batch is verified for purity upon production, and our stability testing confirms maintenance of product integrity during standard shipping conditions.</p>"
+            "content": "<p>Our peptides are shipped in lyophilized (freeze-dried) form, which ensures stability during transit. This powder form is highly stable at room temperature and resistant to temperature fluctuations that occur during shipping.<br/><br/>Research has shown no significant degradation or loss of purity when lyophilized peptides are exposed to room temperature during typical shipping timeframes. Each batch is verified for purity upon production, and our stability testing confirms maintenance of product integrity during standard shipping conditions.</p>", 
+            "title": "Are products stable during shipping?"
           }
-        },
+        }, 
         "item_EjPNg6": {
-          "type": "item",
+          "type": "item", 
           "settings": {
-            "title": "What are your bulk ordering options?",
-            "content": "<p>For bulk inquiries and volume pricing, please <a href=\"/pages/contact\" title=\"Contact\">contact us</a>. </p>"
+            "content": "<p>For bulk inquiries and volume pricing, please <a href=\"/pages/contact\" title=\"Contact\">contact us</a>. </p>", 
+            "title": "What are your bulk ordering options?"
           }
-        },
-        "item_cBaxBB": {
-          "type": "item",
+        }, 
+        "166442457738b23caf-2": {
+          "type": "item", 
           "settings": {
-            "title": "What is your return/refund policy for research peptides?",
-            "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order? We're happy to help - just reach out.</p>"
+            "content": "<p>Our peptides are shipping in lyophilized form, which is stable at room temperature during transit. Once received, store unopened vials in a cool, dry place.</p>", 
+            "title": "How should these compounds be stored?"
           }
-        },
-        "item_ptBQK3": {
-          "type": "item",
+        }, 
+        "166442457738b23caf-1": {
+          "type": "item", 
           "settings": {
-            "title": "What payment methods do you accept?",
-            "content": "<p>We accept credit/debit cards, Cash App, and Apple Pay. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>"
+            "content": "<p>Delivery for our free shipping option typically takes 3-5 business days. We ship from right here in the USA to all US addresses. We also provide an option for next day shipping for an extra charge. Please allow 24 hours for processing. <br/><br/>Every package comes with professional packaging, tracking updates via email, and does not require a signature upon delivery.</p>", 
+            "title": "What are typical delivery times?"
           }
-        },
+        }, 
+        "166442457738b23caf-0": {
+          "type": "item", 
+          "settings": {
+            "content": "<p>Absolutely. Our analytical testing is conducted by Janoshik Analytical, an independent third-party laboratory to verify the identity, purity, and composition of our research products. Each CoA includes purity analysis, peptide sequence confirmation, and date of analysis.</p>", 
+            "title": "Are these peptides quality tested?"
+          }
+        }, 
         "item_WfYway": {
-          "type": "item",
+          "type": "item", 
           "settings": {
-            "title": "Are these peptides legal to buy for research in the USA?",
-            "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled “Not for human consumption,” not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>"
+            "content": "<p>Yes. When purchased for laboratory/research use only and handled in compliance with all applicable federal, state, and local regulations. We sell reagents labeled \u201cNot for human consumption,\u201d not as drugs or supplements. </p><p>Some compounds may be restricted in certain jurisdictions. The buyer is responsible for knowing and following their local rules.</p>", 
+            "title": "Are these peptides legal to buy for research in the USA?"
           }
-        },
-        "item_m79Lh3": {
-          "type": "item",
+        }, 
+        "item_ptBQK3": {
+          "type": "item", 
           "settings": {
-            "title": "Do I need a business or institutional account to order?",
-            "content": "<p>No. Individual researchers, labs, and institutions can order. During checkout you must confirm research intent and agree to our Terms. For certain items or larger orders, we may request additional verification or documentation and reserve the right to decline orders that don’t meet compliance standards.</p>"
+            "content": "<p>We accept credit/debit cards, Cash App, and Apple Pay. After you place an order, we'll email you a secure payment link. Please complete payment within 48 hours. Unpaid orders are automatically canceled after that window. </p><p>If you don't see the email, check spam/promotion or contact support and we'll resend the link. </p>", 
+            "title": "What payment methods do you accept?"
           }
-        },
+        }, 
+        "item_cBaxBB": {
+          "type": "item", 
+          "settings": {
+            "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order?\u00a0We're happy to help - just reach out.</p>", 
+            "title": "What is your return/refund policy for research peptides?"
+          }
+        }, 
         "item_86jjdL": {
-          "type": "item",
+          "type": "item", 
           "settings": {
-            "title": "What is the shelf life/expiration of unopened vials?",
-            "content": "<p>Each lot lists a best-by/expiration on the vial label and COA. As general guidance, lyophilized peptides stored as directed are typically stable 12–24 months (often longer at –20 °C). Short shipping periods at ambient temperature are normal. Actual stability depends on sequence and storage conditions. </p>"
+            "content": "<p>Each lot lists a best-by/expiration on the vial label and COA. As general guidance, lyophilized peptides stored as directed are typically stable 12\u201324 months (often longer at \u201320 \u00b0C). Short shipping periods at ambient temperature are normal. Actual stability depends on sequence and storage conditions. </p>", 
+            "title": "What is the shelf life/expiration of unopened vials?"
+          }
+        }, 
+        "item_m79Lh3": {
+          "type": "item", 
+          "settings": {
+            "content": "<p>No. Individual researchers, labs, and institutions can order. During checkout you must confirm research intent and agree to our Terms. For certain items or larger orders, we may request additional verification or documentation and reserve the right to decline orders that don\u2019t meet compliance standards.</p>", 
+            "title": "Do I need a business or institutional account to order?"
           }
         }
-      },
+      }, 
       "block_order": [
-        "166442457738b23caf-0",
-        "166442457738b23caf-1",
-        "166442457738b23caf-2",
-        "item_FzEkgP",
-        "item_EjPNg6",
-        "item_cBaxBB",
-        "item_ptBQK3",
-        "item_WfYway",
-        "item_m79Lh3",
+        "166442457738b23caf-0", 
+        "166442457738b23caf-1", 
+        "166442457738b23caf-2", 
+        "item_FzEkgP", 
+        "item_EjPNg6", 
+        "item_cBaxBB", 
+        "item_ptBQK3", 
+        "item_WfYway", 
+        "item_m79Lh3", 
         "item_86jjdL"
-      ],
+      ], 
       "settings": {
-        "full_width": false,
-        "subheading": "",
-        "title": "<p>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></p>",
-        "content": "",
-        "team_avatar_width": 160,
-        "support_hours": "",
-        "answer_time": "",
-        "button_text": "",
-        "button_url": "",
-        "mobile_title_alignment": "center",
-        "text_position": "start",
-        "background": "#fffdfa",
-        "background_gradient": "",
-        "text_color": "#24201f",
-        "heading_color": "",
-        "heading_gradient": "",
-        "button_background": "",
-        "button_text_color": "",
-        "accordion_background": "#fffdfa",
-        "accordion_text_color": ""
+        "background_gradient": "", 
+        "button_text_color": "", 
+        "full_width": false, 
+        "background": "#fffdfa", 
+        "title": "<p>You <em>ask</em>, <br/>we <span style=\"text-decoration:underline\">answer.</span></p>", 
+        "mobile_title_alignment": "center", 
+        "heading_color": "", 
+        "accordion_text_color": "", 
+        "button_text": "", 
+        "subheading": "", 
+        "text_color": "#24201f", 
+        "support_hours": "", 
+        "answer_time": "", 
+        "text_position": "start", 
+        "accordion_background": "#fffdfa", 
+        "team_avatar_width": 160, 
+        "button_background": "", 
+        "content": "", 
+        "button_url": "", 
+        "heading_gradient": ""
       }
-    },
+    }, 
+    "custom_liquid_Hg4xgB": {
+      "custom_css": [], 
+      "type": "custom-liquid", 
+      "name": "Custom Liquid", 
+      "settings": {
+        "remove_vertical_spacing": false, 
+        "full_width": true, 
+        "liquid": "{% render 'zs-chemical-formulation' %}", 
+        "remove_horizontal_spacing": false, 
+        "text_color": "", 
+        "background_gradient": "", 
+        "background": ""
+      }
+    }, 
     "17649546184ec1b9eb": {
-      "type": "apps",
+      "disabled": true, 
+      "type": "apps", 
       "blocks": {
         "judge_me_reviews_review_widget_ykNd6F": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8", 
           "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
+            "review_data": "sample_data", 
+            "show_shop_reviews": false, 
+            "max_width": 1200, 
             "empty_state": "empty_widget"
           }
         }
-      },
+      }, 
       "block_order": [
         "judge_me_reviews_review_widget_ykNd6F"
-      ],
-      "disabled": true,
+      ], 
       "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "remove_vertical_spacing": false, 
+        "full_width": true, 
+        "remove_horizontal_spacing": false, 
+        "text_color": "", 
+        "background_gradient": "", 
+        "background": ""
       }
     }
-  },
+  }, 
   "order": [
-    "main",
-    "rich_text_66jfz3",
-    "custom_liquid_Hg4xgB",
-    "product_research",
-    "related-products",
-    "featured_collection_FRmEmp",
-    "product_faq",
+    "main", 
+    "rich_text_66jfz3", 
+    "custom_liquid_Hg4xgB", 
+    "product_research", 
+    "related-products", 
+    "featured_collection_FRmEmp", 
+    "product_faq", 
     "17649546184ec1b9eb"
   ]
 }
