@@ -1721,6 +1721,25 @@ var CartDrawer = class extends Drawer {
    */
   async _onCartChanged(event) {
     const updatedDrawerContent = new DOMParser().parseFromString(event.detail.cart["sections"][extractSectionId(this)], "text/html");
+    const isShippingProtectionEvent = event.detail?.baseEvent?.startsWith("shipping-protection");
+    if (isShippingProtectionEvent && event.detail.cart["item_count"] > 0) {
+      const updatedTop = updatedDrawerContent.querySelector(".cart-drawer__top");
+      const currentTop = this.querySelector(".cart-drawer__top");
+      if (updatedTop && currentTop) {
+        currentTop.replaceChildren(...updatedTop.childNodes);
+      }
+      const updatedProgress = updatedDrawerContent.querySelector(".free-product-progress-bar-main");
+      const currentProgress = this.querySelector(".free-product-progress-bar-main");
+      if (updatedProgress && currentProgress) {
+        currentProgress.innerHTML = updatedProgress.innerHTML;
+      }
+      const updatedFooter = updatedDrawerContent.querySelector('[slot="footer"]');
+      const currentFooter = this.querySelector('[slot="footer"]');
+      if (updatedFooter && currentFooter) {
+        currentFooter.replaceChildren(...updatedFooter.childNodes);
+      }
+      return;
+    }
     if (event.detail.cart["item_count"] > 0) {
       const currentInner = this.querySelector(".cart-drawer__inner"), updatedInner = updatedDrawerContent.querySelector(".cart-drawer__inner");
       if (!currentInner) {
