@@ -1,3 +1,36 @@
+{% liquid
+  assign shipping_protection_product = nil
+  assign shipping_protection_variant = nil
+  assign shipping_protection_in_cart = false
+  assign shipping_protection_quantity = 0
+
+  if settings.show_shipping_protection
+    if settings.product_shipping_protection != blank
+      assign shipping_protection_product = all_products[settings.product_shipping_protection]
+    endif
+
+    if shipping_protection_product == nil
+      assign shipping_protection_product = all_products['shipping-insurance']
+    endif
+
+    if shipping_protection_product == nil
+      assign shipping_protection_product = all_products['shipping-protection']
+    endif
+
+    if shipping_protection_product and shipping_protection_product.selected_or_first_available_variant
+      assign shipping_protection_variant = shipping_protection_product.selected_or_first_available_variant
+
+      for item in cart.items
+        if item.variant_id == shipping_protection_variant.id
+          assign shipping_protection_in_cart = true
+          assign shipping_protection_quantity = item.quantity
+          break
+        endif
+      endfor
+    endif
+  endif
+%}
+
 <cart-drawer {% if request.design_mode %}handle-section-events{% endif %} class="cart-drawer drawer drawer--lg" id="cart-drawer">
   {%- if cart.item_count == 0 -%}
     <button is="close-button" aria-label="{{ 'general.accessibility.close' | t | escape }}">
@@ -19,11 +52,24 @@
     </div>
   {%- else -%}
     <div class="cart-drawer__inner">
+      {%- if shipping_protection_variant -%}
+        <form
+          id="ShippingProtectionForm"
+          class="shipping-protection-form"
+          action="{{ routes.cart_add_url }}.js"
+          method="post"
+          style="display: none;"
+        >
+          <input type="hidden" name="id" value="{{ shipping_protection_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+        </form>
+      {%- endif -%}
+
       <div class="cart-drawer__top">
         <div class="h-stack items-center justify-between">
           <div class="h-stack grow gap-2 sm:gap-2.5">
             <p class="h5">{{- 'cart.general.title' | t -}}</p>
-            <cart-count class="count-bubble count-bubble--md">{{ cart.item_count }}</cart-count>
+            <cart-count class="count-bubble count-bubble--md">{{ cart.item_count | minus: shipping_protection_quantity }}</cart-count>
           </div>
 
           <button type="button" is="close-button" class="drawer__close-icon">
@@ -40,6 +86,9 @@
       <div class="v-stack gap-6 sm:gap-8">
         <div class="cart-drawer__line-items">
           {%- for line_item in cart.items -%}
+            {%- if shipping_protection_variant and line_item.variant_id == shipping_protection_variant.id -%}
+              {%- continue -%}
+            {%- endif -%}
             {%- render 'line-item', line_item: line_item, show_desktop_quantity: true -%}
           {%- endfor -%}
         </div>
@@ -101,6 +150,68 @@
 
     <div class="v-stack gap-4 sm:gap-6" slot="footer">
       <div class="v-stack gap-1">
+        {% if shipping_protection_variant %}
+          {%- assign shipping_heading = settings.shipping_protection_heading | default: 'Shipping Insurance' -%}
+
+          <div
+            class="shipping-protection-card{% if shipping_protection_in_cart %} is-selected{% endif %}"
+            data-shipping-protection
+            data-variant-id="{{ shipping_protection_variant.id }}"
+            data-product-handle="{{ shipping_protection_product.handle }}"
+            data-selected="{{ shipping_protection_in_cart }}"
+            aria-live="polite"
+          >
+            <div class="shipping-protection-card__layout">
+              <div class="shipping-protection-card__info">
+                <div class="shipping-protection-card__icon">
+                  {% if settings.shipping_protection_icon != blank %}
+                    <img
+                      src="{{ settings.shipping_protection_icon | image_url: width: 80 }}"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="{{ shipping_heading | escape }}"
+                    >
+                  {% else %}
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0676/6270/8931/files/shipping-insurance.png?v=1752899311"
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      alt="{{ shipping_heading | escape }}"
+                    >
+                  {% endif %}
+                </div>
+
+                <div class="shipping-protection-card__content">
+                  <p class="bold shipping-protection-card__heading">
+                    {{ shipping_heading | escape }}
+                    <span class="shipping-protection-card__price">{{ shipping_protection_variant.price | money }}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="shipping-protection-card__controls">
+                <label class="shipping-protection-card__toggle" aria-label="{{ 'Add shipping protection' | escape }}">
+                  <input
+                    type="checkbox"
+                    class="switch"
+                    data-shipping-protection-toggle
+                    data-variant-id="{{ shipping_protection_variant.id }}"
+                    data-product-handle="{{ shipping_protection_product.handle }}"
+                    {% if shipping_protection_in_cart %}checked{% endif %}
+                    {% unless shipping_protection_variant.available %}disabled{% endunless %}
+                  >
+                </label>
+
+                {% unless shipping_protection_variant.available %}
+                  <span class="text-xs text-subdued">{{ 'products.product.sold_out' | t }}</span>
+                {% endunless %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
         {% for discount_application in cart.cart_level_discount_applications %}
           <div class="h-stack gap-4 justify-between">
             <div class="badge">
@@ -184,6 +295,159 @@
     </div>
   {%- endif -%}
 </cart-drawer>
+
+<script>
+  (() => {
+    if (window.__shippingProtectionToggleInitialized) return;
+    window.__shippingProtectionToggleInitialized = true;
+
+    const selectors = {
+      toggle: '[data-shipping-protection-toggle]',
+      container: '[data-shipping-protection]'
+    };
+
+    const dispatchCartChange = (baseEvent, cartContent) => {
+      document.documentElement.dispatchEvent(
+        new CustomEvent('cart:change', {
+          bubbles: true,
+          detail: { baseEvent, cart: cartContent }
+        })
+      );
+    };
+
+    const prepareSections = () => {
+      const sections = [];
+      document.documentElement.dispatchEvent(
+        new CustomEvent('cart:prepare-bundled-sections', {
+          bubbles: true,
+          detail: { sections }
+        })
+      );
+      return sections;
+    };
+
+    const setLoadingState = (toggle, isLoading) => {
+      const wasDisabled = toggle.dataset.baseDisabled || toggle.hasAttribute('disabled');
+
+      if (isLoading) {
+        toggle.dataset.baseDisabled = wasDisabled ? 'true' : 'false';
+        toggle.disabled = true;
+      } else if (toggle.dataset.baseDisabled !== 'true') {
+        toggle.disabled = false;
+      }
+    };
+
+    const syncFromCart = (cart) => {
+      document.querySelectorAll(selectors.container).forEach((container) => {
+        const variantId = Number(container.dataset.variantId);
+        if (!variantId) return;
+
+        const toggle = container.querySelector(selectors.toggle);
+        const inCart = cart?.items?.some(
+          (item) => item.variant_id === variantId || item.id === variantId
+        );
+
+        container.dataset.selected = inCart ? 'true' : 'false';
+        container.classList.toggle('is-selected', !!inCart);
+
+        if (toggle) {
+          toggle.checked = !!inCart;
+        }
+      });
+    };
+
+    const addProtection = async () => {
+      const form = document.getElementById('ShippingProtectionForm');
+      if (!form) {
+        throw new Error('Shipping protection form is missing.');
+      }
+
+      const formData = new FormData(form);
+      const sections = prepareSections();
+
+      if (sections.length) {
+        formData.set('sections', sections.join(','));
+        formData.set('sections_url', window.location.pathname);
+      }
+
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          Accept: 'application/json'
+        }
+      });
+
+      const json = await response.json();
+      if (!response.ok) {
+        throw new Error(json.description || 'Unable to add shipping protection.');
+      }
+
+      const cartContent = await (await fetch(`${Shopify.routes.root}cart.js`)).json();
+      cartContent.sections = json.sections;
+      dispatchCartChange('shipping-protection:add', cartContent);
+      return cartContent;
+    };
+
+    const removeProtection = async (variantId) => {
+      const sections = prepareSections();
+      const payload = {
+        updates: {
+          [variantId]: 0
+        }
+      };
+
+      if (sections.length) {
+        payload.sections = sections.join(',');
+        payload.sections_url = window.location.pathname;
+      }
+
+      const response = await fetch(`${Shopify.routes.root}cart/update.js`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const cartContent = await response.json();
+      if (!response.ok) {
+        throw new Error(cartContent?.description || 'Unable to remove shipping protection.');
+      }
+
+      dispatchCartChange('shipping-protection:remove', cartContent);
+      syncFromCart(cartContent);
+      return cartContent;
+    };
+
+    document.addEventListener('change', async (event) => {
+      if (!event.target.matches(selectors.toggle)) return;
+
+      const toggle = event.target;
+      const variantId = Number(toggle.dataset.variantId);
+      if (!variantId) return;
+
+      setLoadingState(toggle, true);
+
+      try {
+        if (toggle.checked) {
+          await addProtection();
+        } else {
+          await removeProtection(variantId);
+        }
+      } catch (error) {
+        console.error('Shipping protection update failed', error);
+        toggle.checked = !toggle.checked;
+      } finally {
+        setLoadingState(toggle, false);
+      }
+    });
+
+    document.addEventListener('cart:change', (event) => {
+      if (!event.detail?.cart) return;
+      syncFromCart(event.detail.cart);
+    });
+  })();
+</script>
 
 {% schema %}
 {

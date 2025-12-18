@@ -819,6 +819,40 @@
         "label": "Free shipping minimum amount",
         "info": "Indicate the value in your store main currency.",
         "default": "50"
+      },
+      {
+        "type": "header",
+        "content": "Shipping protection"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_shipping_protection",
+        "label": "Show shipping protection",
+        "default": true,
+        "info": "Adds a toggle in the cart drawer so customers can add the protection product."
+      },
+      {
+        "type": "product",
+        "id": "product_shipping_protection",
+        "label": "Shipping protection product"
+      },
+      {
+        "type": "image_picker",
+        "id": "shipping_protection_icon",
+        "label": "Icon",
+        "info": "Optional image shown beside the shipping protection copy."
+      },
+      {
+        "type": "text",
+        "id": "shipping_protection_heading",
+        "label": "Heading",
+        "default": "Shipping Insurance"
+      },
+      {
+        "type": "textarea",
+        "id": "shipping_protection_text",
+        "label": "Description",
+        "default": "Protect your order from damage, loss, or theft during shipping."
       }
     ]
   },
