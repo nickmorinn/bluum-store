@@ -7843,7 +7843,7 @@ product-rerender {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-0-5);
+  gap: var(--spacing-1);
   text-align: center;
 }
 
