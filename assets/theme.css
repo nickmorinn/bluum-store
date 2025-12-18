@@ -75,6 +75,11 @@ body {
   position: relative;
 }
 
+html.lock {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+}
+
 em {
   font-family: "LibreBaskerville", serif;
   font-style: italic; 

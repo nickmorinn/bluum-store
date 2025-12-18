@@ -1736,7 +1736,28 @@ var CartDrawer = class extends Drawer {
       const updatedFooter = updatedDrawerContent.querySelector('[slot="footer"]');
       const currentFooter = this.querySelector('[slot="footer"]');
       if (updatedFooter && currentFooter) {
+        const existingCard = currentFooter.querySelector(".shipping-protection-card");
+        const updatedCard = updatedFooter.querySelector(".shipping-protection-card");
         currentFooter.replaceChildren(...updatedFooter.childNodes);
+        if (existingCard && updatedCard) {
+          const updatedHeading = updatedCard.querySelector(".shipping-protection-card__heading");
+          const existingHeading = existingCard.querySelector(".shipping-protection-card__heading");
+          if (existingHeading && updatedHeading) {
+            existingHeading.innerHTML = updatedHeading.innerHTML;
+          }
+          const updatedToggle = updatedCard.querySelector('[data-shipping-protection-toggle]');
+          const existingToggle = existingCard.querySelector('[data-shipping-protection-toggle]');
+          if (existingToggle && updatedToggle) {
+            existingToggle.checked = updatedToggle.checked;
+            existingToggle.disabled = updatedToggle.disabled;
+          }
+          existingCard.dataset.selected = updatedCard.dataset.selected || "";
+          existingCard.setAttribute("data-selected", existingCard.dataset.selected);
+          existingCard.classList.toggle("is-selected", updatedCard.classList.contains("is-selected"));
+          updatedCard.replaceWith(existingCard);
+        } else if (existingCard && !updatedCard) {
+          currentFooter.prepend(existingCard);
+        }
       }
       return;
     }
