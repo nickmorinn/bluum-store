@@ -422,6 +422,7 @@
         },
         "item_cBaxBB": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "title": "What is your return/refund policy for research peptides?",
             "content": "<p>All sales are final. Since we're dealing with sensitive research compounds that require strict quality control, we can't accept returns or exchanges.<br/><br/>Questions about your order? We're happy to help - just reach out.</p>"
