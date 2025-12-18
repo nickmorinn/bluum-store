@@ -5045,7 +5045,7 @@ product-rerender {
 }
 
 .cart-drawer {
-  --drawer-footer-padding: 1rem 1.0rem 1.0rem 1.0rem;
+  --drawer-footer-padding: 1rem 1.5rem 1.5rem 1.5rem;
   --drawer-content-max-height: none;
   height: 100%;
   top: 0;
@@ -5241,42 +5241,26 @@ product-rerender {
 }
 
 .cart-tier-progress {
-  margin-top: var(--spacing-2);
-  padding: var(--spacing-1-5) var(--spacing-3);
-  border-radius: 12px;
+  margin-top: var(--spacing-3);
+  padding: var(--spacing-2-5) var(--spacing-3);
+  border-radius: 14px;
+  border: 1px solid rgb(var(--text-color) / 0.08);
   background: rgb(var(--background, 255 255 255));
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-0-5);
+  gap: var(--spacing-1-5);
 }
 
 .cart-tier-progress__message {
   font-size: var(--text-sm);
   text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-1);
   margin: 0;
   color: rgb(var(--text-color) / 0.85);
-  font-weight: var(--font-weight-medium);
-}
-
-.cart-tier-progress__message-icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1px solid #c8dae8;
-  background: #c8dae8;
-  color: #24201F;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .cart-tier-progress__track {
   position: relative;
-  padding-top: 16px;
+  padding-top: 24px;
 }
 
 .cart-tier-progress__track::before {
@@ -5298,6 +5282,48 @@ product-rerender {
   border-radius: 999px;
   background: #c8dae8;
   display: block;
+}
+
+.cart-tier-progress__tier {
+  position: absolute;
+  top: -4px;
+  left: var(--tier-position);
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.cart-tier-progress__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #c8dae8;
+  background: rgba(200, 218, 232, 0.35);
+  color: #c8dae8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cart-tier-progress__tier-label {
+  font-size: 10px;
+  color: rgb(var(--text-color) / 0.7);
+  max-width: 80px;
+}
+
+.cart-tier-progress__tier.is-complete .cart-tier-progress__icon {
+  background: #c8dae8;
+  color: #1a1a1a;
+  border-color: #c8dae8;
+}
+
+.cart-tier-progress__tier.is-complete .cart-tier-progress__tier-label {
+  color: rgb(var(--text-color));
+  font-weight: var(--font-weight-medium, 500);
 }
 
 @media screen and (max-width: 540px) {

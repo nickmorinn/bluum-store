@@ -15,6 +15,12 @@
         "content": "Adapt the theme to your brand style by changing rounded elements, spacing and icons style."
       },
       {
+        "type": "text",
+        "id": "shipping_tier_label",
+        "label": "Shipping reward label",
+        "default": "free shipping"
+      },
+      {
         "type": "range",
         "id": "page_width",
         "min": 1300,
