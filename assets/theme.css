@@ -10737,6 +10737,10 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
   align-items: flex-start !important;
 }
 
+.x106a9eq:not(#\#):not(#\#):not(#\#) {
+    padding-inline-start: 0px !important;
+}
+
 /* Put Fast Bundle's "Price" label on the same rhythm as other selectors */
 ._titlecontainer_tde9m_29 {
   margin-block-end: var(--spacing-2);
