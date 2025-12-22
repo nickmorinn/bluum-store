@@ -14,27 +14,25 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "message": {
-          "type": "message",
-          "disabled": true,
-          "settings": {
-            "text": "Use code SPRINGSALE for 20% off",
-            "url": "shopify://collections/frontpage"
-          }
-        },
         "message_RaRXpN": {
           "type": "message",
           "settings": {
-            "text": "Black Friday: 20% Off & Free US Domestic Shipping On All Orders",
+            "text": "Holiday Sale: 20% Off All Orders 🎅🏼",
             "url": ""
+          }
+        },
+        "message": {
+          "type": "message",
+          "settings": {
+            "text": "Free Shipping On Orders $100+",
+            "url": "shopify://collections/frontpage"
           }
         }
       },
       "block_order": [
-        "message",
-        "message_RaRXpN"
+        "message_RaRXpN",
+        "message"
       ],
-      "disabled": true,
       "settings": {
         "enable_sticky": false,
         "autoplay": false,
@@ -49,6 +47,7 @@
     },
     "custom_html_3JKJag": {
       "type": "custom-html",
+      "disabled": true,
       "name": "Custom HTML",
       "settings": {
         "full_width": true,
