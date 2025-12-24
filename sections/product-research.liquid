@@ -43,6 +43,10 @@
 
   if research_page
     assign research_content = research_page.content | default: research_page.body_html | default: research_page.body
+
+    unless research_content contains 'table-scroll'
+      assign research_content = research_content | replace: '<table', '<div class="table-scroll"><table' | replace: '</table>', '</table></div>'
+    endunless
   endif
 -%}
 

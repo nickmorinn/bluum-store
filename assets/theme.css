@@ -3415,6 +3415,21 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   word-break: break-word;
 }
 
+.shopify-section--main-page .prose :is(h1, h2, h3) {
+  margin-block-start: var(--spacing-5);
+  margin-block-end: var(--spacing-2-5);
+}
+
+.shopify-section--main-page .prose :is(h4, h5, h6) {
+  margin-block-start: var(--spacing-2-5);
+  margin-block-end: var(--spacing-2-5);
+}
+
+.shopify-section--main-page .prose :is(p, ul, ol) {
+  margin-block-start: 0;
+  margin-block-end: var(--spacing-2-5);
+}
+
 .prose br {
   margin-block-start: 0 !important;
   margin-block-end: 0 !important;
@@ -3505,13 +3520,20 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .product-research__content {
-  overflow-x: auto;
+  overflow-x: visible;
   max-width: 100%;
+  width: 100%;
+  min-width: 0;
 }
 
 .product-research {
   overflow-x: hidden;
   position: relative;
+}
+
+.product-research .v-stack,
+.product-research .v-stack > * {
+  min-width: 0;
 }
 
 .product-research__content table {
@@ -3520,9 +3542,32 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   table-layout: auto;
 }
 
+.product-research__content .table-scroll {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-research__content .table-scroll table {
+  width: max-content !important;
+  min-width: 100%;
+}
+
 .product-research__content :is(td, th, p, li) {
   word-break: normal;
   white-space: normal;
+}
+
+.product-research__content > :not(.table-scroll) :is(p, li, a, span) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.product-research__content > * {
+  max-width: 100%;
 }
 
 .product-research__content {
@@ -3545,9 +3590,9 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .product-research .page-width {
-  width: min(100%, var(--container-inner-width));
-  margin-inline: auto;
-  padding-inline: var(--calculated-section-spacing-inline);
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
 @supports (height: 1lh) {
@@ -3619,6 +3664,24 @@ table caption {
   max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.shopify-section--image-with-text-overlay .table-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shopify-section--image-with-text-overlay .table-scroll table {
+  width: max-content;
+  min-width: 100%;
+}
+
+.shopify-section--image-with-text-overlay .content-over-media > :not(img, video, iframe, svg, video-media, picture) {
+  width: 100%;
+  min-width: 0;
 }
 
 th {

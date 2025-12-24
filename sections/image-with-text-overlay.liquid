@@ -171,15 +171,23 @@
 
               {%- when 'richtext' -%}
                 {%- if block.settings.content != blank -%}
+                  {%- capture richtext_content -%}{{- block.settings.content -}}{%- endcapture -%}
+                  {%- unless richtext_content contains 'table-scroll' -%}
+                    {%- assign richtext_content = richtext_content | replace: '<table', '<div class="table-scroll"><table' | replace: '</table>', '</table></div>' -%}
+                  {%- endunless -%}
                   <div {{ block.shopify_attributes }}>
-                    {{- block.settings.content -}}
+                    {{- richtext_content -}}
                   </div>
                 {%- endif -%}
 
               {%- when 'liquid' -%}
                 {%- if block.settings.liquid != blank -%}
+                  {%- capture liquid_content -%}{{- block.settings.liquid -}}{%- endcapture -%}
+                  {%- unless liquid_content contains 'table-scroll' -%}
+                    {%- assign liquid_content = liquid_content | replace: '<table', '<div class="table-scroll"><table' | replace: '</table>', '</table></div>' -%}
+                  {%- endunless -%}
                   <div {{ block.shopify_attributes }}>
-                    {{- block.settings.liquid -}}
+                    {{- liquid_content -}}
                   </div>
                 {%- endif -%}
 
@@ -194,6 +202,20 @@
     {%- endif -%}
   </image-banner>
 </div>
+
+<script>
+  (() => {
+    const section = document.getElementById('shopify-section-{{ section.id }}');
+    if (!section) return;
+    section.querySelectorAll('.content-over-media table').forEach((table) => {
+      if (table.closest('.table-scroll')) return;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-scroll';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    });
+  })();
+</script>
 
 {% schema %}
 {
