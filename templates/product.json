@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "heading_tag": "h2"
+            "heading_tag": "h1"
           }
         },
         "judge_me_reviews_preview_badge_3hynWc": {
@@ -211,7 +211,7 @@
           "type": "heading",
           "settings": {
             "text": "About {{ product.title }}",
-            "heading_tag": "h1",
+            "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
           }
@@ -253,7 +253,6 @@
     },
     "product_research": {
       "type": "product-research",
-      "disabled": true,
       "settings": {
         "metafield_namespace": "custom",
         "metafield_key": "research",
