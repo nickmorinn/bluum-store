@@ -3507,10 +3507,12 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 .product-research__content table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: auto;
 }
 
 .product-research__content :is(td, th, p, li) {
-  word-break: break-word;
+  word-break: normal;
+  white-space: normal;
 }
 
 .product-research__content {
@@ -3519,11 +3521,11 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 
 @media screen and (max-width: 749px) {
   .product-research__content table {
-    min-width: 640px;
+    min-width: 760px;
   }
 
   .product-research__content :is(td, th) {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 
