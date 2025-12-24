@@ -3410,6 +3410,11 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   display: grid;
 }
 
+.shopify-section--main-page .prose {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .prose br {
   margin-block-start: 0 !important;
   margin-block-end: 0 !important;
@@ -3607,6 +3612,13 @@ table {
 table caption {
   text-align: inherit;
   margin-block-end: .5rem;
+}
+
+.shopify-section--main-page .prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 th {
