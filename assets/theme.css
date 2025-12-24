@@ -3518,6 +3518,12 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   height: auto;
 }
 
+.product-research .page-width {
+  width: min(100%, var(--container-inner-width));
+  margin-inline: auto;
+  padding-inline: var(--calculated-section-spacing-inline);
+}
+
 @supports (height: 1lh) {
   :is(.link, .prose a:not(.button)) {
     background: linear-gradient(to right, currentColor, currentColor) 0 min(100%, 1.2lh) / 100% 1px no-repeat;
