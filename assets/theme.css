@@ -3513,6 +3513,20 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   word-break: break-word;
 }
 
+.product-research__content {
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 749px) {
+  .product-research__content table {
+    min-width: 640px;
+  }
+
+  .product-research__content :is(td, th) {
+    font-size: 0.9rem;
+  }
+}
+
 .product-research__content img {
   max-width: 100%;
   height: auto;
