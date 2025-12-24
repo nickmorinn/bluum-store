@@ -3504,6 +3504,11 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   max-width: 100%;
 }
 
+.product-research {
+  overflow-x: hidden;
+  position: relative;
+}
+
 .product-research__content table {
   width: 100%;
   border-collapse: collapse;
