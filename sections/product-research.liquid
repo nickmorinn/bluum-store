@@ -49,7 +49,7 @@
 {%- if research_page and research_content != blank -%}
   {%- render 'section-spacing-collapsing' -%}
 
-  <section class="product-research" {% render 'section-properties', full_width: section.settings.full_width %}>
+  <section {% render 'section-properties', class: 'product-research', full_width: section.settings.full_width %}>
     <div class="page-width">
       <div class="v-stack gap-6">
       {%- assign heading_text = section.settings.heading -%}
