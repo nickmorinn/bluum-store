@@ -3499,6 +3499,25 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   transition: background-size .3s ease-in-out, color .3s ease-in-out;
 }
 
+.product-research__content {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.product-research__content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-research__content :is(td, th, p, li) {
+  word-break: break-word;
+}
+
+.product-research__content img {
+  max-width: 100%;
+  height: auto;
+}
+
 @supports (height: 1lh) {
   :is(.link, .prose a:not(.button)) {
     background: linear-gradient(to right, currentColor, currentColor) 0 min(100%, 1.2lh) / 100% 1px no-repeat;
