@@ -10388,8 +10388,8 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 .h2, .prose h2:not(.h0, .h1, .h2, .h3, .h4, .h5, .h6) {
-  font-size: var(--text-h1);
-  line-height: 1.1;
+  font-size: var(--text-h2);
+  line-height: 1.15;
 }
 
 .h3, .prose h3:not(.h0, .h1, .h2, .h3, .h4, .h5, .h6) {
@@ -10453,7 +10453,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
   .sm\:h2 {
     font-size: var(--text-h2);
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   .sm\:h3 {
