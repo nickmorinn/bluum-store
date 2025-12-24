@@ -253,7 +253,7 @@
     },
     "product_research": {
       "type": "product-research",
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "metafield_namespace": "custom",
         "metafield_key": "research",

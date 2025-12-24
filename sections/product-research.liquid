@@ -76,6 +76,20 @@
       </div>
     </div>
   </section>
+
+  <script>
+    (() => {
+      const section = document.getElementById('shopify-section-{{ section.id }}');
+      if (!section) return;
+      section.querySelectorAll('.product-research__content table').forEach((table) => {
+        if (table.closest('.table-scroll')) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-scroll';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      });
+    })();
+  </script>
 {%- endif -%}
 
 {% schema %}
