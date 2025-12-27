@@ -117,6 +117,7 @@
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "title": "",
             "content": "<p><strong>Address:<br/></strong>2121 Lohmans Crossing Road<br/>STE504-190<br/>Lakeway, TX 78734<br/><br/><strong>Email: </strong>hello@bluumpeptides.com<br/><br/><strong>Phone: </strong>(512) 903-2399<br/><br/><strong>Customer Service Hours: </strong>Monday to Friday, 8am-5pm (CST)</p>",
