@@ -16,6 +16,7 @@
       "blocks": {
         "message_RaRXpN": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "text": "Holiday Sale: 20% Off All Orders 🎅🏼",
             "url": ""
