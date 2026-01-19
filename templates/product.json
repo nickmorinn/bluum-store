@@ -75,7 +75,6 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "disabled": true,
           "settings": {}
         },
         "fbp_fast_bundle_volume_position_MkgDht": {
