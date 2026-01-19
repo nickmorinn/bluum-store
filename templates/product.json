@@ -116,6 +116,7 @@
         "liquid_payment_icons": {
           "type": "liquid",
           "name": "Payment Icons",
+          "disabled": true,
           "settings": {
             "liquid": "{% render 'payment-icons' %}"
           }
@@ -123,6 +124,7 @@
         "liquid_smart_shipping_box": {
           "type": "liquid",
           "name": "Smart Shipping Box",
+          "disabled": true,
           "settings": {
             "liquid": "{% render 'smart-shipping-box' %}"
           }
