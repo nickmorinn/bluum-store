@@ -7928,6 +7928,10 @@ product-rerender {
   }
 }
 
+.product-info__block-item[data-block-id="buy_buttons"] {
+  margin-top: 0 !important;
+}
+
 .product-info {
   --product-info-block-spacing: var(--spacing-6);
 }
