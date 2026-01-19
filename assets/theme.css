@@ -625,7 +625,8 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
   -webkit-appearance: none;
   appearance: none;
   /* border-radius: var(--rounded-button); */
-  border-radius: var(--rbr__border-border-radius-md);
+  /* border-radius: var(--rbr__border-border-radius-md); */
+  border-radius: 9px;
   background-color: rgb(var(--button-background));
   color: rgb(var(--button-text-color));
   text-align: center;
@@ -4054,7 +4055,8 @@ tfoot td {
   height: var(--input-height);
   white-space: nowrap;
   /* border-radius: var(--rounded-button); */
-  border-radius: var(--rbr__border-border-radius-md);
+  border-radius: 9px;
+  /* border-radius: var(--rbr__border-border-radius-md); */
   background: rgb(var(--input-background, var(--background))) no-repeat;
   border-width: 1px;
   padding-inline-start: var(--spacing-5);
