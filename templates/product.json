@@ -80,6 +80,7 @@
         },
         "fbp_fast_bundle_volume_position_MkgDht": {
           "type": "shopify://apps/fbp-fast-bundle/blocks/volume_position/9e87fbe2-9041-4c23-acf5-322413994cef",
+          "disabled": true,
           "settings": {}
         },
         "liquid_btFKek": {
