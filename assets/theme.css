@@ -624,8 +624,8 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
   --button-outline-color: var(--button-background-primary);
   -webkit-appearance: none;
   appearance: none;
-  /* border-radius: var(--rounded-button); */
-  border-radius: var(--rbr__border-border-radius-md);
+  border-radius: var(--rounded-button);
+  /* border-radius: var(--rbr__border-border-radius-md); */
   background-color: rgb(var(--button-background));
   color: rgb(var(--button-text-color));
   text-align: center;
@@ -4053,8 +4053,8 @@ tfoot td {
   gap: var(--spacing-3);
   height: var(--input-height);
   white-space: nowrap;
-  border-radius: var(--rounded-button);
-  /* border-radius: var(--rbr__border-border-radius-md); */
+  /* border-radius: var(--rounded-button); */
+  border-radius: var(--rbr__border-border-radius-md);
   background: rgb(var(--input-background, var(--background))) no-repeat;
   border-width: 1px;
   padding-inline-start: var(--spacing-5);
