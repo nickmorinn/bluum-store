@@ -11059,3 +11059,50 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
     width: auto;
   }
 }
+
+
+/* Product Research Section */
+.product-research {
+  padding: 96px 24px;
+}
+
+.product-research .page-width {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-research__content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #222;
+}
+
+/* Headings styling */
+.product-research__content h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.product-research__content h2 {
+  font-size: 32px;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+
+.product-research__content h3 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+/* Paragraph spacing */
+.product-research__content p {
+  margin-bottom: 20px;
+}
+
+/* Tables */
+.product-research__content .table-scroll {
+  overflow-x: auto;
+  margin: 32px 0;
+}

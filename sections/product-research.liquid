@@ -49,14 +49,6 @@
 <section class="product-research">
   <div class="product-research__container">
 
-    {%- if research_page.image -%}
-      <img
-        class="product-research__hero"
-        src="{{ research_page.image | image_url: width: 1600 }}"
-        alt="{{ research_page.title | escape }}"
-      >
-    {%- endif -%}
-
     <header class="product-research__header">
       {%- if section.settings.subheading != blank -%}
         <p class="product-research__subheading">
