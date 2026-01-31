@@ -11062,47 +11062,55 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
 
 
 /* Product Research Section */
+/* Product Research – Webflow-style layout */
 .product-research {
-  padding: 96px 24px;
+  padding: 120px 0;
 }
 
-.product-research .page-width {
-  max-width: 900px;
+.product-research__container {
+  max-width: 1100px;   /* ← THIS is the real fix */
   margin: 0 auto;
+  padding: 0 64px;     /* Big side spacing like Webflow */
 }
 
+/* Content */
 .product-research__content {
   font-size: 18px;
-  line-height: 1.8;
-  color: #222;
+  line-height: 1.9;
+  color: #1f2937;
 }
 
-/* Headings styling */
+/* Headings (Webflow-like) */
 .product-research__content h1 {
-  font-size: 44px;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 32px;
 }
 
 .product-research__content h2 {
-  font-size: 32px;
-  margin-top: 56px;
-  margin-bottom: 20px;
+  font-size: 34px;
+  margin-top: 64px;
+  margin-bottom: 24px;
 }
 
 .product-research__content h3 {
-  font-size: 24px;
-  margin-top: 40px;
-  margin-bottom: 16px;
+  font-size: 26px;
+  margin-top: 48px;
+  margin-bottom: 18px;
 }
 
 /* Paragraph spacing */
 .product-research__content p {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
-/* Tables */
-.product-research__content .table-scroll {
-  overflow-x: auto;
-  margin: 32px 0;
+/* Mobile fix */
+@media (max-width: 768px) {
+  .product-research__container {
+    padding: 0 24px;
+  }
+
+  .product-research__content h1 {
+    font-size: 36px;
+  }
 }
