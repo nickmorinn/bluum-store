@@ -1,395 +1,102 @@
 {%- liquid
-
   assign namespace = section.settings.metafield_namespace | default: 'custom'
-
   assign key = section.settings.metafield_key | default: 'research'
-
   assign research_page = nil
-
   assign research_content = ''
 
-
-
   if product
-
     assign selected_variant = product.selected_or_first_available_variant
-
     assign research_source = nil
 
-
-
     if selected_variant
-
       assign variant_namespace = selected_variant.metafields[namespace]
-
       if variant_namespace != blank and variant_namespace[key] != blank
-
         assign research_source = variant_namespace[key]
-
       endif
-
     endif
-
-
 
     if research_source == blank
-
       assign product_namespace = product.metafields[namespace]
-
       if product_namespace != blank and product_namespace[key] != blank
-
         assign research_source = product_namespace[key]
-
       endif
-
     endif
-
-
 
     if research_source != blank
-
       assign direct_page = research_source.value | default: research_source
 
-
-
       if direct_page.content != blank or direct_page.body_html != blank or direct_page.body != blank
-
         assign research_page = direct_page
-
       else
-
         assign page_field_handle = section.settings.metaobject_page_field | default: 'page'
-
         assign candidate_page = direct_page[page_field_handle]
-
-
-
         if candidate_page != blank
-
           assign page_drop = candidate_page.value | default: candidate_page
-
           if page_drop.content != blank or page_drop.body_html != blank or page_drop.body != blank
-
             assign research_page = page_drop
-
           endif
-
         endif
-
       endif
-
     endif
-
   endif
-
-
 
   if research_page
-
     assign research_content = research_page.content | default: research_page.body_html | default: research_page.body
-
-
-
-    unless research_content contains 'table-scroll'
-
-      assign research_content = research_content | replace: '<table', '<div class="table-scroll"><table' | replace: '</table>', '</table></div>'
-
-    endunless
-
   endif
-
 -%}
 
-
-
 {%- if research_page and research_content != blank -%}
+<section class="product-research">
+  <div class="product-research__container">
 
-  {%- render 'section-spacing-collapsing' -%}
+    {%- if research_page.image -%}
+      <img
+        class="product-research__hero"
+        src="{{ research_page.image | image_url: width: 1600 }}"
+        alt="{{ research_page.title | escape }}"
+      >
+    {%- endif -%}
 
-
-
-  <section {% render 'section-properties', class: 'product-research', full_width: section.settings.full_width %}>
-
-    <div class="page-width">
-
-      <div class="v-stack gap-6">
-
-      {%- assign heading_text = section.settings.heading -%}
-
-      {%- if heading_text == blank and section.settings.show_page_title and research_page.title != blank -%}
-
-        {%- assign heading_text = research_page.title -%}
-
+    <header class="product-research__header">
+      {%- if section.settings.subheading != blank -%}
+        <p class="product-research__subheading">
+          {{ section.settings.subheading }}
+        </p>
       {%- endif -%}
 
+      <h2 class="product-research__title">
+        {{ section.settings.heading | default: research_page.title }}
+      </h2>
 
-
-      {%- if section.settings.subheading != blank or heading_text != blank -%}
-
-        {%- render 'section-header',
-
-          subheading: section.settings.subheading,
-
-          heading: heading_text,
-
-          heading_color: section.settings.heading_color,
-
-          heading_gradient: section.settings.heading_gradient
-
-        -%}
-
+      {%- if research_page.published_at -%}
+        <p class="product-research__meta">
+          {{ research_page.published_at | date: "%B %d, %Y" }}
+        </p>
       {%- endif -%}
+    </header>
 
+    <article class="product-research__body prose">
+      {{ research_content }}
+    </article>
 
-
-        <div class="prose product-research__content">
-
-          {{ research_content }}
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <script>
-
-    (() => {
-
-      const section = document.getElementById('shopify-section-{{ section.id }}');
-
-      if (!section) return;
-
-      section.querySelectorAll('.product-research__content table').forEach((table) => {
-
-        if (table.closest('.table-scroll')) return;
-
-        const wrapper = document.createElement('div');
-
-        wrapper.className = 'table-scroll';
-
-        table.parentNode.insertBefore(wrapper, table);
-
-        wrapper.appendChild(table);
-
-      });
-
-    })();
-
-  </script>
-
+  </div>
+</section>
 {%- endif -%}
 
-
-
 {% schema %}
-
 {
-
   "name": "Product research",
-
   "tag": "section",
-
-  "enabled_on": {
-
-    "templates": [
-
-      "product"
-
-    ]
-
-  },
-
+  "enabled_on": { "templates": ["product"] },
   "settings": [
-
-    {
-
-      "type": "text",
-
-      "id": "metafield_namespace",
-
-      "label": "Metafield namespace",
-
-      "default": "custom"
-
-    },
-
-    {
-
-      "type": "text",
-
-      "id": "metafield_key",
-
-      "label": "Metafield key",
-
-      "default": "research"
-
-    },
-
-    {
-
-      "type": "text",
-
-      "id": "metaobject_page_field",
-
-      "label": "Metaobject page field handle",
-
-      "default": "page",
-
-      "info": "Used only when the metafield returns a metaobject that contains a page reference field."
-
-    },
-
-    {
-
-      "type": "checkbox",
-
-      "id": "full_width",
-
-      "label": "Full width",
-
-      "default": true
-
-    },
-
-    {
-
-      "type": "text",
-
-      "id": "subheading",
-
-      "label": "Subheading"
-
-    },
-
-    {
-
-      "type": "text",
-
-      "id": "heading",
-
-      "label": "Heading"
-
-    },
-
-    {
-
-      "type": "checkbox",
-
-      "id": "show_page_title",
-
-      "label": "Use page title when heading is empty",
-
-      "default": true
-
-    },
-
-    {
-
-      "type": "select",
-
-      "id": "heading_tag",
-
-      "label": "Heading style",
-
-      "default": "h2",
-
-      "options": [
-
-        {
-
-          "value": "h2",
-
-          "label": "Large"
-
-        },
-
-        {
-
-          "value": "h3",
-
-          "label": "Medium"
-
-        },
-
-        {
-
-          "value": "h4",
-
-          "label": "Small"
-
-        }
-
-      ]
-
-    },
-
-    {
-
-      "type": "color",
-
-      "id": "heading_color",
-
-      "label": "Heading text color"
-
-    },
-
-    {
-
-      "type": "color_background",
-
-      "id": "heading_gradient",
-
-      "label": "Heading gradient"
-
-    },
-
-    {
-
-      "type": "color",
-
-      "id": "background",
-
-      "label": "Background"
-
-    },
-
-    {
-
-      "type": "color_background",
-
-      "id": "background_gradient",
-
-      "label": "Background gradient"
-
-    },
-
-    {
-
-      "type": "color",
-
-      "id": "text_color",
-
-      "label": "Text color"
-
-    }
-
+    { "type": "text", "id": "metafield_namespace", "label": "Metafield namespace", "default": "custom" },
+    { "type": "text", "id": "metafield_key", "label": "Metafield key", "default": "research" },
+    { "type": "text", "id": "metaobject_page_field", "label": "Metaobject page field handle", "default": "page" },
+    { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "heading", "label": "Heading" }
   ],
-
   "presets": [
-
-    {
-
-      "name": "Product research"
-
-    }
-
+    { "name": "Product research (Blog Style)" }
   ]
-
 }
-
 {% endschema %}
