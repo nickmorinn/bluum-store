@@ -47,6 +47,16 @@
           </div>
         </custom-cursor>
       {%- endif -%}
+      {%- if product.media.size > 1 and request.page_type == 'product' -%}
+        <div class="product-gallery__mobile-nav">
+          <button type="button" is="prev-button" class="product-gallery__mobile-nav-button product-gallery__mobile-nav-button--prev circle-button circle-button--fill circle-button--sm ring" aria-controls="{{ product_gallery_id }}" aria-label="{{ 'general.accessibility.previous' | t | escape }}" disabled>
+            {%- render 'icon' with 'chevron-left', direction_aware: true -%}
+          </button>
+          <button type="button" is="next-button" class="product-gallery__mobile-nav-button product-gallery__mobile-nav-button--next circle-button circle-button--fill circle-button--sm ring" aria-controls="{{ product_gallery_id }}" aria-label="{{ 'general.accessibility.next' | t | escape }}">
+            {%- render 'icon' with 'chevron-right', direction_aware: true -%}
+          </button>
+        </div>
+      {%- endif -%}
 
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
