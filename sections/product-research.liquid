@@ -67,9 +67,27 @@
       {%- endif -%}
     </header>
 
-    <article class="product-research__body prose">
-      {{ research_content }}
-    </article>
+<article class="product-research__body prose" data-research-content>
+  {{ research_content }}
+</article>
+
+<script>
+  (() => {
+    const container = document.querySelector('[data-research-content]');
+    if (!container) return;
+
+    container.querySelectorAll('table').forEach(table => {
+      if (table.closest('.table-scroll')) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-scroll';
+
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    });
+  })();
+</script>
+
 
   </div>
 </section>
