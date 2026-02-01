@@ -11230,12 +11230,13 @@ html, body {
 }
 
 /* Ensure tables never break layout */
-/* .product-research__content .table-scroll {
+.product-research__content .table-scroll {
   max-width: 100%;
   overflow-x: auto;
-} */
-
-.product-research__content table {
+  }
+  
+  .product-research__content table {
   min-width: 1000px; /* allows scroll inside table, not page */
+  overflow-x: auto;
 }
 
