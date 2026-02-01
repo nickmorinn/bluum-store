@@ -11512,22 +11512,3 @@ body {
     min-width: 720px;
   }
 }
-/* First column – SIGNIFICANTLY increased breathing room */
-.product-research__content th:first-child,
-.product-research__content td:first-child {
-  padding-left: 40px;      /* Increased from 28px to 40px */
-  padding-right: 30px;     /* Added right padding to separate from the next column */
-  font-weight: 700;        /* Makes the labels stand out */
-  width: 280px;            /* Gives the first column a set width so it doesn't squish */
-  min-width: 250px;        
-}
-
-/* General Body cells adjustment */
-.product-research__content tbody td {
-  padding: 24px 22px;      /* Increased top/bottom padding for a more "premium" feel */
-  font-size: 15px;
-  line-height: 1.6;
-  color: #333;
-  border-bottom: 1px solid #eef0f3;
-  vertical-align: middle;  /* Changed to middle so text stays centered if rows get tall */
-}
