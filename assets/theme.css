@@ -11114,3 +11114,112 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
     font-size: 36px;
   }
 }
+
+/* css for the verticl spcing */
+/* =========================
+   Editorial Spacing System
+   ========================= */
+
+/* Section spacing */
+.product-research {
+  padding: 140px 0;
+}
+
+/* Paragraphs */
+.product-research__content p {
+  margin-bottom: 28px;
+}
+
+/* Headings rhythm */
+.product-research__content h1 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.product-research__content h2 {
+  margin-top: 96px;   /* BIG break between sections */
+  margin-bottom: 32px;
+}
+
+.product-research__content h3 {
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+/* Lists */
+.product-research__content ul,
+.product-research__content ol {
+  margin: 32px 0 40px 24px;
+}
+
+.product-research__content li {
+  margin-bottom: 16px;
+}
+
+/* Section breaks (optional HR use) */
+.product-research__content hr {
+  margin: 96px 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* PREMIUM TABLE DESIGN (VERY IMPORTANT) */
+
+/* =========================
+   Premium Research Tables
+   ========================= */
+
+.product-research__content .table-scroll {
+  margin: 72px 0;
+  overflow-x: auto;
+}
+
+/* Base table */
+.product-research__content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Table header */
+.product-research__content thead th {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 18px 20px;
+  text-align: left;
+}
+
+/* Table cells */
+.product-research__content tbody td {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1f2937;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Zebra rows */
+.product-research__content tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* First column emphasis (Feature column) */
+.product-research__content tbody td:first-child {
+  font-weight: 600;
+  color: #020617;
+  width: 26%;
+}
+
+/* Remove last border */
+.product-research__content tbody tr:last-child td {
+  border-bottom: none;
+}
+
