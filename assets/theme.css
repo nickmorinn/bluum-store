@@ -11279,3 +11279,53 @@ body {
 .product-research__content table {
   min-width: 900px;
 }
+
+/* === PRODUCT RESEARCH TABLES (FINAL, MOBILE SAFE) === */
+
+.product-research__body .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 64px 0;
+}
+
+.product-research__body table {
+  width: max-content;   /* forces scroll */
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* Header */
+.product-research__body thead th {
+  background: #0f172a;
+  color: #fff;
+  padding: 18px 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* Cells */
+.product-research__body td {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+/* Zebra rows */
+.product-research__body tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* Feature column emphasis */
+.product-research__body td:first-child {
+  font-weight: 600;
+  color: #020617;
+  white-space: nowrap;
+}
