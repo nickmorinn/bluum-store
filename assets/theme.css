@@ -11223,3 +11223,19 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
   border-bottom: none;
 }
 
+/* Stop horizontal scroll issues */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure tables never break layout */
+.product-research__content .table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.product-research__content table {
+  min-width: 700px; /* allows scroll inside table, not page */
+}
+
