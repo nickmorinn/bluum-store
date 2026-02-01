@@ -11249,3 +11249,33 @@ body {
 .product-research__content {
   overflow: visible !important;
 }
+/* === OVERRIDE BLUUM SECTION LOGIC FOR PRODUCT RESEARCH ONLY === */
+.shopify-section:has(.product-research) {
+  overflow-x: visible !important;
+}
+
+.product-research {
+  overflow: visible;
+}
+
+/* Kill Bluum padding math for this section */
+.shopify-section:has(.product-research) .section {
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+}
+
+/* Our custom container controls layout */
+.product-research__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+.product-research__content .table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-research__content table {
+  min-width: 900px;
+}
