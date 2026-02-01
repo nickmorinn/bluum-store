@@ -11226,7 +11226,7 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
 /* Stop horizontal scroll issues */
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /* Ensure tables never break layout */
