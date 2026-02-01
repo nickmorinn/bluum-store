@@ -11223,20 +11223,29 @@ div#rich-text-01K4VDZ2V3MTQRM0630Q9T711V span[style="font-family: libre_baservil
   border-bottom: none;
 }
 
-/* Stop horizontal scroll issues */
-html, body {
-  max-width: 100%;
-  /* overflow-x: hidden; */
+html {
+  overflow-x: hidden;
 }
 
-/* Ensure tables never break layout */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .product-research__content .table-scroll {
   max-width: 100%;
   overflow-x: auto;
-  }
-  
-  .product-research__content table {
-  min-width: 1000px; /* allows scroll inside table, not page */
-  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
+.product-research__content table {
+  width: 100%;
+  min-width: 900px; /* forces horizontal scroll */
+  border-collapse: separate;
+}
+.product-research,
+.product-research__container,
+.product-research__content {
+  overflow: visible !important;
+}
