@@ -194,6 +194,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    <script src="{{ 'click_scroll.js' | asset_url }}" defer="defer"></script>
   </head>
 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelectorAll(".product-research__body table")
+    .forEach((table) => {
+      if (!table.parentElement.classList.contains("table-scroll")) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "table-scroll";
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      }
+    });
+});
+</script>
+
+
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
     {%- render 'shadow-dom-templates' -%}
 
