@@ -11236,6 +11236,6 @@ html, body {
 } */
 
 .product-research__content table {
-  min-width: 700px; /* allows scroll inside table, not page */
+  min-width: 1000px; /* allows scroll inside table, not page */
 }
 
